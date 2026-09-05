@@ -1,0 +1,14 @@
+# 依赖与构建产物
+node_modules/
+dist/
+
+# 本机/系统文件
+.DS_Store
+Thumbs.db
+.npmrc
+npm-debug.log*
+
+# 本地配置/密钥（如有）
+.env
+.env.local
+*.local

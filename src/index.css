@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-ink text-textured font-body antialiased;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(46, 155, 255, 0.35);
+    color: #f5f7fa;
+  }
+
+  /* 细滚动条 */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #05070c;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1a2b43;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2e9bff;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-label text-cyan/80;
+  }
+
+  .section-title {
+    @apply font-display font-semibold leading-tight text-textured;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    text-wrap: balance;
+  }
+
+  .gradient-text {
+    background: linear-gradient(120deg, #116aa3 0%, #2e9bff 50%, #7c5cff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* 微妙的网格背景，强调声学数据感 */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(46, 155, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(46, 155, 255, 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .glass {
+    background: rgba(17, 26, 46, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(154, 167, 188, 0.14);
+  }
+
+  .card-hover {
+    transition:
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+  .card-hover:hover {
+    border-color: rgba(46, 155, 255, 0.45);
+    box-shadow: 0 20px 60px -25px rgba(46, 155, 255, 0.45);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ── 图表动效（pop / fade / draw），带 reduced-motion 降级 ── */
+@layer base {
+  .chart-pop {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: chartPop 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.3) both;
+  }
+  .chart-fade {
+    animation: chartFade 0.9s ease both;
+  }
+  .chart-draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: chartDraw 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+  @keyframes chartPop {
+    from { transform: scale(0); }
+    to { transform: none; }
+  }
+  @keyframes chartFade {
+    from { opacity: 0; }
+  }
+  @keyframes chartDraw {
+    to { stroke-dashoffset: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .chart-pop, .chart-fade { animation: none; }
+    .chart-draw { animation: none; stroke-dasharray: none; stroke-dashoffset: 0; }
+  }
+}
