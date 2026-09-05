@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useI18n } from '../i18n'
 import LanguageSwitcher from './LanguageSwitcher'
 import { OTHER_PRODUCTS } from '../data/products'
+import { scrollToId } from '../utils/scroll'
 
 /** 顶部导航 —— 玻璃拟态；「产品」下挂 4 个子页，默认 AcouScope */
 export default function Nav() {
@@ -32,9 +33,9 @@ export default function Nav() {
   ]
 
   const anchorLinks = [
-    { label: t.nav.features, href: '#features' },
-    { label: t.nav.vision, href: '#vision' },
-    { label: t.nav.download, href: '#download' },
+    { label: t.nav.features, id: 'features' },
+    { label: t.nav.vision, id: 'vision' },
+    { label: t.nav.download, id: 'download' },
   ]
 
   return (
@@ -86,9 +87,9 @@ export default function Nav() {
 
           {isHome &&
             anchorLinks.map((l) => (
-              <a key={l.href} href={l.href} className="rounded-full px-4 py-2 text-sm text-muted transition hover:bg-raised/60 hover:text-textured">
+              <button key={l.id} onClick={() => scrollToId(l.id)} className="rounded-full px-4 py-2 text-sm text-muted transition hover:bg-raised/60 hover:text-textured">
                 {l.label}
-              </a>
+              </button>
             ))}
           {!isHome && (
             <Link to="/" className="rounded-full px-4 py-2 text-sm text-muted transition hover:bg-raised/60 hover:text-textured">
@@ -101,6 +102,7 @@ export default function Nav() {
           <LanguageSwitcher />
           <a
             href={isHome ? '#download' : '/#download'}
+            onClick={(e) => { e.preventDefault(); if (isHome) scrollToId('download') }}
             className="hidden rounded-full border border-cyan/40 bg-cyan/10 px-4 py-2 text-sm font-medium text-cyan transition hover:bg-cyan/20 md:inline-block"
           >
             {t.hero.cta1}
@@ -129,9 +131,9 @@ export default function Nav() {
             ))}
             {isHome &&
               anchorLinks.map((l) => (
-                <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="rounded-xl px-3 py-2.5 text-sm text-muted transition hover:bg-raised/60 hover:text-textured">
+                <button key={l.id} onClick={() => { scrollToId(l.id); setOpen(false) }} className="rounded-xl px-3 py-2.5 text-left text-sm text-muted transition hover:bg-raised/60 hover:text-textured">
                   {l.label}
-                </a>
+                </button>
               ))}
           </div>
         </nav>

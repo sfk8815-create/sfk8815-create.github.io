@@ -1,5 +1,6 @@
 import { useI18n } from '../i18n'
 import { PALETTE } from '../charts/chartCore'
+import { scrollToId } from '../utils/scroll'
 
 // 三套 SOTA 音高检测引擎 —— 详细、重点介绍
 export default function PitchEngines() {
@@ -48,7 +49,7 @@ export default function PitchEngines() {
                 </dl>
 
                 <a
-                  href="#features"
+                  type="button" onClick={() => scrollToId('features')}
                   className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium transition hover:text-cyan"
                   style={{ color: accent }}
                 >

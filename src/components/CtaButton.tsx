@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import Magnet from './bits/Magnet'
 import BorderGlow from './bits/BorderGlow'
+import { scrollToId } from '../utils/scroll'
 
 /** CTA 主按钮 —— Magnet 磁吸 + BorderGlow 流光边框 */
 export default function CtaButton({
@@ -12,11 +13,13 @@ export default function CtaButton({
   href?: string
   className?: string
 }) {
+  const id = href.replace('#', '')
   return (
     <Magnet className={className}>
       <BorderGlow duration={5}>
         <a
           href={href}
+          onClick={(e) => { e.preventDefault(); scrollToId(id) }}
           className="group flex items-center gap-2.5 rounded-2xl px-7 py-3.5 text-base font-semibold text-textured"
         >
           <span
