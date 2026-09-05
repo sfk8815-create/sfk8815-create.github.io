@@ -20,7 +20,7 @@ const dict = {
       badge: '声音研究 · 可存档、可溯源 · 支持国际与中国档案标准',
       slogan: '测度其所鸣，留证其所存。',
       subtitle:
-        'AcouScope（音析）是面向音乐学、声学与数字人文等研究领域的次世代声学分析引擎。无论你是研究古琴泛音的民族音乐学家、分析唱腔音高的声乐研究者，还是测量琴房混响的音频工程师，它都能把听觉上的直觉，转译成可量化、可引用、可复现的声学证据。原生支持国际音频档案标准 IASA-TC 04 / IMDI，并符合中国 GB/T 31219.4 与档案行业标准 DA/T 63，让每一段录音都按国内外标准著录、可长期存档、可溯源。专业 DAW 级的三栏工作台，让长夜里的研究整理，像剪辑一段声音史一样从容。',
+        'AcouScope（音析）是面向音乐学、声学与数字人文等研究领域的次世代声学分析引擎。无论你是研究古琴泛音的民族音乐学家、分析唱腔音高的声乐研究者，还是测量琴房混响的音频工程师，它都能把听觉上的直觉，转译成可量化、可引用、可复现的声学证据。原生支持国际音频档案标准 IASA-TC 04 / IMDI，并符合中国 GB/T 31219.4 与档案行业标准 DA/T 63，让每一段录音都按国内外标准著录、可长期存档、可溯源。三栏工作台让频谱、语谱与 3D 视图随开随用，研究整理一气呵成。',
       cta1: '即将发布',
       cta2: '了解三套音高引擎',
       version: 'v0.99.20260904',
@@ -29,7 +29,7 @@ const dict = {
     product: {
       label: '面向音乐与数字人文领域',
       title: '认识 AcouScope · 音析',
-      body: 'AcouScope 是面向音乐学、声学与数字人文等领域研究的专业声学分析软件，以严谨的学术态度，将声音的测量、分析与档案化融为一体——从课堂演示、田野采录，到论文配图与长期音档保存，皆能胜任。软件内置三套 SOTA 音高检测引擎（pYIN / SwiftF0 / RMVPE），可按研究场景灵活切换，仅凭 CPU 即可高效推理；其反量化连续音高技术，能够忠实还原微分音与滑音等细微差别；AI 释图与田野元数据导出，支持国际音频档案标准 IASA-TC 04 / IMDI，并符合中国 GB/T 31219.4 与档案行业标准 DA/T 63，使分析图表清晰可信，让每段录音皆有据可查、可长期典藏。软件另提供 10 套主题与三语界面，兼顾学术研究的严谨与日常使用的舒适。',
+      body: 'AcouScope 是面向音乐学、声学与数字人文等领域研究的专业声学分析软件，以严谨的学术态度，将声音的测量、分析与档案化融为一体——从课堂演示、田野采录，到论文配图与长期音档保存，皆能胜任。软件内置三套 SOTA 音高检测引擎（pYIN / SwiftF0 / RMVPE），可按研究场景灵活切换，仅凭 CPU 即可高效推理；其反量化连续音高技术，能够忠实还原微分音与滑音等细微差别；AI 释图与田野元数据导出，支持国际音频档案标准 IASA-TC 04 / IMDI，并符合中国 GB/T 31219.4 与档案行业标准 DA/T 63，使分析图表清晰可信，让每段录音皆有据可查、可长期典藏。软件另提供 10 套主题与双语界面（简体中文 / 繁體中文 / English），兼顾学术研究的严谨与日常使用的舒适。',
       spectrum: '单窗口三栏工作台 · 三套音高引擎',
     },
     pitch: {
@@ -129,7 +129,7 @@ const dict = {
       ],
       flag: [
         { badge: '旗舰 01', title: '出版级出图', hook: '论文里能直接用的图，答辩不用再修。', points: ['导出与所见完全一致，SVG / PDF 矢量 + PNG 位图任选', '内置出版级字体与配色，中文与乐理符号不乱不糊', '自定义分辨率与图尺寸，直投 CSSCI / SCI', '一张图配一份说明，图表编号与注释由它来管'], stats: [{ n: '6', l: '导出格式' }, { n: '300', l: 'DPI 可调' }] },
-        { badge: '旗舰 02', title: 'AI 释图', hook: '它以学术审稿人的视角，帮你读频谱。', points: ['自动识别谱峰、泛音序列与共振峰结构，中文学术语境解释', '给出可直接写进论文的分析段落草稿，省一半文字工时', '三语切换输出，国际会议投稿不用自己翻', '可提示的研究建议，下一步看哪里它会提醒'], stats: [{ n: '多', l: 'Provider 可选' }, { n: '30', l: 'AI 测试项' }] },
+        { badge: '旗舰 02', title: 'AI 释图', hook: '它以学术审稿人的视角，帮你读频谱。', points: ['自动识别谱峰、泛音序列与共振峰结构，中文学术语境解释', '给出可直接写进论文的分析段落草稿，省一半文字工时', '双语切换输出，国际会议投稿不用自己翻', '可提示的研究建议，下一步看哪里它会提醒'], stats: [{ n: '多', l: 'Provider 可选' }, { n: '30', l: 'AI 测试项' }] },
       ],
       rowPrec: '精度',
       rowUse: '适用场景',
@@ -159,7 +159,7 @@ const dict = {
       heroBtn: '即将发布',
       recommend: '为您推荐',
       allTitle: '全部平台与版本',
-      coming: '即将震撼发布',
+      coming: '即将发布',
       note: 'GPL-3.0-or-later · 7 天全功能试用 + 二阶意愿赞助',
       releaseHint: '下载地址将在正式发布时提供。',
     },
@@ -187,7 +187,7 @@ const dict = {
       badge: '聲音研究 · 可儲存、可溯源 · 支援國際與中國檔案標準',
       slogan: '測度其所鳴，留證其所存。',
       subtitle:
-        'AcouScope（音析）是面向音樂學、聲學與數位人文等研究領域的次世代聲學分析引擎。無論你是研究古琴泛音的民樂學者、分析唱腔音高的聲樂研究者，還是測量琴房混響的音訊工程師，它都能把聽覺上的直覺，轉譯成可量化、可引用、可重現的聲學證據。原生支援國際音訊檔案標準 IASA-TC 04 / IMDI，並符合中國 GB/T 31219.4 與檔案行業標準 DA/T 63，讓每一段錄音都按國內外標準著錄、可長期儲存、可溯源。專業 DAW 級的三欄工作台，讓長夜裡的研究整理，像剪輯一段聲音史一樣從容。',
+        'AcouScope（音析）是面向音樂學、聲學與數位人文等研究領域的次世代聲學分析引擎。無論你是研究古琴泛音的民樂學者、分析唱腔音高的聲樂研究者，還是測量琴房混響的音訊工程師，它都能把聽覺上的直覺，轉譯成可量化、可引用、可重現的聲學證據。原生支援國際音訊檔案標準 IASA-TC 04 / IMDI，並符合中國 GB/T 31219.4 與檔案行業標準 DA/T 63，讓每一段錄音都按國內外標準著錄、可長期儲存、可溯源。三欄工作台讓頻譜、語譜與 3D 視圖隨開隨用，研究整理一氣呵成。',
       cta1: '即將發布',
       cta2: '了解三套音高引擎',
       version: 'v0.99.20260904',
@@ -196,7 +196,7 @@ const dict = {
     product: {
       label: '面向音樂與數位人文領域',
       title: '認識 AcouScope · 音析',
-      body: 'AcouScope 是面向音樂學、聲學與數位人文等領域研究的專業聲學分析軟體，以嚴謹的學術態度，將聲音的測量、分析與檔案化融為一體——從課堂示範、田野採錄，到論文配圖與長期音檔保存，皆能勝任。軟體內建三套 SOTA 音高檢測引擎（pYIN / SwiftF0 / RMVPE），可按研究場景靈活切換，僅憑 CPU 即可高效推理；其反量化連續音高技術，能夠忠實還原微分音與滑音等細微差別；AI 釋圖與田野元資料匯出，支援國際音訊檔案標準 IASA-TC 04 / IMDI，並符合中國 GB/T 31219.4 與檔案行業標準 DA/T 63，使分析圖表清晰可信，讓每段錄音皆有據可查、可長期典藏。軟體另提供 10 套主題與三語介面，兼顧學術研究的嚴謹與日常使用的舒適。',
+      body: 'AcouScope 是面向音樂學、聲學與數位人文等領域研究的專業聲學分析軟體，以嚴謹的學術態度，將聲音的測量、分析與檔案化融為一體——從課堂示範、田野採錄，到論文配圖與長期音檔保存，皆能勝任。軟體內建三套 SOTA 音高檢測引擎（pYIN / SwiftF0 / RMVPE），可按研究場景靈活切換，僅憑 CPU 即可高效推理；其反量化連續音高技術，能夠忠實還原微分音與滑音等細微差別；AI 釋圖與田野元資料匯出，支援國際音訊檔案標準 IASA-TC 04 / IMDI，並符合中國 GB/T 31219.4 與檔案行業標準 DA/T 63，使分析圖表清晰可信，讓每段錄音皆有據可查、可長期典藏。軟體另提供 10 套主題與雙語介面（簡體中文 / 繁體中文 / English），兼顧學術研究的嚴謹與日常使用的舒適。',
       spectrum: '單視窗三欄工作台 · 三套音高引擎',
     },
     pitch: {
@@ -258,7 +258,7 @@ const dict = {
       trust: [ {n:'9',label:'大分析模組',tag:'Analysis Modules'}, {n:'9',label:'套學術主題',tag:'Themes'}, {n:'3',label:'種介面語言',tag:'簡體 / 繁體 / EN'}, {n:'403',label:'項自動化測試',tag:'Automated Tests'}, {n:'5',label:'類安裝形態',tag:'Platforms'} ],
       flag: [
         { badge: '旗艦 01', title: '出版級出圖', hook: '論文裡能直接用的圖，答辯不用再修。', points: ['匯出與所見完全一致，SVG / PDF 向量 + PNG 點陣任選', '內建出版級字體與配色，中文與樂理符號不亂不糊', '自訂解析度與圖尺寸，直投 CSSCI / SCI', '一張圖配一份說明，圖表編號與註釋由它來管'], stats: [{ n: '6', l: '匯出格式' }, { n: '300', l: 'DPI 可調' }] },
-        { badge: '旗艦 02', title: 'AI 釋圖', hook: '它以學術審稿人的視角，幫你讀頻譜。', points: ['自動辨識譜峰、泛音序列與共振峰結構，中文學術語境解釋', '給出可直接寫進論文的分析段落草稿，省一半文字工時', '三語切換輸出，國際會議投稿不用自己翻', '可提示的研究建議，下一步看哪裡它會提醒'], stats: [{ n: '多', l: 'Provider 可選' }, { n: '30', l: 'AI 測試項' }] },
+        { badge: '旗艦 02', title: 'AI 釋圖', hook: '它以學術審稿人的視角，幫你讀頻譜。', points: ['自動辨識譜峰、泛音序列與共振峰結構，中文學術語境解釋', '給出可直接寫進論文的分析段落草稿，省一半文字工時', '雙語切換輸出，國際會議投稿不用自己翻', '可提示的研究建議，下一步看哪裡它會提醒'], stats: [{ n: '多', l: 'Provider 可選' }, { n: '30', l: 'AI 測試項' }] },
       ],
       rowPrec: '精度',
       rowUse: '適用場景',
@@ -286,7 +286,7 @@ const dict = {
       heroBtn: '即將發布',
       recommend: '為您推薦',
       allTitle: '全部平台與版本',
-      coming: '即將震撼發布',
+      coming: '即將發布',
       note: 'GPL-3.0-or-later · 7 天全功能試用 + 二階意願贊助',
       releaseHint: '下載位址將在正式發布時提供。',
     },
@@ -314,7 +314,7 @@ const dict = {
       badge: 'Sound research · archivable & traceable · international & Chinese archive standards',
       slogan: 'Measure why it sounds, preserve why it endures.',
       subtitle:
-        'AcouScope is a next-generation acoustic analysis engine for research fields such as musicology, acoustics and the digital humanities. Whether you are an ethnomusicologist tracing a guqin’s harmonics, a vocal researcher analyzing a singer’s microtones, or an audio engineer measuring a room’s reverb, it turns your auditory intuition into measurable, citable, reproducible acoustic evidence. Native support for the international audio-archive standards IASA-TC 04 / IMDI, plus conformance to the Chinese GB/T 31219.4 and archival standard DA/T 63, means every recording is catalogued to international and domestic standards, archived long-term and traceable. A pro-DAW three-pane workspace makes a long night of analysis feel as calm as editing a history of sound.',
+        'AcouScope is a next-generation acoustic analysis engine for research fields such as musicology, acoustics and the digital humanities. Whether you are an ethnomusicologist tracing a guqin’s harmonics, a vocal researcher analyzing a singer’s microtones, or an audio engineer measuring a room’s reverb, it turns your auditory intuition into measurable, citable, reproducible acoustic evidence. Native support for the international audio-archive standards IASA-TC 04 / IMDI, plus conformance to the Chinese GB/T 31219.4 and archival standard DA/T 63, means every recording is catalogued to international and domestic standards, archived long-term and traceable. The three-pane workspace keeps spectrum, spectrogram and 3D views at hand, so analysis stays smooth and unbroken.',
       cta1: 'Coming soon',
       cta2: 'Explore three pitch engines',
       version: 'v0.99.20260904',
@@ -323,7 +323,7 @@ const dict = {
     product: {
       label: 'FOR MUSICOLOGY & DIGITAL HUMANITIES',
       title: 'Meet AcouScope',
-      body: 'AcouScope is a professional acoustic analysis application for research across musicology, acoustics and the digital humanities. With a rigorous, scholarly approach, it unites the measurement, analysis and archiving of sound — from classroom demonstration and fieldwork capture to publication figures and long-term audio preservation. Three SOTA pitch-detection engines (pYIN / SwiftF0 / RMVPE) switch flexibly by research scenario and run efficiently on CPU alone; its de-quantized continuous-pitch technology faithfully preserves the subtle nuances of microtones and glides; AI interpretation and field-metadata export support the international audio-archive standards IASA-TC 04 / IMDI plus conformance to the Chinese GB/T 31219.4 and archival standard DA/T 63, making analysis figures clear and trustworthy and every recording traceable and durably storable. Ten themes and a trilingual interface balance scholarly rigor with everyday comfort.',
+      body: 'AcouScope is a professional acoustic analysis application for research across musicology, acoustics and the digital humanities. With a rigorous, scholarly approach, it unites the measurement, analysis and archiving of sound — from classroom demonstration and fieldwork capture to publication figures and long-term audio preservation. Three SOTA pitch-detection engines (pYIN / SwiftF0 / RMVPE) switch flexibly by research scenario and run efficiently on CPU alone; its de-quantized continuous-pitch technology faithfully preserves the subtle nuances of microtones and glides; AI interpretation and field-metadata export support the international audio-archive standards IASA-TC 04 / IMDI plus conformance to the Chinese GB/T 31219.4 and archival standard DA/T 63, making analysis figures clear and trustworthy and every recording traceable and durably storable. Ten themes and a bilingual interface (Simplified & Traditional Chinese / English) balance scholarly rigor with everyday comfort.',
       spectrum: 'Single-window three-pane workspace · three pitch engines',
     },
     pitch: {

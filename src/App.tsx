@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
+import { HashRouter, Routes, Route, useParams } from 'react-router-dom'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
@@ -39,7 +39,7 @@ function ProductRoute() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="min-h-screen overflow-x-hidden bg-ink text-textured">
         <Nav />
         <Routes>
@@ -48,6 +48,6 @@ export default function App() {
         </Routes>
         <Footer />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
