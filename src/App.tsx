@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, useParams } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Routes, Route, useParams } from 'react-router-dom'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
@@ -38,8 +38,10 @@ function ProductRoute() {
 }
 
 export default function App() {
+  // 折衷：Vercel 用 BrowserRouter（URL 干净，Vercel 有 SPA 重写）；GitHub Pages 用 HashRouter（防刷新 404）
+  const Router = import.meta.env.VERCEL ? BrowserRouter : HashRouter
   return (
-    <HashRouter>
+    <Router>
       <div className="min-h-screen overflow-x-hidden bg-ink text-textured">
         <Nav />
         <Routes>
@@ -48,6 +50,6 @@ export default function App() {
         </Routes>
         <Footer />
       </div>
-    </HashRouter>
+    </Router>
   )
 }
