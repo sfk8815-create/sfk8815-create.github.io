@@ -112,7 +112,7 @@ const dict = {
       c4t: '两大旗舰，为一个研究者的论文而设',
       c4s: '出版级出图 + AI 释图 · 直投 CSSCI / SCI · gold = 旗舰/出版级',
       c5t: '一个可信赖的研究工具',
-      c5s: '全核心算法自主研发 · 开源可审计 · GPL-3.0-or-later · 经得起同行评审推敲',
+      c5s: '全核心算法自主研发 · 开源可审计 · GPL-3.0-only · 经得起同行评审推敲',
       fam_label: '气泡大小 = 分析模块数　·　金 = 分析最多的能力族',
       fam: ['时域', '频域·频谱', '音高·嗓音', '空间·实时'],
       engines: ['波形分析', 'FFT 频谱', '语谱图', '3D 频谱图', '音高分析', '共振峰分析', '音色分析', '实时特征', '房间模态分析'],
@@ -144,7 +144,7 @@ const dict = {
         '缙云声智（Jinyun SonicAI）是西南大学音乐声学实验室面向创新应用落地的品牌之一，专注于音乐声学、音乐科技、数字人文与 AI 应用的交叉研究。',
       bodyBottom:
         'AcouScope（音析）是工作室为音乐与声音研究倾力打造的分析引擎——让研究、教学与创作，都能凭一套软件完成从田野采风到论文出版的全流程。',
-      badges: ['西南大学', '音乐声学 · 数字人文', '开源可审计 · GPL-3.0-or-later'],
+      badges: ['西南大学', '音乐声学 · 数字人文', '开源可审计 · GPL-3.0-only'],
     },
     stats: {
       engines: '套音高引擎',
@@ -160,7 +160,7 @@ const dict = {
       recommend: '为您推荐',
       allTitle: '全部平台与版本',
       coming: '即将发布',
-      note: 'GPL-3.0-or-later · 7 天全功能试用 + 二阶意愿赞助',
+      note: 'GPL-3.0-only · 开源可审计 · 按需赞助',
       releaseHint: '下载地址将在正式发布时提供。',
     },
     cta: {
@@ -247,7 +247,7 @@ const dict = {
       c4t: '兩大旗艦，為一個研究者的論文而設',
       c4s: '出版級出圖 + AI 釋圖 · 直投 CSSCI / SCI · gold = 旗艦/出版級',
       c5t: '一個可信賴的研究工具',
-      c5s: '全核心演算法自主研發 · 開源可審計 · GPL-3.0-or-later · 經得起同儕評審推敲',
+      c5s: '全核心演算法自主研發 · 開源可審計 · GPL-3.0-only · 經得起同儕評審推敲',
       fam_label: '氣泡大小 = 分析模組數　·　金 = 分析最多的能力族',
       fam: ['時域', '頻域·頻譜', '音高·嗓音', '空間·實時'],
       engines: ['波形分析', 'FFT 頻譜', '語譜圖', '3D 頻譜圖', '音高分析', '共振峰分析', '音色分析', '實時特徵', '房間模態分析'],
@@ -271,7 +271,7 @@ const dict = {
       quote: '「我們相信，聲音裡藏著一個民族的審美、一個時代的記憶；而好的工具，讓這些證據被看見、被引用、被傳承。」',
       bodyTop: '縉雲聲智（Jinyun SonicAI）是西南大學音樂聲學實驗室面向創新應用落地的品牌之一，專注於音樂聲學、音樂科技、數位人文與 AI 應用的交叉研究。',
       bodyBottom: 'AcouScope（音析）是工作室為音樂與聲音研究傾力打造的分析引擎——讓研究、教學與創作，都能憑一套軟體完成從田野採風到論文出版的全流程。',
-      badges: ['西南大學', '音樂聲學 · 數位人文', '開源可審計 · GPL-3.0-or-later'],
+      badges: ['西南大學', '音樂聲學 · 數位人文', '開源可審計 · GPL-3.0-only'],
     },
     stats: {
       engines: '套音高引擎',
@@ -287,7 +287,7 @@ const dict = {
       recommend: '為您推薦',
       allTitle: '全部平台與版本',
       coming: '即將發布',
-      note: 'GPL-3.0-or-later · 7 天全功能試用 + 二階意願贊助',
+      note: 'GPL-3.0-only · 開源可審計 · 按需贊助',
       releaseHint: '下載位址將在正式發布時提供。',
     },
     cta: {
@@ -398,7 +398,7 @@ const dict = {
       c4t: 'Two flagship features for a researcher’s paper',
       c4s: 'Publication-grade figures + AI interpretation · target CSSCI / SCI · gold = flagship',
       c5t: 'A trustworthy research tool',
-      c5s: 'Core algorithms built in-house · open-source & auditable · GPL-3.0-or-later · stands up to peer review',
+      c5s: 'Core algorithms built in-house · open-source & auditable · GPL-3.0-only · stands up to peer review',
       fam_label: 'Bubble size = number of analysis modules · gold = family with most modules',
       fam: ['Time-domain', 'Frequency·Spectrum', 'Pitch·Voice', 'Space·Realtime'],
       engines: ['Waveform', 'FFT Spectrum', 'Spectrogram', '3D Spectrogram', 'Pitch', 'Formant', 'Timbre', 'Realtime', 'Room Mode'],
@@ -428,7 +428,7 @@ const dict = {
       quote: '“We believe sound holds a culture’s aesthetic and an era’s memory — and a great tool makes that evidence seen, cited and preserved.”',
       bodyTop: 'Jinyun SonicAI is one of the brands launched by the Southwest University Musical Acoustics Lab for innovative applications, focused on the intersection of musical acoustics, music technology, digital humanities and AI research.',
       bodyBottom: 'AcouScope is the studio’s acoustic analysis engine for music and sound research — delivering the complete workflow from field recording to published figures in one application.',
-      badges: ['Southwest University', 'Musical Acoustics · Digital Humanities', 'Open-source & auditable · GPL-3.0-or-later'],
+      badges: ['Southwest University', 'Musical Acoustics · Digital Humanities', 'Open-source & auditable · GPL-3.0-only'],
     },
     stats: {
       engines: 'pitch engines',
@@ -444,7 +444,7 @@ const dict = {
       recommend: 'Recommended for you',
       allTitle: 'All platforms & builds',
       coming: 'Coming soon',
-      note: 'GPL-3.0-or-later · 7-day full trial + two-tier optional sponsorship',
+      note: 'GPL-3.0-only · open-source & auditable · optional sponsorship',
       releaseHint: 'Download links will be provided at the official release.',
     },
     cta: {

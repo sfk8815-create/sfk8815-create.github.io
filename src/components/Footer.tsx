@@ -4,10 +4,10 @@ import { SOCIALS } from './socialIcons'
 export default function Footer() {
   const { t, locale } = useI18n()
   const licenseValue = locale === 'sc'
-    ? '开源可审计 · GPL-3.0-or-later'
+    ? '开源可审计 · GPL-3.0-only'
     : locale === 'tc'
-      ? '開源可審計 · GPL-3.0-or-later'
-      : 'Open-source & auditable · GPL-3.0-or-later'
+      ? '開源可審計 · GPL-3.0-only'
+      : 'Open-source & auditable · GPL-3.0-only'
 
   return (
     <footer className="border-t border-raised/60 bg-ink">
