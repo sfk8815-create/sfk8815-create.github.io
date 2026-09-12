@@ -311,10 +311,10 @@ const dict = {
     brand: { name: 'Jinyun SonicAI', en: 'Jinyun SonicAI' },
     nav: { product: 'Product', features: 'Features', vision: 'Vision', download: 'Download' },
     hero: {
-      badge: 'Sound research · archivable & traceable · international & Chinese archive standards',
+      badge: 'Sound research · archivable & traceable · reference to international & Chinese archive metadata elements',
       slogan: 'Measure why it sounds, preserve why it endures.',
       subtitle:
-        'AcouScope is a next-generation acoustic analysis engine for research fields such as musicology, acoustics and the digital humanities. Whether you are an ethnomusicologist tracing a guqin’s harmonics, a vocal researcher analyzing a singer’s microtones, or an audio engineer measuring a room’s reverb, it turns your auditory intuition into measurable, citable, reproducible acoustic evidence. Native support for the international audio-archive standards IASA-TC 04 / IMDI, plus conformance to the Chinese GB/T 31219.4 and archival standard DA/T 63, means every recording is catalogued to international and domestic standards, archived long-term and traceable. The three-pane workspace keeps spectrum, spectrogram and 3D views at hand, so analysis stays smooth and unbroken.',
+        'AcouScope is a next-generation acoustic analysis engine for research fields such as musicology, acoustics and the digital humanities. Whether you are an ethnomusicologist tracing a guqin’s harmonics, a vocal researcher analyzing a singer’s microtones, or an audio engineer measuring a room’s reverb, it turns your auditory intuition into measurable, citable, reproducible acoustic evidence. Exported fields reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, so every recording stays archivable long-term and traceable. The three-pane workspace keeps spectrum, spectrogram and 3D views at hand, so analysis stays smooth and unbroken.',
       cta1: 'Coming soon',
       cta2: 'Explore three pitch engines',
       version: 'v0.99.20260904',
@@ -323,7 +323,7 @@ const dict = {
     product: {
       label: 'FOR MUSICOLOGY & DIGITAL HUMANITIES',
       title: 'Meet AcouScope',
-      body: 'AcouScope is a professional acoustic analysis application for research across musicology, acoustics and the digital humanities. With a rigorous, scholarly approach, it unites the measurement, analysis and archiving of sound — from classroom demonstration and fieldwork capture to publication figures and long-term audio preservation. Three SOTA pitch-detection engines (pYIN / SwiftF0 / RMVPE) switch flexibly by research scenario and run efficiently on CPU alone; its de-quantized continuous-pitch technology faithfully preserves the subtle nuances of microtones and glides; AI interpretation and field-metadata export support the international audio-archive standards IASA-TC 04 / IMDI plus conformance to the Chinese GB/T 31219.4 and archival standard DA/T 63, making analysis figures clear and trustworthy and every recording traceable and durably storable. Ten themes and a bilingual interface (Simplified & Traditional Chinese / English) balance scholarly rigor with everyday comfort.',
+      body: 'AcouScope is a professional acoustic analysis application for research across musicology, acoustics and the digital humanities. With a rigorous, scholarly approach, it unites the measurement, analysis and archiving of sound — from classroom demonstration and fieldwork capture to publication figures and long-term audio preservation. Three SOTA pitch-detection engines (pYIN / SwiftF0 / RMVPE) switch flexibly by research scenario and run efficiently on CPU alone; its de-quantized continuous-pitch technology faithfully preserves the subtle nuances of microtones and glides; AI interpretation and field-metadata export reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, making analysis figures clear and trustworthy and every recording traceable and durably storable. Ten themes and a bilingual interface (Simplified & Traditional Chinese / English) balance scholarly rigor with everyday comfort.',
       spectrum: 'Single-window three-pane workspace · three pitch engines',
     },
     pitch: {
@@ -363,9 +363,9 @@ const dict = {
           tag: 'AI Insight',
         },
         {
-          title: 'Metadata export to international & Chinese standards',
-          desc: 'Native IASA-TC 04 / IMDI international audio-archive standards, plus conformance to Chinese GB/T 31219.4 and archival standard DA/T 63; one-click field-report export (JSON / XML / CSV): archive no., project, informant, capture time, region, category, technical info — every recording catalogued to international and domestic standards, durable and traceable, ready for journals and archives.',
-          tag: 'GB/T · IASA-TC04 · IMDI',
+          title: 'Export referencing international & Chinese metadata elements',
+          desc: 'Exported fields reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported; one-click field-report export (JSON / XML / CSV): archive no., project, informant, capture time, region, category, technical info — every recording verifiable, durable and traceable, ready for journals and archives.',
+          tag: 'Metadata elements · custom mapping',
         },
         {
           title: 'Runs on weak devices',
@@ -419,7 +419,7 @@ const dict = {
       ],
       rowPrec: 'Accuracy',
       rowUse: 'Use case',
-      stdArchive: 'Archive standards',
+      stdArchive: 'Referenced metadata elements',
       pitchEng: 'Pitch engines',
     },
     vision: {
