@@ -1,4 +1,5 @@
 // 通用社交图标（来自开源 simple-icons，CC0）· 内联 SVG · fill=currentColor
+// S3-b4：暂不渲染（待真实社媒链接）——数据保留，勿填假链接
 // 微信 / 微博 / 抖音（TikTok 型）/ B站
 export interface SocialIcon {
   name: string

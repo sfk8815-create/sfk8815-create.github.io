@@ -174,7 +174,7 @@ const dict = {
       license: '许可',
       rights: '© 2026 缙云声智（Jinyun SonicAI）\n西南大学艺术人类学研究所 · 西南大学中国音乐心理健康研究所',
       special: '谨以此软件，特别鸣谢并献予音乐声学领军学者、国务院特殊津贴专家：韩宝强 教授。',
-      version: 'v0.99',
+      version: 'v0.99.20260904',
     },
     changelog: {
       eyebrow: 'CHANGELOG · 开发日志',
@@ -307,7 +307,7 @@ const dict = {
       license: '授權',
       rights: '© 2026 縉雲聲智（Jinyun SonicAI）\n西南大學藝術人類學研究所 · 西南大學中國音樂心理健康研究所',
       special: '謹以此軟體，特別鳴謝並獻予音樂聲學領軍學者、國務院特殊津貼專家：韓寶強 教授。',
-      version: 'v0.99',
+      version: 'v0.99.20260904',
     },
     changelog: {
       eyebrow: 'CHANGELOG · 開發日誌',
@@ -470,7 +470,7 @@ const dict = {
       license: 'License',
       rights: '© 2026 Jinyun SonicAI\nSouthwest University Art Anthropology Institute · Southwest University China Music Mental Health Institute',
       special: 'Dedicated with gratitude to the leading scholar in musical acoustics and expert of the State Council Special Allowance: Prof. Han Baoqiang.',
-      version: 'v0.99',
+      version: 'v0.99.20260904',
     },
     changelog: {
       eyebrow: 'CHANGELOG',

@@ -1,5 +1,4 @@
 import { useI18n } from '../i18n'
-import { SOCIALS } from './socialIcons'
 
 export default function Footer() {
   const { t, locale } = useI18n()
@@ -41,22 +40,6 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-            {/* 社交媒体（真实通用图标 · simple-icons） */}
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              {SOCIALS.map((s) => (
-                <a
-                  key={s.name}
-                  href={s.url}
-                  title={s.name}
-                  aria-label={s.name}
-                  className="grid h-9 w-9 place-items-center rounded-lg border border-raised bg-ink/50 transition hover:border-cyan/40 hover:text-cyan"
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d={s.d} />
-                  </svg>
-                </a>
-              ))}
-            </div>
           </div>
 
           <div className="text-sm">
