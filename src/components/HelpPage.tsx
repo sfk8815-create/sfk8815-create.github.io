@@ -1,6 +1,8 @@
 import { useI18n } from '../i18n'
 import { getQuickstart, renderShortcuts } from '../data/quickstart'
+import { getManual } from '../data/manual'
 import { PALETTE } from '../charts/chartCore'
+import { scrollToId } from '../utils/scroll'
 import BlurText from './bits/BlurText'
 import Aurora from './bits/Aurora'
 
@@ -8,9 +10,23 @@ import Aurora from './bits/Aurora'
 // 14 条逐字镜像应用内帮助（help_dialogs.py QUICK_START）；{sc_*} 占位符经 SC_KEYS 统一替换
 const VERSION = 'v0.99.20260904' // 页面顶部徽标版本（站点统一口径）
 
+// <b>…</b> → 真实 <strong>（粗体引导词），其余纯文本原样通过（S3-c2-fix：渲染面禁裸标签）
+function renderRich(text: string) {
+  return text.split(/(<b>[\s\S]*?<\/b>)/g).map((part, i) =>
+    part.startsWith('<b>') && part.endsWith('</b>') ? (
+      <strong key={i} className="font-semibold text-textured">
+        {part.slice(3, -4)}
+      </strong>
+    ) : (
+      part
+    ),
+  )
+}
+
 export default function HelpPage() {
   const { t, locale } = useI18n()
   const q = getQuickstart(locale)
+  const m = getManual(locale)
 
   return (
     <main className="bg-ink text-textured">
@@ -48,44 +64,122 @@ export default function HelpPage() {
         </div>
       </section>
 
+      {/* 页内锚点导航（快速入门 / 用户手册；纯站内锚点，不新增路由） */}
+      <section className="relative border-b border-raised/60 py-4">
+        <div className="container-content">
+          <nav className="flex flex-wrap items-center gap-3 text-sm" aria-label="页面锚点">
+            <a
+              href="#quickstart"
+              onClick={(e) => { e.preventDefault(); scrollToId('quickstart') }}
+              className="rounded-full border border-raised bg-surface/70 px-4 py-1.5 text-muted backdrop-blur transition hover:text-cyan"
+            >
+              {t.help.headline}
+            </a>
+            <a
+              href="#manual"
+              onClick={(e) => { e.preventDefault(); scrollToId('manual') }}
+              className="rounded-full border border-raised bg-surface/70 px-4 py-1.5 text-muted backdrop-blur transition hover:text-cyan"
+            >
+              {m.h2}
+            </a>
+          </nav>
+        </div>
+      </section>
+
       {/* 快速入门：14 条有序列表（逐字镜像应用内帮助） */}
-      <section className="relative py-14">
+      <section id="quickstart" className="relative scroll-mt-24 py-14">
         <div className="container-content">
           <p className="eyebrow">{t.help.eyebrow}</p>
           <h2 className="section-title mt-4 max-w-3xl">{t.help.headline}</h2>
 
           <div className="mt-10 rounded-2xl border border-raised bg-surface/60 p-6 backdrop-blur sm:p-8">
             <ol className="space-y-4">
-              {q.items.map((it, i) => {
-                const rendered = renderShortcuts(it.text)
-                const idx = rendered.indexOf('</b>')
-                const lead = idx >= 0 ? rendered.slice(0, idx + 4) : ''
-                const rest = idx >= 0 ? rendered.slice(idx + 4) : rendered
-                return (
-                  <li key={i} className="flex items-start gap-3">
-                    <span
-                      className="grid h-7 w-7 shrink-0 place-items-center rounded-lg font-mono text-xs font-bold text-ink"
-                      style={{ background: `linear-gradient(135deg, ${PALETTE.data2}, ${PALETTE.hero})` }}
-                    >
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <p className="text-sm leading-relaxed text-muted">
-                      {lead ? (
-                        <>
-                          <span className="font-semibold text-textured">{lead}</span>
-                          {rest}
-                        </>
-                      ) : (
-                        rendered
-                      )}
-                    </p>
-                  </li>
-                )
-              })}
+              {q.items.map((it, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span
+                    className="grid h-7 w-7 shrink-0 place-items-center rounded-lg font-mono text-xs font-bold text-ink"
+                    style={{ background: `linear-gradient(135deg, ${PALETTE.data2}, ${PALETTE.hero})` }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <p className="text-sm leading-relaxed text-muted">
+                    {renderRich(renderShortcuts(it.text))}
+                  </p>
+                </li>
+              ))}
             </ol>
             <p className="mt-6 border-t border-raised/60 pt-5 text-sm leading-relaxed text-muted">
-              {renderShortcuts(q.footnote)}
+              {renderRich(renderShortcuts(q.footnote))}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 用户手册：19 节（逐字镜像应用内帮助 MANUAL；第 18 节快捷键表按结构化数据以真实 <table> 渲染） */}
+      <section id="manual" className="relative scroll-mt-24 py-14">
+        <div className="container-content">
+          <h2 className="section-title max-w-3xl">{m.h2}</h2>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
+            {renderRich(renderShortcuts(m.intro))}
+          </p>
+
+          <div className="mt-10 space-y-6">
+            {m.sections.map((sec, i) => (
+              <div key={i} className="rounded-2xl border border-raised bg-surface/60 p-6 backdrop-blur sm:p-8">
+                <h3 className="font-display text-lg font-bold text-textured">{sec.title}</h3>
+                {sec.items ? (
+                  <ul className="mt-5 space-y-3">
+                    {sec.items.map((it, j) => (
+                      <li key={j} className="flex items-start gap-3">
+                        <span
+                          aria-hidden="true"
+                          className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
+                          style={{ background: PALETTE.data2 }}
+                        />
+                        <p className="text-sm leading-relaxed text-muted">
+                          {renderRich(renderShortcuts(it.text))}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <div className="mt-5 space-y-6">
+                    {sec.tables?.map((tb, k) => (
+                      <div key={k}>
+                        <p className="text-sm leading-relaxed text-muted">
+                          {renderRich(renderShortcuts(tb.caption))}
+                        </p>
+                        <div className="mt-3 overflow-x-auto rounded-xl border border-raised/60">
+                          <table className="w-full min-w-[480px] text-left text-sm">
+                            <thead>
+                              <tr className="border-b border-raised/60">
+                                {tb.headers.map((h, hi) => (
+                                  <th key={hi} className="px-4 py-2.5 font-mono text-xs tracking-wide text-muted">
+                                    {h}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {tb.rows.map((r, ri) => (
+                                <tr key={ri} className="border-b border-raised/40 last:border-0">
+                                  <td className="px-4 py-2.5 text-muted">
+                                    {renderRich(renderShortcuts(r.action))}
+                                  </td>
+                                  <td className="px-4 py-2.5 font-mono text-xs text-textured">
+                                    {renderRich(renderShortcuts(r.key))}
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
