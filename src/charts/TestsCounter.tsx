@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 import { useI18n } from '../i18n'
 import { PALETTE, useInView } from './chartCore'
 
-// C3 · 403 项自动化测试（Draw-in + Counter，纯 SVG）—— 文案走 i18n
+// C3 · 2148 项自动化测试（Draw-in + Counter，纯 SVG）—— 文案走 i18n
 export default function TestsCounter() {
   const { t } = useI18n()
   const c = t.charts
   const MODS = c.mods // 9 模块名
-  const vals = [50, 55, 45, 60, 50, 45, 40, 35, 23]
-  const TOTAL = vals.reduce((a, b) => a + b, 0) // 403
+  const TOTAL = 2148 // 实测 collect 总数
+  const vals = Array.from({ length: 9 }, () => TOTAL / 9) // 分模块数值为示意、非对外主张（页面只显示总数）
   const W = 460, H = 260
   const PAD = { l: 20, r: 20, t: 66, b: 30 }
   const INNER_W = W - PAD.l - PAD.r

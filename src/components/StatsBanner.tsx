@@ -3,9 +3,9 @@ import CountUp from './bits/CountUp'
 
 const STATS: { value: number; suffix: string; key: 'engines' | 'tests' | 'realtime' | 'themes' }[] = [
   { value: 3, suffix: '', key: 'engines' },
-  { value: 38, suffix: '×', key: 'realtime' },
-  { value: 403, suffix: '+', key: 'tests' },
-  { value: 10, suffix: '', key: 'themes' },
+  { value: 9.2, suffix: '×', key: 'realtime' },
+  { value: 2148, suffix: '', key: 'tests' },
+  { value: 9, suffix: '', key: 'themes' },
 ]
 
 /** 数据指标带 —— 滚动进入视口时数字滚动 */

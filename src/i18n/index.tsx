@@ -29,7 +29,7 @@ const dict = {
     product: {
       label: '面向音乐与数字人文领域',
       title: '认识 AcouScope · 音析',
-      body: 'AcouScope 是面向音乐学、声学与数字人文等领域研究的专业声学分析软件，以严谨的学术态度，将声音的测量、分析与档案化融为一体——从课堂演示、田野采录，到论文配图与长期音档保存，皆能胜任。软件内置三套 SOTA 音高检测引擎（pYIN / SwiftF0 / RMVPE），可按研究场景灵活切换，仅凭 CPU 即可高效推理；其反量化连续音高技术，能够忠实还原微分音与滑音等细微差别；AI 释图与田野元数据导出，字段参考 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等元数据要素（字段对照核对中），支持自定义映射，使分析图表清晰可信，让每段录音皆有据可查、可长期典藏。软件另提供 10 套主题与双语界面（简体中文 / 繁體中文 / English），兼顾学术研究的严谨与日常使用的舒适。',
+      body: 'AcouScope 是面向音乐学、声学与数字人文等领域研究的专业声学分析软件，以严谨的学术态度，将声音的测量、分析与档案化融为一体——从课堂演示、田野采录，到论文配图与长期音档保存，皆能胜任。软件内置三套 SOTA 音高检测引擎（pYIN / SwiftF0 / RMVPE），可按研究场景灵活切换，仅凭 CPU 即可高效推理；其反量化连续音高技术，能够忠实还原微分音与滑音等细微差别；AI 释图与田野元数据导出，字段参考 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等元数据要素（字段对照核对中），支持自定义映射，使分析图表清晰可信，让每段录音皆有据可查、可长期典藏。软件另提供 9 套主题与双语界面（简体中文 / 繁體中文 / English），兼顾学术研究的严谨与日常使用的舒适。',
       spectrum: '单窗口三栏工作台 · 三套音高引擎',
     },
     pitch: {
@@ -39,7 +39,7 @@ const dict = {
       common: '纯 CPU ONNX 推理 · 30 分钟长录音约 196 秒分析 · 峰值内存 < 140MB',
       engines: [
         { name: 'pYIN', role: '经典算法 · 概率化 YIN', acc: '20 cent 分辨率', use: '流式预览、实时分析' },
-        { name: 'SwiftF0', role: '深度神经模型 · 单音音高', acc: '91.8% HM 精度 · 约 42× 高倍实时', use: '9.5 万参轻量模型，弱设备首选' },
+        { name: 'SwiftF0', role: '深度神经模型 · 单音音高', acc: '90.2% HM 精度 · 9.2× 高倍实时', use: '9.5 万参轻量模型，弱设备首选' },
         { name: 'RMVPE', role: '深度神经模型 · 复音人声', acc: '复音 / 嘈杂环境稳健', use: '复音音乐中稳健的人声基频估计' },
       ],
     },
@@ -50,7 +50,7 @@ const dict = {
       items: [
         {
           title: '三套 SOTA 音高引擎',
-          desc: 'pYIN（流式/实时，20 cent 分辨率）、SwiftF0（9.5 万参，38x 实时，90.2% HM 精度）、RMVPE（复音·嘈杂人声提取）按场景自由切换，纯 CPU ONNX 推理。',
+          desc: 'pYIN（流式/实时，20 cent 分辨率）、SwiftF0（9.5 万参，9.2× 实时，90.2% HM 精度）、RMVPE（复音·嘈杂人声提取）按场景自由切换，纯 CPU ONNX 推理。',
           tag: 'pYIN · SwiftF0 · RMVPE',
         },
         {
@@ -107,7 +107,7 @@ const dict = {
       c1s: '一条发丝线 = 一个分析模块 · 气泡大小 = 该模块数 · 时域 / 频域·频谱 / 音高·嗓音 / 空间·实时',
       c2t: '三大操作系统，一套完整能力',
       c2s: 'macOS · Windows · Linux · 全部实心 = 支持 · identical capability 完全一致',
-      c3t: '403 项自动化测试，让结果可复现',
+      c3t: '2148 项自动化测试，让结果可复现',
       c3s: 'algorithm · audio I/O · UI · 每项分析都经过验证',
       c4t: '两大旗舰，为一个研究者的论文而设',
       c4s: '出版级出图 + AI 释图 · 直投 CSSCI / SCI · gold = 旗舰/出版级',
@@ -124,7 +124,7 @@ const dict = {
         { n: '9', label: '大分析模块', tag: 'Analysis Modules' },
         { n: '9', label: '套学术主题', tag: 'Themes' },
         { n: '3', label: '种界面语言', tag: '简体 / 繁體 / EN' },
-        { n: '403', label: '项自动化测试', tag: 'Automated Tests' },
+        { n: '2148', label: '项自动化测试', tag: 'Automated Tests' },
         { n: '5', label: '类安装形态', tag: 'Platforms' },
       ],
       flag: [
@@ -196,7 +196,7 @@ const dict = {
     product: {
       label: '面向音樂與數位人文領域',
       title: '認識 AcouScope · 音析',
-      body: 'AcouScope 是面向音樂學、聲學與數位人文等領域研究的專業聲學分析軟體，以嚴謹的學術態度，將聲音的測量、分析與檔案化融為一體——從課堂示範、田野採錄，到論文配圖與長期音檔保存，皆能勝任。軟體內建三套 SOTA 音高檢測引擎（pYIN / SwiftF0 / RMVPE），可按研究場景靈活切換，僅憑 CPU 即可高效推理；其反量化連續音高技術，能夠忠實還原微分音與滑音等細微差別；AI 釋圖與田野元資料匯出，字段參考 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等元資料要素（字段對照核對中），支援自訂映射，使分析圖表清晰可信，讓每段錄音皆有據可查、可長期典藏。軟體另提供 10 套主題與雙語介面（簡體中文 / 繁體中文 / English），兼顧學術研究的嚴謹與日常使用的舒適。',
+      body: 'AcouScope 是面向音樂學、聲學與數位人文等領域研究的專業聲學分析軟體，以嚴謹的學術態度，將聲音的測量、分析與檔案化融為一體——從課堂示範、田野採錄，到論文配圖與長期音檔保存，皆能勝任。軟體內建三套 SOTA 音高檢測引擎（pYIN / SwiftF0 / RMVPE），可按研究場景靈活切換，僅憑 CPU 即可高效推理；其反量化連續音高技術，能夠忠實還原微分音與滑音等細微差別；AI 釋圖與田野元資料匯出，字段參考 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等元資料要素（字段對照核對中），支援自訂映射，使分析圖表清晰可信，讓每段錄音皆有據可查、可長期典藏。軟體另提供 9 套主題與雙語介面（簡體中文 / 繁體中文 / English），兼顧學術研究的嚴謹與日常使用的舒適。',
       spectrum: '單視窗三欄工作台 · 三套音高引擎',
     },
     pitch: {
@@ -206,7 +206,7 @@ const dict = {
       common: '純 CPU ONNX 推理 · 30 分鐘長錄音約 196 秒分析 · 峰值記憶體 < 140MB',
       engines: [
         { name: 'pYIN', role: '經典演算法 · 機率化 YIN', acc: '20 cent 解析度', use: '串流預覽、即時分析' },
-        { name: 'SwiftF0', role: '深度神經模型 · 單音音高', acc: '91.8% HM 精度 · 約 42× 高倍即時', use: '9.5 萬參輕量模型，弱設備首選' },
+        { name: 'SwiftF0', role: '深度神經模型 · 單音音高', acc: '90.2% HM 精度 · 9.2× 高倍即時', use: '9.5 萬參輕量模型，弱設備首選' },
         { name: 'RMVPE', role: '深度神經模型 · 複音人聲', acc: '複音 / 嘈雜環境穩健', use: '複音音樂中穩健的人聲基頻估計' },
       ],
     },
@@ -215,7 +215,7 @@ const dict = {
       title: '用科學，還原聲音裡被忽略的細節。',
       desc: '從 SOTA 音高引擎到專業級三欄工作台，每一個細節都為田野研究與學術寫作而設計——不只為「看見」，更為「可引用、可重現」。',
       items: [
-        { title: '三套 SOTA 音高引擎', desc: 'pYIN（串流/即時，20 cent 解析度）、SwiftF0（9.5 萬參，38x 即時，90.2% HM 精度）、RMVPE（複音·嘈雜人聲提取）按場景自由切換，純 CPU ONNX 推理。', tag: 'pYIN · SwiftF0 · RMVPE' },
+        { title: '三套 SOTA 音高引擎', desc: 'pYIN（串流/即時，20 cent 解析度）、SwiftF0（9.5 萬參，9.2× 即時，90.2% HM 精度）、RMVPE（複音·嘈雜人聲提取）按場景自由切換，純 CPU ONNX 推理。', tag: 'pYIN · SwiftF0 · RMVPE' },
         { title: '單視窗三欄工作台', desc: '0.99 全新介面：左側分析導航 7 大視圖一鍵切換（已分析自動打勾）、中央畫布堆疊、右側檢查器即時讀數。三欄寬度、折疊、上次視圖——重啟即恢復工作現場。', tag: 'Workspace' },
         { title: '反量化連續音高', desc: '拋物線內插 + 期望值法輸出連續 Hz，忠實記錄微分音與滑音等細微差別。', tag: 'Microtone' },
         { title: '本地 AI 學術釋圖', desc: '右側一點「AI 釋圖」，連同取樣率、基頻、音分等數值上下文送入端側模型，串流生成學術釋讀，可連續追問——隱私不出機器，無網也能用。', tag: 'AI Insight' },
@@ -242,7 +242,7 @@ const dict = {
       c1s: '一條髮絲線 = 一個分析模組 · 氣泡大小 = 該模組數 · 時域 / 頻域·頻譜 / 音高·嗓音 / 空間·實時',
       c2t: '三大作業系統，一套完整能力',
       c2s: 'macOS · Windows · Linux · 全部實心 = 支援 · identical capability 完全一致',
-      c3t: '403 項自動化測試，讓結果可複現',
+      c3t: '2148 項自動化測試，讓結果可複現',
       c3s: 'algorithm · audio I/O · UI · 每項分析都經過驗證',
       c4t: '兩大旗艦，為一個研究者的論文而設',
       c4s: '出版級出圖 + AI 釋圖 · 直投 CSSCI / SCI · gold = 旗艦/出版級',
@@ -255,7 +255,7 @@ const dict = {
       omarchy: '率先支援 Omarchy',
       mods: ['波形', 'FFT', '語譜', '音高', '共振峰', '音色', '3D', '實時', 'AI'],
       testsLabel: '項自動化測試 · pytest',
-      trust: [ {n:'9',label:'大分析模組',tag:'Analysis Modules'}, {n:'9',label:'套學術主題',tag:'Themes'}, {n:'3',label:'種介面語言',tag:'簡體 / 繁體 / EN'}, {n:'403',label:'項自動化測試',tag:'Automated Tests'}, {n:'5',label:'類安裝形態',tag:'Platforms'} ],
+      trust: [ {n:'9',label:'大分析模組',tag:'Analysis Modules'}, {n:'9',label:'套學術主題',tag:'Themes'}, {n:'3',label:'種介面語言',tag:'簡體 / 繁體 / EN'}, {n:'2148',label:'項自動化測試',tag:'Automated Tests'}, {n:'5',label:'類安裝形態',tag:'Platforms'} ],
       flag: [
         { badge: '旗艦 01', title: '出版級出圖', hook: '論文裡能直接用的圖，答辯不用再修。', points: ['匯出與所見完全一致，SVG / PDF 向量 + PNG 點陣任選', '內建出版級字體與配色，中文與樂理符號不亂不糊', '自訂解析度與圖尺寸，直投 CSSCI / SCI', '一張圖配一份說明，圖表編號與註釋由它來管'], stats: [{ n: '6', l: '匯出格式' }, { n: '300', l: 'DPI 可調' }] },
         { badge: '旗艦 02', title: 'AI 釋圖', hook: '它以學術審稿人的視角，幫你讀頻譜。', points: ['自動辨識譜峰、泛音序列與共振峰結構，中文學術語境解釋', '給出可直接寫進論文的分析段落草稿，省一半文字工時', '雙語切換輸出，國際會議投稿不用自己翻', '可提示的研究建議，下一步看哪裡它會提醒'], stats: [{ n: '多', l: 'Provider 可選' }, { n: '30', l: 'AI 測試項' }] },
@@ -323,7 +323,7 @@ const dict = {
     product: {
       label: 'FOR MUSICOLOGY & DIGITAL HUMANITIES',
       title: 'Meet AcouScope',
-      body: 'AcouScope is a professional acoustic analysis application for research across musicology, acoustics and the digital humanities. With a rigorous, scholarly approach, it unites the measurement, analysis and archiving of sound — from classroom demonstration and fieldwork capture to publication figures and long-term audio preservation. Three SOTA pitch-detection engines (pYIN / SwiftF0 / RMVPE) switch flexibly by research scenario and run efficiently on CPU alone; its de-quantized continuous-pitch technology faithfully preserves the subtle nuances of microtones and glides; AI interpretation and field-metadata export reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, making analysis figures clear and trustworthy and every recording traceable and durably storable. Ten themes and a bilingual interface (Simplified & Traditional Chinese / English) balance scholarly rigor with everyday comfort.',
+      body: 'AcouScope is a professional acoustic analysis application for research across musicology, acoustics and the digital humanities. With a rigorous, scholarly approach, it unites the measurement, analysis and archiving of sound — from classroom demonstration and fieldwork capture to publication figures and long-term audio preservation. Three SOTA pitch-detection engines (pYIN / SwiftF0 / RMVPE) switch flexibly by research scenario and run efficiently on CPU alone; its de-quantized continuous-pitch technology faithfully preserves the subtle nuances of microtones and glides; AI interpretation and field-metadata export reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, making analysis figures clear and trustworthy and every recording traceable and durably storable. Nine themes and a bilingual interface (Simplified & Traditional Chinese / English) balance scholarly rigor with everyday comfort.',
       spectrum: 'Single-window three-pane workspace · three pitch engines',
     },
     pitch: {
@@ -333,7 +333,7 @@ const dict = {
       common: 'Pure-CPU ONNX inference · 30-min recording in ~196 s · peak memory < 140 MB',
       engines: [
         { name: 'pYIN', role: 'Classic algorithm · probabilistic YIN', acc: '20-cent resolution', use: 'Streaming preview, live analysis' },
-        { name: 'SwiftF0', role: 'Deep neural model · monophonic pitch', acc: '91.8% HM · ~42× realtime', use: '95k-param lightweight model, ideal for weak devices' },
+        { name: 'SwiftF0', role: 'Deep neural model · monophonic pitch', acc: '90.2% HM · 9.2× realtime', use: '95k-param lightweight model, ideal for weak devices' },
         { name: 'RMVPE', role: 'Deep neural model · polyphonic vocal', acc: 'Robust in polyphonic / noisy settings', use: 'Robust vocal pitch estimation in polyphonic music' },
       ],
     },
@@ -344,7 +344,7 @@ const dict = {
       items: [
         {
           title: 'Three SOTA pitch engines',
-          desc: 'pYIN (streaming/live, 20-cent resolution), SwiftF0 (95k params, 38x realtime, 90.2% HM) and RMVPE (polyphonic/noisy vocal) switch per scenario, all on pure-CPU ONNX.',
+          desc: 'pYIN (streaming/live, 20-cent resolution), SwiftF0 (95k params, 9.2× realtime, 90.2% HM) and RMVPE (polyphonic/noisy vocal) switch per scenario, all on pure-CPU ONNX.',
           tag: 'pYIN · SwiftF0 · RMVPE',
         },
         {
@@ -393,7 +393,7 @@ const dict = {
       c1s: 'One hairline = one analysis module · bubble size = module count · Time-domain / Frequency·Spectrum / Pitch·Voice / Space·Realtime',
       c2t: 'Three operating systems, one complete capability',
       c2s: 'macOS · Windows · Linux · all filled = supported · identical capability',
-      c3t: '403 automated tests, reproducible results',
+      c3t: '2148 automated tests, reproducible results',
       c3s: 'algorithm · audio I/O · UI · every analysis verified',
       c4t: 'Two flagship features for a researcher’s paper',
       c4s: 'Publication-grade figures + AI interpretation · target CSSCI / SCI · gold = flagship',
@@ -410,7 +410,7 @@ const dict = {
         { n: '9', label: 'analysis modules', tag: 'Analysis Modules' },
         { n: '9', label: 'academic themes', tag: 'Themes' },
         { n: '3', label: 'interface languages', tag: '简体 / 繁體 / EN' },
-        { n: '403', label: 'automated tests', tag: 'Automated Tests' },
+        { n: '2148', label: 'automated tests', tag: 'Automated Tests' },
         { n: '5', label: 'install types', tag: 'Platforms' },
       ],
       flag: [

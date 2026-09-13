@@ -25,7 +25,7 @@ export default function Product() {
             <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[
                 { n: '3×', l: 'Pitch engines' },
-                { n: '38×', l: 'Realtime' },
+                { n: '9.2×', l: 'Realtime' },
                 { n: '<140MB', l: 'Peak memory' },
                 { n: '196s', l: 'Per 30-min' },
               ].map((s) => (
