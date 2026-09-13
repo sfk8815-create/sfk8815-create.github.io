@@ -46,7 +46,7 @@ export const OTHER_PRODUCTS: ProductNews[] = [
       highlights: [
         { title: 'Zotero 深度接入', desc: '分类 / 条目 / 标注读取（本地 API，无需 Web API key），附带 Zotero 插件直达。' },
         { title: '文献全文转换', desc: '附件批量转为 AI 友好 Markdown，含【书页页码】标注，引用可溯源。' },
-        { title: '扫描件 OCR', desc: 'Unlimited-OCR 结构化识别，MLX / GGUF 双后端，全平台、可远程。' },
+        { title: '扫描件 OCR', desc: 'Unlimited-OCR 结构化识别，MLX / GGUF 双后端，可远程。' },
         { title: '向量语义检索', desc: 'LanceDB + 任意 OpenAI 兼容 embedding（本地或远程商用平台）。' },
         { title: '增量处理', desc: '条目 version + 附件指纹双重检测，只处理新增 / 变更内容。' },
         { title: 'AI 深度阅读外脑', desc: 'Claude / Cherry Studio / Trae 等经 MCP 直查你的文献库，回答带出处。' },
