@@ -44,6 +44,7 @@ export default function Product() {
                 <span className="rounded-md border border-cyan/40 bg-cyan/10 px-2.5 py-1 font-mono text-[11px] text-cyan">GB/T 31219.4</span>
                 <span className="rounded-md border border-cyan/40 bg-cyan/10 px-2.5 py-1 font-mono text-[11px] text-cyan">DA/T 63</span>
               </div>
+              <span className="text-[11px] text-muted">{t.charts.stdArchiveNote}</span>
             </div>
 
             <div className="mt-4 flex flex-wrap gap-3">

@@ -134,6 +134,7 @@ const dict = {
       rowPrec: '精度',
       rowUse: '适用场景',
       stdArchive: '参考的元数据要素',
+      stdArchiveNote: '字段对照核对中（不作符合性声明）',
       pitchEng: '音高引擎',
     },
     vision: {
@@ -276,6 +277,7 @@ const dict = {
       rowPrec: '精度',
       rowUse: '適用場景',
       stdArchive: '參考的元資料要素',
+      stdArchiveNote: '欄位對照核對中（不作符合性聲明）',
       pitchEng: '音高引擎',
     },
     vision: {
@@ -446,6 +448,7 @@ const dict = {
       rowPrec: 'Accuracy',
       rowUse: 'Use case',
       stdArchive: 'Referenced metadata elements',
+      stdArchiveNote: 'Field-by-field mapping under review (no conformance claim)',
       pitchEng: 'Pitch engines',
     },
     vision: {
