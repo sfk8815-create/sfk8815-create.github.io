@@ -15,7 +15,7 @@ const dict = {
       desc: '面向音乐学、声学与数字人文等研究领域的次世代声学分析引擎：三套 SOTA 音高引擎、三栏工作台、本地 AI 学术释图、田野元数据导出——弱设备也能流畅运行。',
     },
     brand: { name: '缙云声智', en: 'Jinyun SonicAI' },
-    nav: { product: '产品', features: '特性', vision: '愿景', download: '下载', changelog: '开发日志' },
+    nav: { product: '产品', features: '特性', vision: '愿景', download: '下载', changelog: '开发日志', help: '帮助' },
     hero: {
       badge: '声音研究 · 可存档、可溯源 · 参考国际与中国档案元数据要素',
       slogan: '测度其所鸣，留证其所存。',
@@ -181,6 +181,13 @@ const dict = {
       headline: 'v0.98 → v0.99，九类更新',
       legend: '★ 为本版重磅（应最先看到）；每条一行，数字与站点口径一致。',
     },
+    help: {
+      eyebrow: 'HELP · 帮助',
+      headline: '快速入门：十四步上手',
+      legend: '内容镜像自 AcouScope 应用内「帮助 → 快速入门」（三语各 14 条，逐字一致）。',
+      shortcutsTitle: '快捷键说明',
+      shortcutsNote: 'macOS 上 Ctrl 对应 Cmd；其中「重做」在 macOS 为 Cmd+Shift+Z。',
+    },
   },
   tc: {
     meta: {
@@ -188,7 +195,7 @@ const dict = {
       desc: '面向音樂學、聲學與數位人文等研究領域的次世代聲學分析引擎：三套 SOTA 音高引擎、三欄工作台、本地 AI 學術釋圖、田野元資料匯出——弱設備也能流暢運行。',
     },
     brand: { name: '縉雲聲智', en: 'Jinyun SonicAI' },
-    nav: { product: '產品', features: '特性', vision: '願景', download: '下載', changelog: '開發日誌' },
+    nav: { product: '產品', features: '特性', vision: '願景', download: '下載', changelog: '開發日誌', help: '幫助' },
     hero: {
       badge: '聲音研究 · 可儲存、可溯源 · 參考國際與中國檔案元資料要素',
       slogan: '測度其所鳴，留證其所存。',
@@ -314,6 +321,13 @@ const dict = {
       headline: 'v0.98 → v0.99，九類更新',
       legend: '★ 為本版重磅（應最先看到）；每條一行，數字與站點口徑一致。',
     },
+    help: {
+      eyebrow: 'HELP · 幫助',
+      headline: '快速入門：十四步上手',
+      legend: '內容鏡像自 AcouScope 應用內「說明 → 快速入門」（三語各 14 條，逐字一致）。',
+      shortcutsTitle: '快速鍵說明',
+      shortcutsNote: 'macOS 上 Ctrl 對應 Cmd；其中「重做」在 macOS 為 Cmd+Shift+Z。',
+    },
   },
   en: {
     meta: {
@@ -321,7 +335,7 @@ const dict = {
       desc: 'A next-generation acoustic analysis engine for research fields such as musicology, acoustics and the digital humanities: three SOTA pitch engines, a three-pane workspace, local AI chart interpretation, and field-metadata export — smooth even on weak devices.',
     },
     brand: { name: 'Jinyun SonicAI', en: 'Jinyun SonicAI' },
-    nav: { product: 'Product', features: 'Features', vision: 'Vision', download: 'Download', changelog: 'Changelog' },
+    nav: { product: 'Product', features: 'Features', vision: 'Vision', download: 'Download', changelog: 'Changelog', help: 'Help' },
     hero: {
       badge: 'Sound research · archivable & traceable · reference to international & Chinese archive metadata elements',
       slogan: 'Measure why it sounds, preserve why it endures.',
@@ -476,6 +490,13 @@ const dict = {
       eyebrow: 'CHANGELOG',
       headline: 'v0.98 → v0.99, nine categories of updates',
       legend: '★ marks the headline items of this release; one line each, numbers consistent with the rest of the site.',
+    },
+    help: {
+      eyebrow: 'HELP',
+      headline: 'Quick start: fourteen steps to get going',
+      legend: 'Mirrored word for word from the in-app Help → Quick Start (14 items per language).',
+      shortcutsTitle: 'Keyboard shortcuts',
+      shortcutsNote: 'On macOS, Ctrl corresponds to Cmd; “Redo” is Cmd+Shift+Z on macOS.',
     },
   },
 }
