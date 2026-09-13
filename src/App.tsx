@@ -12,6 +12,7 @@ import Screenshots from './components/Screenshots'
 import Vision from './components/Vision'
 import CTA from './components/CTA'
 import ProductPage from './components/ProductPage'
+import ChangelogPage from './components/ChangelogPage'
 
 // AcouScope 主页面（默认展示，路由 `/`）
 function AcouScopeHome() {
@@ -47,6 +48,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<AcouScopeHome />} />
           <Route path="/products/:slug" element={<ProductRoute />} />
+          <Route path="/changelog" element={<ChangelogPage />} />
         </Routes>
         <Footer />
       </div>

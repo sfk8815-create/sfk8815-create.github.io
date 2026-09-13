@@ -96,6 +96,14 @@ export default function Nav() {
               {t.nav.features}
             </Link>
           )}
+          <Link
+            to="/changelog"
+            className={`rounded-full px-4 py-2 text-sm transition ${
+              location.pathname === '/changelog' ? 'bg-cyan/15 text-cyan' : 'text-muted hover:bg-raised/60 hover:text-textured'
+            }`}
+          >
+            {t.nav.changelog}
+          </Link>
         </nav>
 
         <div className="flex items-center gap-3">
@@ -135,6 +143,9 @@ export default function Nav() {
                   {l.label}
                 </button>
               ))}
+            <Link to="/changelog" onClick={() => setOpen(false)} className="rounded-xl px-3 py-2.5 text-sm text-muted transition hover:bg-raised/60 hover:text-textured">
+              {t.nav.changelog}
+            </Link>
           </div>
         </nav>
       )}
