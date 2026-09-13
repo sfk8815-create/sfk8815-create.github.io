@@ -70,7 +70,7 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-raised/60 pt-6 text-xs text-faint sm:flex-row">
           <p className="whitespace-pre-line">{t.footer.rights}</p>
-          <p className="font-mono">AcouScope · 音析 v0.99</p>
+          <p className="font-mono">{t.footer.version}</p>
         </div>
       </div>
     </footer>
