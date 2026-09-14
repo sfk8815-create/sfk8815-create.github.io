@@ -19,7 +19,12 @@
 //                若 src/data/*.ts 含 <b>，则 HelpPage.tsx 必须含 renderRich
 //   ⑤ 帮助页结构 quickstart.ts 五语各 14 条；manual.ts 五语各 19 节、
 //                逐节条数五语一致（第 18 节为 tables，条数 = 表行数合计）
-//   ⑥ 汇总       逐项 PASS/FAIL + 明细（文件:行）；任一 FAIL → exit 1
+//   ⑥ changelog/products 五语一致性（S3-s4）：
+//                changelog.ts 五语条数一致（由 sc 段推出，勿写死）+ 逐节一致；
+//                products.ts 各语块（sc/en/ko/ja）键集/highlights 长度一致
+//                （tc 无独立块 → 按 getLocaleContent 回退 sc 的既有语义豁免）；
+//                两文件 TODO(ko/ja) = 0
+//   ⑦ 汇总       逐项 PASS/FAIL + 明细（文件:行）；任一 FAIL → exit 1
 //
 // 只读子仓内文件（相对本脚本所在仓库根），不依赖主仓任何路径。
 // ============================================================================
@@ -170,6 +175,14 @@ function extractObject(src, name) {
   const re = new RegExp(`(?:export\\s+)?const\\s+${name}\\b[^=]*=\\s*\\{`)
   const m = re.exec(src)
   if (!m) throw new Error(`object literal "${name}" not found`)
+  return parseLiteral(src, m.index + m[0].length - 1)[0]
+}
+
+/** 从源码中定位 `const NAME ... = [` 并解析该数组字面量 */
+function extractArray(src, name) {
+  const re = new RegExp(`(?:export\\s+)?const\\s+${name}\\b[^=]*=\\s*\\[`)
+  const m = re.exec(src)
+  if (!m) throw new Error(`array literal "${name}" not found`)
   return parseLiteral(src, m.index + m[0].length - 1)[0]
 }
 
@@ -404,21 +417,120 @@ function record(name, pass, details) {
   record('⑤ 帮助页结构（quickstart 14×5 · manual 19节×5 逐节一致）', pass, details)
 }
 
-// ---- ⑥ 汇总输出 ----
+// ---- ⑥ changelog/products 五语一致性（S3-s4：changelog 补韩/日 · products 补韩/日） ----
+{
+  const details = []
+  let pass = true
+
+  // changelog：五语条数一致（基线由 sc 段推出，勿写死）+ 逐节条数一致
+  try {
+    const cl = extractObject(read('src/data/changelog.ts'), 'CHANGELOG')
+    const langs = ['sc', 'tc', 'en', 'ko', 'ja']
+    for (const l of langs) {
+      if (!cl[l] || typeof cl[l] !== 'object' || !Array.isArray(cl[l].sections)) {
+        pass = false
+        details.push(`FAIL: changelog 缺少 ${l} 段（或 sections 非数组）`)
+      }
+    }
+    if (pass) {
+      const countOf = (l) => cl[l].sections.reduce((s, sec) => s + (Array.isArray(sec.items) ? sec.items.length : 0), 0)
+      const counts = {}
+      for (const l of langs) counts[l] = countOf(l)
+      const base = counts.sc
+      for (const l of ['tc', 'en', 'ko', 'ja']) {
+        if (counts[l] !== base) { pass = false; details.push(`FAIL: changelog ${l} = ${counts[l]} 条 ≠ sc ${base} 条`) }
+      }
+      // 逐节条数（强度只增不减：总量一致之外，逐节亦须五语一致）
+      const secCounts = {}
+      for (const l of langs) secCounts[l] = cl[l].sections.length
+      let secMismatch = 0
+      for (let i = 0; i < secCounts.sc; i++) {
+        const per = langs.map((l) => (cl[l].sections[i] && Array.isArray(cl[l].sections[i].items) ? cl[l].sections[i].items.length : -1))
+        if (new Set(per).size > 1) {
+          secMismatch++
+          pass = false
+          details.push(`FAIL: changelog 第 ${i + 1} 节条数五语不一致 sc/tc/en/ko/ja = ${per.join('/')}`)
+        }
+      }
+      for (const l of ['tc', 'en', 'ko', 'ja']) {
+        if (secCounts[l] !== secCounts.sc) { pass = false; details.push(`FAIL: changelog ${l} = ${secCounts[l]} 节 ≠ sc ${secCounts.sc} 节`) }
+      }
+      if (pass) {
+        details.push(`changelog 五语条数一致 sc/tc/en/ko/ja = ${counts.sc}/${counts.tc}/${counts.en}/${counts.ko}/${counts.ja}（由 sc 段推出，非写死）✓`)
+        details.push(`changelog 五语各 ${secCounts.sc} 节、逐节条数一致（sc 逐节 [${cl.sc.sections.map((s) => s.items.length).join('/')}]）✓`)
+      }
+    }
+  } catch (e) { pass = false; details.push(`FAIL: 解析 changelog.ts CHANGELOG 失败 — ${e.message}`) }
+
+  // products：各语块（sc/en/ko/ja）键集 + highlights 长度一致
+  // tc 豁免说明：products.ts 无独立 tc 块——getLocaleContent() 对 tc 回退 sc（既有行为，见该文件注释），
+  // 属设计内回退而非翻译缺失，故不参与键集比对（changelog 有独立 tc 段，不豁免）。
+  try {
+    const pr = extractArray(read('src/data/products.ts'), 'OTHER_PRODUCTS')
+    if (!Array.isArray(pr) || pr.length === 0) {
+      pass = false
+      details.push('FAIL: OTHER_PRODUCTS 为空或非数组')
+    } else {
+      const langs = ['sc', 'en', 'ko', 'ja'] // tc 无独立块 → 豁免（见上方说明）
+      let ok = true
+      for (const p of pr) {
+        const slug = p?.slug ?? '?'
+        if (!p.sc || typeof p.sc !== 'object' || Object.keys(p.sc).length === 0) {
+          pass = false; ok = false
+          details.push(`FAIL: products ${slug} 缺 sc 块（基线）`)
+          continue
+        }
+        const baseKeys = Object.keys(p.sc).sort()
+        for (const l of ['en', 'ko', 'ja']) {
+          const b = p[l]
+          if (!b || typeof b !== 'object') { pass = false; ok = false; details.push(`FAIL: products ${slug} 缺 ${l} 块`); continue }
+          const keys = Object.keys(b).sort()
+          const onlyBase = baseKeys.filter((k) => !keys.includes(k))
+          const onlyOther = keys.filter((k) => !baseKeys.includes(k))
+          if (onlyBase.length || onlyOther.length) {
+            pass = false; ok = false
+            details.push(`FAIL: products ${slug} ${l} 键集不齐 — 仅sc有: [${onlyBase.join(', ')}] 仅${l}有: [${onlyOther.join(', ')}]`)
+          }
+          const sh = Array.isArray(p.sc.highlights) ? p.sc.highlights.length : -1
+          const bh = Array.isArray(b.highlights) ? b.highlights.length : -1
+          if (bh !== sh) { pass = false; ok = false; details.push(`FAIL: products ${slug} ${l} highlights = ${bh} ≠ sc ${sh}`) }
+        }
+      }
+      if (ok) {
+        const k0 = Object.keys(pr[0].sc).length
+        details.push(`products ${pr.length} 产品 × 4 语块（sc/en/ko/ja）键集一致（各块 ${k0} 键 · highlights=${pr[0].sc.highlights.length}）✓`)
+        details.push('tc 豁免：无独立块，getLocaleContent 回退 sc（既有行为）✓')
+      }
+    }
+  } catch (e) { pass = false; details.push(`FAIL: 解析 products.ts OTHER_PRODUCTS 失败 — ${e.message}`) }
+
+  // 旧占位零残留：TODO(ko/ja) = 0（两文件）
+  for (const f of ['src/data/changelog.ts', 'src/data/products.ts']) {
+    const r = countRe(f, /TODO\s*\(\s*(?:ko|ja)/)
+    if (r.count > 0) {
+      pass = false
+      details.push(`FAIL: ${f} TODO(ko/ja) 残留 ${r.count} 处 — [${r.hits.slice(0, 5).map((h) => `${h.line}: ${h.text}`).join(' ; ')}]`)
+    } else details.push(`${f} TODO(ko/ja) = 0 ✓`)
+  }
+
+  record('⑥ changelog/products 五语一致性（changelog 条数由 sc 推出 · products 键集 tc 豁免 · TODO(ko/ja)=0）', pass, details)
+}
+
+// ---- ⑦ 汇总输出 ----
 const failed = results.filter((r) => !r.pass)
 
 if (JSON_OUT) {
   console.log(JSON.stringify({ ok: failed.length === 0, checks: results }, null, 2))
 } else {
-  console.log('== check-parity：站点一致性自检（6 组） ==')
+  console.log(`== check-parity：站点一致性自检（${results.length} 组） ==`)
   for (const r of results) {
     console.log(`${r.pass ? 'PASS' : 'FAIL'}  ${r.name}`)
     for (const d of r.details) console.log(`      ${d}`)
   }
   console.log('----------------------------------------')
   console.log(failed.length === 0
-    ? `结果：6/6 PASS（exit 0）`
-    : `结果：${results.length - failed.length}/6 PASS，${failed.length} FAIL（exit 1）— ${failed.map((f) => f.name).join(' | ')}`)
+    ? `结果：${results.length}/${results.length} PASS（exit 0）`
+    : `结果：${results.length - failed.length}/${results.length} PASS，${failed.length} FAIL（exit 1）— ${failed.map((f) => f.name).join(' | ')}`)
 }
 
 process.exit(failed.length === 0 ? 0 : 1)
