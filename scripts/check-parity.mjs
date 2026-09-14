@@ -13,7 +13,8 @@
 //                403 唯一例外 = src/components/socialIcons.tsx（白名单）
 //   ③ 禁用词     符合标准 / 无损映射 / 需系统编码器 / compliant / conformance
 //                （英文词按"正向声明"计数：no/not/non- 引导的否定不计）；
-//                且 字段对照核对中|欄位對照核對中|under review 合计 ≥3（三语各一）
+//                且 字段对照核对中|欄位對照核對中|under review 合计 ≥3（三语各一）；
+//                旧定位语零残留（音频分析软件 / 音訊分析軟體 / audio analysis application 各 0；S3-t1）
 //   ④ 渲染面     src/** 中 dangerouslySetInnerHTML = 0；indexOf('</b>') = 0；
 //                若 src/data/*.ts 含 <b>，则 HelpPage.tsx 必须含 renderRich
 //   ⑤ 帮助页结构 quickstart.ts 三语各 14 条；manual.ts 三语各 19 节、
@@ -309,12 +310,20 @@ function record(name, pass, details) {
       details.push(`FAIL: 禁用词「${w}」正向声明 ${positive} 处（总 ${total}，否定 ${negated}）— [${hits.slice(0, 5).map((h) => `${h.file}:${h.line}`).join(', ')}]`)
     } else details.push(`禁用词「${w}」正向 0（总 ${total}，其中否定 ${negated} 不计）✓`)
   }
+  // S3-t1：旧定位语零残留（音频分析软件 / 音訊分析軟體 / audio analysis application 各 0；老术语不再出现）
+  for (const w of ['音频分析软件', '音訊分析軟體', 'audio analysis application']) {
+    const r = scanAll(new RegExp(w, w === 'audio analysis application' ? 'i' : ''))
+    if (r.count > 0) {
+      pass = false
+      details.push(`FAIL: 旧定位语「${w}」残留 ${r.count} 处 — [${r.hits.slice(0, 5).map((h) => `${h.file}:${h.line}`).join(', ')}]`)
+    } else details.push(`旧定位语「${w}」0 命中 ✓`)
+  }
   // 限定语三语各一：合计 ≥3
   let qual = 0
   for (const w of ['字段对照核对中', '欄位對照核對中', 'under review']) qual += scanAll(new RegExp(w, w === 'under review' ? 'i' : '')).count
   if (qual < 3) { pass = false; details.push(`FAIL: 「字段对照核对中|欄位對照核對中|under review」合计 ${qual} < 3`) }
   else details.push(`限定语「…核对中/under review」合计 ${qual} ≥ 3（三语各一）✓`)
-  record('③ 禁用词（符合标准/无损映射/需系统编码器/compliant/conformance）', pass, details)
+  record('③ 禁用词（符合标准/无损映射/需系统编码器/compliant/conformance/旧定位语零残留）', pass, details)
 }
 
 // ---- ④ 渲染面（src/**；S3-c2 事故项） ----

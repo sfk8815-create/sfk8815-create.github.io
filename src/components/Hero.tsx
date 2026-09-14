@@ -89,7 +89,7 @@ export default function Hero() {
             <div className="flex items-center justify-between px-4 pt-3">
               <div>
                 <p className="font-display text-sm font-semibold text-textured">AcouScope · 音析</p>
-                <p className="text-xs text-faint">Audio Analysis</p>
+                <p className="text-xs text-faint">Acoustic Analysis</p>
               </div>
               <span className="rounded-md border border-cyan/40 bg-cyan/10 px-2 py-1 font-mono text-[11px] text-cyan">
                 {t.hero.version}

@@ -26,7 +26,7 @@ export interface ManualSection {
 export const MANUAL = {
   sc: {
     h2: '用户手册',
-    intro: 'AcouScope 是面向音乐与数字人文领域研究的音频分析软件。核心算法纯 NumPy 实现，界面基于 PyQt6。',
+    intro: 'AcouScope 是面向音乐与数字人文领域研究的声学分析软件。核心算法纯 NumPy 实现，界面基于 PyQt6。',
     sections: [
       { title: '1. 界面概览',
         items: [
@@ -290,7 +290,7 @@ export const MANUAL = {
   },
   tc: {
     h2: '使用者手冊',
-    intro: 'AcouScope 是面向音樂與數位人文領域研究的音訊分析軟體。核心演算法純 NumPy 實現，介面基於 PyQt6。',
+    intro: 'AcouScope 是面向音樂與數位人文領域研究的聲學分析軟體。核心演算法純 NumPy 實現，介面基於 PyQt6。',
     sections: [
       { title: '1. 介面概覽',
         items: [
@@ -554,7 +554,7 @@ export const MANUAL = {
   },
   en: {
     h2: 'User Manual',
-    intro: 'AcouScope is an audio analysis application for music and digital humanities research. Core algorithms are implemented in pure NumPy; the UI is built with PyQt6.',
+    intro: 'AcouScope is an acoustic analysis application for music and digital humanities research. Core algorithms are implemented in pure NumPy; the UI is built with PyQt6.',
     sections: [
       { title: '1. Interface Overview',
         items: [
