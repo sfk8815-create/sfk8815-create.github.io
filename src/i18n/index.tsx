@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 
-export type Locale = 'sc' | 'tc' | 'en' | 'ko' | 'ja'
+export type CoreLocale = 'sc' | 'tc' | 'en'
+export type Locale = CoreLocale | 'ko' | 'ja'
 
 export const LOCALES: { code: Locale; label: string; lang: string }[] = [
   { code: 'sc', label: '简体中文', lang: 'zh-CN' },

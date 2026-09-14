@@ -4,7 +4,7 @@
 // 第 18 节（快捷键表）按结构化数据建模：tables[].{caption, headers, rows[{action,key}]}，页面用真实 <table> 渲染。
 // {sc_*} 占位符不逐条写死、不原样渲染花括号：渲染时统一经 quickstart.ts 的 renderShortcuts（11 键映射）替换；<b> 经 HelpPage 的 renderRich 渲染为 <strong>。
 // 分语范式同 quickstart.ts / changelog.ts（import type { Locale } + getManual(locale)）。
-import type { Locale } from '../i18n'
+import type { CoreLocale, Locale } from '../i18n'
 
 export interface ManualItem {
   text: string // 逐字镜像内容源 <li>（含 <b> 与 {sc_*} 原文）
@@ -819,5 +819,6 @@ export const MANUAL = {
 }
 
 export function getManual(locale: Locale) {
-  return MANUAL[locale]
+  const k: CoreLocale = locale === 'ko' || locale === 'ja' ? 'en' : locale
+  return MANUAL[k]
 }

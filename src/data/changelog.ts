@@ -1,7 +1,7 @@
 // 开发日志数据（v0.98 → v0.99 更新要点）
 // 内容源：.pi/knowledge/SITE_CHANGELOG_0.99.md（幕僚编制，指挥拍板）
 // 三语（sc / tc / en）分语范式同 products.ts；九类各一节、每节每条一行，star = 重磅。
-import type { Locale } from '../i18n'
+import type { CoreLocale, Locale } from '../i18n'
 
 export interface ChangelogItem {
   text: string
@@ -20,7 +20,7 @@ export interface ChangelogContent {
   sections: ChangelogSection[]
 }
 
-export const CHANGELOG: Record<Locale, ChangelogContent> = {
+export const CHANGELOG: Record<CoreLocale, ChangelogContent> = {
   sc: {
     title: '开发日志',
     subtitle: 'v0.98 → v0.99 更新要点：九类更新、每条一行，★ 为本版重磅。',
@@ -291,5 +291,6 @@ export const CHANGELOG: Record<Locale, ChangelogContent> = {
 }
 
 export function getChangelog(locale: Locale): ChangelogContent {
-  return CHANGELOG[locale]
+  const k: CoreLocale = locale === 'ko' || locale === 'ja' ? 'en' : locale
+  return CHANGELOG[k]
 }
