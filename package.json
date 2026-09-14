@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check:parity": "node scripts/check-parity.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
