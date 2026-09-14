@@ -17,7 +17,7 @@
 //                旧定位语零残留（音频分析软件 / 音訊分析軟體 / audio analysis application 各 0；S3-t1）
 //   ④ 渲染面     src/** 中 dangerouslySetInnerHTML = 0；indexOf('</b>') = 0；
 //                若 src/data/*.ts 含 <b>，则 HelpPage.tsx 必须含 renderRich
-//   ⑤ 帮助页结构 quickstart.ts 三语各 14 条；manual.ts 三语各 19 节、
+//   ⑤ 帮助页结构 quickstart.ts 五语各 14 条；manual.ts 三语各 19 节、
 //                逐节条数三语一致（第 18 节为 tables，条数 = 表行数合计）
 //   ⑥ 汇总       逐项 PASS/FAIL + 明细（文件:行）；任一 FAIL → exit 1
 //
@@ -354,17 +354,17 @@ function record(name, pass, details) {
   record('④ 渲染面（dangerouslySetInnerHTML / indexOf(\'</b>\') / renderRich）', pass, details)
 }
 
-// ---- ⑤ 帮助页结构（quickstart 三语各 14 条；manual 三语各 19 节、逐节一致） ----
+// ---- ⑤ 帮助页结构（quickstart 五语各 14 条；manual 三语各 19 节、逐节一致） ----
 {
   const details = []
   let pass = true
   try {
     const qs = extractObject(read('src/data/quickstart.ts'), 'QUICK_START')
-    for (const l of ['sc', 'tc', 'en']) {
+    for (const l of ['sc', 'tc', 'en', 'ko', 'ja']) {
       const n = qs[l]?.items?.length ?? -1
       if (n !== 14) { pass = false; details.push(`FAIL: quickstart ${l} = ${n} 条（应 14）`) }
     }
-    if (pass) details.push('quickstart 三语各 14 条 ✓')
+    if (pass) details.push('quickstart 五语各 14 条 ✓')
   } catch (e) { pass = false; details.push(`FAIL: 解析 quickstart.ts 失败 — ${e.message}`) }
 
   try {
@@ -401,7 +401,7 @@ function record(name, pass, details) {
       if (pass) details.push('第 18 节三语均为 tables（快捷键表）✓')
     }
   } catch (e) { pass = false; details.push(`FAIL: 解析 manual.ts 失败 — ${e.message}`) }
-  record('⑤ 帮助页结构（quickstart 14×3 · manual 19节×3 逐节一致）', pass, details)
+  record('⑤ 帮助页结构（quickstart 14×5 · manual 19节×3 逐节一致）', pass, details)
 }
 
 // ---- ⑥ 汇总输出 ----

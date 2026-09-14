@@ -1,8 +1,8 @@
 // 快速入门数据（站点「帮助」栏目 · S3-c2）
 // 内容源：acouscope/src/acouscope/ui/widgets/help_dialogs.py 的 QUICK_START（T-1057 ce4fe7d 已入库）
-// 三语（sc / tc / en）各 14 条，逐字镜像内容源 <li>（顺序、措辞、加粗要点一致）；分语范式同 changelog.ts。
+// 五语（sc / tc / en / ko / ja）各 14 条，逐字镜像内容源 <li>（顺序、措辞、加粗要点一致）；分语范式同 changelog.ts。
 // {sc_*} 占位符不逐条写死、不原样渲染花括号：统一由下方 SC_KEYS 映射表在页面渲染时替换（共 11 键，整值逐字照抄）。
-import type { CoreLocale, Locale } from '../i18n'
+import type { Locale } from '../i18n'
 
 // 快捷键占位符 → 默认键位（唯一映射表；页面渲染时统一替换 {sc_*}）
 export const SC_KEYS: Record<string, string> = {
@@ -33,7 +33,7 @@ export interface QuickstartContent {
   footnote: string // 内容源 <ol> 之后的收尾句（含 <b>，渲染时同样替换占位符）
 }
 
-export const QUICK_START: Record<CoreLocale, QuickstartContent> = {
+export const QUICK_START: Record<Locale, QuickstartContent> = {
   sc: {
     items: [
       { text: '<b>启动与首启</b>：首次使用音高检测的在线引擎（SwiftF0 / RMVPE）时，应用会自动下载模型（含校验）并内置；此后可<b>离线</b>使用。' },
@@ -90,9 +90,46 @@ export const QUICK_START: Record<CoreLocale, QuickstartContent> = {
       { text: '<b>Learn more</b>: Help → User Manual, a full 19-section guide.' },
     ],
     footnote: 'See <b>Help → User Manual</b> for the full documentation.',
+  },
+  ko: {
+    items: [
+      { text: '<b>시작 및 최초 실행</b>: 온라인 피치 엔진（SwiftF0 / RMVPE）을 처음 사용할 때, 모델이 자동으로 다운로드（검증 포함）되어 내장되며, 이후에는 <b>오프라인</b>으로 사용할 수 있습니다.' },
+      { text: '<b>오디오 열기</b>: 파일 → 열기（{sc_open}）, WAV / FLAC / MP3 / AIFF / OGG 지원, 내장 디코딩으로 외부 인코더 불필요.' },
+      { text: '<b>3패널 구조</b>: 왼쪽 내비게이션과 탭（파일 / 설정） · 중앙 캔버스（위쪽 웨이브폼, 아래쪽 분석） · 오른쪽 인스펙터（AI 해석 포함）.' },
+      { text: '<b>재생 및 플레이헤드</b>: 스페이스바로 재생 / 일시정지, 웨이브폼의 아무 위치나 클릭하면 플레이헤드를 지정합니다.' },
+      { text: '<b>구간 선택</b>: 웨이브폼에서 마우스 왼쪽 버튼으로 드래그해 선택 영역을 만듭니다; Delete 키로 삭제, {sc_undo}로 실행 취소.' },
+      { text: '<b>분석 뷰 전환</b>: F2 스펙트럼 · F3 스펙트로그램 · F4 피치 · F5 포먼트 · F6 음색 · F7 3D · F8 룸 모드.' },
+      { text: '<b>3종 피치 엔진</b>: pYIN（스트리밍 / 실시간） · SwiftF0（경량 오프라인） · RMVPE（복음, 노이즈 많은 보컬）, 피치 패널에서 선택합니다.' },
+      { text: '<b>차트 디자이너</b>: 파일 → 내보내기 → 차트 디자이너（또는 분석 도구모음）; 실시간 미리보기, 흰 배경 내보내기, 논문 도표에 적합.' },
+      { text: '<b>AI 해석</b>: 오른쪽 인스펙터 → AI 해석（Ctrl+I）; 스펙트럼 피크 / 하모닉 / 포먼트를 읽고 Markdown 문단 초안을 생성합니다.' },
+      { text: '<b>흰 배경 내보내기</b>: 차트 내보내기（SVG / PDF / PNG）는 항상 흰 배경, 보이는 그대로（{sc_export}）.' },
+      { text: '<b>워크스페이스 토글 그룹</b>: 도구모음 오른쪽의「배치」등 전체 패널 토글은 상호 배타적이며, 다시 클릭하면 일반 워크스페이스로 접힙니다; 왼쪽 패널에서 파일 / 설정을 엽니다.' },
+      { text: '<b>환경 설정</b>: 설정 → 환경 설정（{sc_settings}）, 언어 전환（간체 / 번체 / EN）, 9종 테마, 아이콘 스타일.' },
+      { text: '<b>단축키 3연속</b>: 스페이스바 = 재생 / 일시정지; Delete = 선택 영역 삭제; Shift + 드래그 = 연동 분석 포인터.' },
+      { text: '<b>더 보기</b>: 도움말 → 사용자 매뉴얼, 19개 섹션의 완전한 설명을 포함합니다.' },
+    ],
+    footnote: '완전한 설명은 <b>도움말 → 사용자 매뉴얼</b>을 참고하세요.',
+  },
+  ja: {
+    items: [
+      { text: '<b>起動と初回実行</b>: オンラインのピッチエンジン（SwiftF0 / RMVPE）を初めて使うと、モデルが自動的にダウンロード（検証込み）されて内蔵され、以降は<b>オフライン</b>で利用できます。' },
+      { text: '<b>オーディオを開く</b>: ファイル → 開く（{sc_open}）、WAV / FLAC / MP3 / AIFF / OGG に対応、内蔵デコードで外部エンコーダー不要。' },
+      { text: '<b>3ペインの構造</b>: 左のナビゲーションとタブ（ファイル / 設定） · 中央キャンバス（上：波形、下：分析） · 右のインスペクター（AI 解釈を含む）。' },
+      { text: '<b>再生とプレイヘッド</b>: スペースキーで再生 / 一時停止、波形の任意の位置をクリックしてプレイヘッドを配置。' },
+      { text: '<b>領域の選択</b>: 波形上で左ボタンをドラッグして選択範囲を作成; Delete で削除、{sc_undo} で元に戻す。' },
+      { text: '<b>分析ビューの切り替え</b>: F2 スペクトル · F3 スペクトログラム · F4 ピッチ · F5 フォーマント · F6 ティンバー · F7 3D · F8 ルームモード。' },
+      { text: '<b>3種のピッチエンジン</b>: pYIN（ストリーミング / リアルタイム） · SwiftF0（軽量オフライン） · RMVPE（ポリフォニック、ノイズの多いボーカル）、ピッチパネルで選択。' },
+      { text: '<b>チャートデザイナー</b>: ファイル → エクスポート → チャートデザイナー（または分析ツールバー）、ライブプレビュー、白背景エクスポート、論文の図に最適。' },
+      { text: '<b>AI 解釈</b>: 右インスペクター → AI 解釈（Ctrl+I）、スペクトルピーク / ハーモニック / フォーマントを読み取り、Markdown 段落の草稿を作成。' },
+      { text: '<b>白背景エクスポート</b>: グラフのエクスポート（SVG / PDF / PNG）は常に白背景、WYSIWYG（{sc_export}）。' },
+      { text: '<b>ワークスペース切替グループ</b>: ツールバー右側の「バッチ」などの全画面切替は排他制御で、再度クリックすると通常のワークスペースに折りたたみ; 左ペインでファイル / 設定を開く。' },
+      { text: '<b>環境設定</b>: 設定 → 環境設定（{sc_settings}）、言語の切り替え（簡体 / 繁体 / EN）、9 種のテーマ、アイコンスタイル。' },
+      { text: '<b>ショートカットキー 3連</b>: スペース = 再生 / 一時停止; Delete = 選択範囲の削除; Shift + ドラッグ = 連動分析ポインタ。' },
+      { text: '<b>もっと詳しく</b>: ヘルプ → ユーザーマニュアル、19 章の完全な説明を含む。' },
+    ],
+    footnote: '完全な説明は <b>ヘルプ → ユーザーマニュアル</b>を参照してください。',
   },}
 
 export function getQuickstart(locale: Locale): QuickstartContent {
-  const k: CoreLocale = locale === 'ko' || locale === 'ja' ? 'en' : locale
-  return QUICK_START[k]
+  return QUICK_START[locale]
 }
