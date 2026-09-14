@@ -34,6 +34,12 @@ const dict = {
       title: '认识 AcouScope · 音析',
       body: 'AcouScope 是面向音乐学、声学与数字人文等领域研究的专业声学分析软件，以严谨的学术态度，将声音的测量、分析与档案化融为一体——从课堂演示、田野采录，到论文配图与长期音档保存，皆能胜任。软件内置三套 SOTA 音高检测引擎（pYIN / SwiftF0 / RMVPE），可按研究场景灵活切换，仅凭 CPU 即可高效推理；其反量化连续音高技术，能够忠实还原微分音与滑音等细微差别；AI 释图与田野元数据导出，字段参考 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等元数据要素（字段对照核对中），支持自定义映射，使分析图表清晰可信，让每段录音皆有据可查、可长期典藏。软件另提供 9 套主题与双语界面（简体中文 / 繁體中文 / English），兼顾学术研究的严谨与日常使用的舒适。',
       spectrum: '单窗口三栏工作台 · 三套音高引擎',
+      quick: [
+        { n: '3×', l: '音高引擎' },
+        { n: '9.2×', l: '倍实时' },
+        { n: '<140MB', l: '峰值内存' },
+        { n: '196s', l: '每 30 分钟' },
+      ],
     },
     pitch: {
       eyebrow: 'PITCH · 音高引擎',
@@ -179,6 +185,7 @@ const dict = {
       rights: '© 2026 缙云声智（Jinyun SonicAI）\n西南大学艺术人类学研究所 · 西南大学中国音乐心理健康研究所',
       special: '谨以此软件，特别鸣谢并献予音乐声学领军学者、国务院特殊津贴专家：韩宝强 教授。',
       version: 'v0.99.20260904',
+      licenseValue: '开源可审计 · GPL-3.0-only',
     },
     changelog: {
       eyebrow: 'CHANGELOG · 开发日志',
@@ -215,6 +222,12 @@ const dict = {
       title: '認識 AcouScope · 音析',
       body: 'AcouScope 是面向音樂學、聲學與數位人文等領域研究的專業聲學分析軟體，以嚴謹的學術態度，將聲音的測量、分析與檔案化融為一體——從課堂示範、田野採錄，到論文配圖與長期音檔保存，皆能勝任。軟體內建三套 SOTA 音高檢測引擎（pYIN / SwiftF0 / RMVPE），可按研究場景靈活切換，僅憑 CPU 即可高效推理；其反量化連續音高技術，能夠忠實還原微分音與滑音等細微差別；AI 釋圖與田野元資料匯出，字段參考 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等元資料要素（字段對照核對中），支援自訂映射，使分析圖表清晰可信，讓每段錄音皆有據可查、可長期典藏。軟體另提供 9 套主題與雙語介面（簡體中文 / 繁體中文 / English），兼顧學術研究的嚴謹與日常使用的舒適。',
       spectrum: '單視窗三欄工作台 · 三套音高引擎',
+      quick: [
+        { n: '3×', l: '音高引擎' },
+        { n: '9.2×', l: '倍實時' },
+        { n: '<140MB', l: '峰值記憶體' },
+        { n: '196s', l: '每 30 分鐘' },
+      ],
     },
     pitch: {
       eyebrow: 'PITCH · 音高引擎',
@@ -320,6 +333,7 @@ const dict = {
       rights: '© 2026 縉雲聲智（Jinyun SonicAI）\n西南大學藝術人類學研究所 · 西南大學中國音樂心理健康研究所',
       special: '謹以此軟體，特別鳴謝並獻予音樂聲學領軍學者、國務院特殊津貼專家：韓寶強 教授。',
       version: 'v0.99.20260904',
+      licenseValue: '開源可審計 · GPL-3.0-only',
     },
     changelog: {
       eyebrow: 'CHANGELOG · 開發日誌',
@@ -356,6 +370,12 @@ const dict = {
       title: 'Meet AcouScope',
       body: 'AcouScope is a professional acoustic analysis application for research across musicology, acoustics and the digital humanities. With a rigorous, scholarly approach, it unites the measurement, analysis and archiving of sound — from classroom demonstration and fieldwork capture to publication figures and long-term audio preservation. Three SOTA pitch-detection engines (pYIN / SwiftF0 / RMVPE) switch flexibly by research scenario and run efficiently on CPU alone; its de-quantized continuous-pitch technology faithfully preserves the subtle nuances of microtones and glides; AI interpretation and field-metadata export reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, making analysis figures clear and trustworthy and every recording traceable and durably storable. Nine themes and a bilingual interface (Simplified & Traditional Chinese / English) balance scholarly rigor with everyday comfort.',
       spectrum: 'Single-window three-pane workspace · three pitch engines',
+      quick: [
+        { n: '3×', l: 'Pitch engines' },
+        { n: '9.2×', l: 'Realtime' },
+        { n: '<140MB', l: 'Peak memory' },
+        { n: '196s', l: 'Per 30-min' },
+      ],
     },
     pitch: {
       eyebrow: 'PITCH · ENGINES',
@@ -491,6 +511,7 @@ const dict = {
       rights: '© 2026 Jinyun SonicAI\nSouthwest University Art Anthropology Institute · Southwest University China Music Mental Health Institute',
       special: 'Dedicated with gratitude to the leading scholar in musical acoustics and expert of the State Council Special Allowance: Prof. Han Baoqiang.',
       version: 'v0.99.20260904',
+      licenseValue: 'Open-source & auditable · GPL-3.0-only',
     },
     changelog: {
       eyebrow: 'CHANGELOG',
@@ -510,145 +531,152 @@ const dict = {
       title: 'AcouScope — 소리의 측정을 기록하고, 증거를 보존하다 | Jinyun SonicAI',
       desc: '음악학·음향학·디지털 휴머니티스 연구 분야를 위한 차세대 음향 분석 엔진: 3개의 SOTA 피치 엔진, 3패널 워크스페이스, 로컬 AI 차트 해석, 필드 메타데이터 내보내기 — 사양이 낮은 기기에서도 부드럽게 동작합니다.',
     },
-    brand: { name: 'Jinyun SonicAI', en: 'Jinyun SonicAI' }, // TODO(ko)
+    brand: { name: 'Jinyun SonicAI', en: 'Jinyun SonicAI' },
     nav: { product: '제품', features: '기능', vision: '비전', download: '다운로드', changelog: '개발 로그', help: '도움말' },
     hero: {
-      badge: 'Sound research · archivable & traceable · reference to international & Chinese archive metadata elements', // TODO(ko)
-      slogan: 'Measure why it sounds, preserve why it endures.', // TODO(ko)
-      subtitle: 'AcouScope is a next-generation acoustic analysis engine for research fields such as musicology, acoustics and the digital humanities. Whether you are an ethnomusicologist tracing a guqin’s harmonics, a vocal researcher analyzing a singer’s microtones, or an audio engineer measuring a room’s reverb, it turns your auditory intuition into measurable, citable, reproducible acoustic evidence. Exported fields reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, so every recording stays archivable long-term and traceable. The three-pane workspace keeps spectrum, spectrogram and 3D views at hand, so analysis stays smooth and unbroken.', // TODO(ko)
-      cta1: 'Coming soon', // TODO(ko)
-      cta2: 'Explore three pitch engines', // TODO(ko)
-      version: 'v0.99.20260904', // TODO(ko)
-      chip: 'SOTA deep-learning core · single-window three-pane workspace · local AI interpretation', // TODO(ko)
+      badge: '소리 연구 · 아카이빙 가능, 추적 가능 · 국제 및 중국 아카이브 메타데이터 요소 참조',
+      slogan: '소리의 측정을 기록하고, 증거를 보존하다.',
+      subtitle: 'AcouScope는 음악학·음향학·디지털 휴머니티스 연구 분야를 위한 차세대 음향 분석 엔진입니다. 거금의 하모닉스를 연구하는 민족음악학자, 창법의 피치를 분석하는 성악 연구자, 연습실의 잔향을 측정하는 오디오 엔지니어든, 듣기 직관을 정량화·인용·재현 가능한 음향 증거로 번역합니다. 내보내기 필드는 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 등 메타데이터 요소를 참조(필드 대조 확인 진행 중)하며 사용자 정의 매핑을 지원하여, 모든 녹음이 장기 아카이빙되고 추적 가능하게 합니다. 3패널 워크스페이스로 스펙트럼·스펙트로그램·3D 뷰를 언제든 열어, 연구 정리를 한 번에 끝냅니다.',
+      cta1: '출시 예정',
+      cta2: '3종 피치 엔진 보기',
+      version: 'v0.99.20260904',
+      chip: 'SOTA 딥러닝 기반 · 단일 창 3패널 워크스페이스 · 로컬 AI 해석',
     },
     product: {
-      label: 'FOR MUSICOLOGY & DIGITAL HUMANITIES', // TODO(ko)
-      title: 'Meet AcouScope', // TODO(ko)
-      body: 'AcouScope is a professional acoustic analysis application for research across musicology, acoustics and the digital humanities. With a rigorous, scholarly approach, it unites the measurement, analysis and archiving of sound — from classroom demonstration and fieldwork capture to publication figures and long-term audio preservation. Three SOTA pitch-detection engines (pYIN / SwiftF0 / RMVPE) switch flexibly by research scenario and run efficiently on CPU alone; its de-quantized continuous-pitch technology faithfully preserves the subtle nuances of microtones and glides; AI interpretation and field-metadata export reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, making analysis figures clear and trustworthy and every recording traceable and durably storable. Nine themes and a bilingual interface (Simplified & Traditional Chinese / English) balance scholarly rigor with everyday comfort.', // TODO(ko)
-      spectrum: 'Single-window three-pane workspace · three pitch engines', // TODO(ko)
+      label: '음악학과 디지털 휴머니티스를 위한',
+      title: 'AcouScope를 만나다',
+      body: 'AcouScope는 음악학·음향학·디지털 휴머니티스 등 분야 연구를 위한 전문 음향 분석 소프트웨어로, 엄격한 학술 태도로 소리의 측정·분석·아카이빙을 하나로 통합합니다 — 강의실 데모, 필드 채록부터 논문 도표와 장기 음원 보존까지 모두 소화합니다. 소프트웨어에는 3개의 SOTA 피치 탐지 엔진(pYIN / SwiftF0 / RMVPE)이 내장되어 연구 시나리오에 따라 유연하게 전환되며, CPU만으로 고효율 추론이 가능합니다. 탈양자화 연속 피치 기술은 미세음과 글라이드 같은 미묘한 차이를 충실히 복원하고, AI 해석과 필드 메타데이터 내보내기는 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 등 메타데이터 요소를 참조(필드 대조 확인 진행 중)하며 사용자 정의 매핑을 지원하여, 분석 차트가 명확하고 신뢰할 수 있게 하며 모든 녹음이 근거를 갖고 장기 보존되게 합니다. 소프트웨어는 9종 테마와 이중 언어 인터페이스(간체 중국어 / 번체 중국어 / English)를 제공하여, 학술 연구의 엄격함과 일상 사용의 편안함을 모두 챙깁니다.',
+      spectrum: '단일 창 3패널 워크스페이스 · 3종 피치 엔진',
+      quick: [
+        { n: '3×', l: '피치 엔진' },
+        { n: '9.2×', l: '실시간 배수' },
+        { n: '<140MB', l: '피크 메모리' },
+        { n: '196s', l: '30분당' },
+      ],
     },
     pitch: {
-      eyebrow: 'PITCH · ENGINES', // TODO(ko)
-      title: 'Three SOTA pitch-detection engines', // TODO(ko)
-      subtitle: 'Switch freely by research scenario, on pure-CPU inference — from streaming preview to a weak device in the field.', // TODO(ko)
-      common: 'Pure-CPU ONNX inference · 30-min recording in ~196 s · peak memory < 140 MB', // TODO(ko)
+      eyebrow: 'PITCH · 피치 엔진',
+      title: '3개의 SOTA 피치 탐지 엔진',
+      subtitle: '연구 시나리오에 따라 자유롭게 전환, 순수 CPU 추론 — 스트리밍 미리보기부터 필드의 사양 낮은 기기까지 가볍게 소화합니다.',
+      common: '순수 CPU ONNX 추론 · 30분 장시간 녹음 약 196초 분석 · 피크 메모리 < 140MB',
       engines: [
-        { name: 'pYIN', role: 'Classic algorithm · probabilistic YIN', acc: '20-cent resolution', use: 'Streaming preview, live analysis' }, // TODO(ko)
-        { name: 'SwiftF0', role: 'Deep neural model · monophonic pitch', acc: '90.2% HM · 9.2× realtime', use: '95k-param lightweight model, ideal for weak devices' }, // TODO(ko)
-        { name: 'RMVPE', role: 'Deep neural model · polyphonic vocal', acc: 'Robust in polyphonic / noisy settings', use: 'Robust vocal pitch estimation in polyphonic music' }, // TODO(ko)
+        { name: 'pYIN', role: '고전 알고리즘 · 확률화 YIN', acc: '20 cent 해상도', use: '스트리밍 미리보기, 실시간 분석' },
+        { name: 'SwiftF0', role: '딥 뉴럴 모델 · 단음 피치', acc: '90.2% HM 정확도 · 9.2× 고배 실시간', use: '9.5만 파라미터 경량 모델, 사양 낮은 기기의 첫 선택' },
+        { name: 'RMVPE', role: '딥 뉴럴 모델 · 복음 보컬', acc: '복음 / 소음 환경에서 안정적', use: '복음 음악에서 안정적인 보컬 기본주파수 추정' },
       ],
     },
     features: {
-      eyebrow: 'ACOUSTIC · CORE ENGINE', // TODO(ko)
-      title: 'Use science to recover the details sound hides.', // TODO(ko)
-      desc: 'From the SOTA pitch core to a pro-grade workspace, every detail is designed for field research and academic writing — not just to "see", but to cite and reproduce.', // TODO(ko)
+      eyebrow: 'ACOUSTIC · 코어 엔진',
+      title: '과학으로, 소리에 숨겨진 세부 사항을 복원합니다.',
+      desc: 'SOTA 피치 코어부터 프로급 3패널 워크스페이스까지, 모든 세부 사항은 필드 연구와 학술 작성을 위해 설계되었습니다 — “보이는” 것을 넘어 “인용·재현 가능한” 것을 위해.',
       items: [
-        { title: 'Three SOTA pitch engines', desc: 'pYIN (streaming/live, 20-cent resolution), SwiftF0 (95k params, 9.2× realtime, 90.2% HM) and RMVPE (polyphonic/noisy vocal) switch per scenario, all on pure-CPU ONNX.', tag: 'pYIN · SwiftF0 · RMVPE' }, // TODO(ko)
-        { title: 'Single-window three-pane workspace', desc: 'The new 0.99 UI: left analysis nav for 7 views (auto-checked when analyzed), a central stacked canvas, and a right inspector with live readings. Pane widths, collapses and last view restore on restart.', tag: 'Workspace' }, // TODO(ko)
-        { title: 'De-quantized continuous pitch', desc: 'Parabolic interpolation + expectation method outputs continuous Hz, faithfully capturing microtones and glides.', tag: 'Microtone' }, // TODO(ko)
-        { title: 'Local AI chart interpretation', desc: 'One click on "AI Interpret" sends the current view with sample rate, F0, cents and confidence to an on-device model, streaming an academic reading you can keep asking — private, offline.', tag: 'AI Insight' }, // TODO(ko)
-        { title: 'Export referencing international & Chinese metadata elements', desc: 'Exported fields reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported; one-click field-report export (JSON / XML / CSV): archive no., project, informant, capture time, region, category, technical info — every recording verifiable, durable and traceable, ready for journals and archives.', tag: 'Metadata elements · custom mapping' }, // TODO(ko)
-        { title: 'Runs on weak devices', desc: 'No Python environment setup required, models are downloaded automatically on first use and can then run offline, bundled FFmpeg, vectorized DSP and streaming — analyze a 30-minute recording offline on old hardware.', tag: 'Offline after first run' }, // TODO(ko)
+        { title: '3개의 SOTA 피치 엔진', desc: 'pYIN(스트리밍/실시간, 20 cent 해상도), SwiftF0(9.5만 파라미터, 9.2× 실시간, 90.2% HM 정확도), RMVPE(복음·소음 보컬 추출)를 시나리오에 따라 자유롭게 전환, 순수 CPU ONNX 추론.', tag: 'pYIN · SwiftF0 · RMVPE 3종' },
+        { title: '단일 창 3패널 워크스페이스', desc: '0.99 신규 인터페이스: 왼쪽 분석 내비게이션 7개 뷰 원클릭 전환(분석 완료 자동 체크), 중앙 캔버스 스택, 오른쪽 인스펙터 실시간 읽기값. 패널 너비, 접힘 상태, 마지막 뷰 — 재시작 시 작업 현장 그대로 복원.', tag: 'Workspace' },
+        { title: '탈양자화 연속 피치', desc: '파라볼라 보간 + 기댓값법으로 연속 Hz를 출력하여, 미세음과 글라이드 같은 미묘한 차이를 충실히 기록합니다.', tag: 'Microtone' },
+        { title: '로컬 AI 학술 해석', desc: '오른쪽에서 “AI 해석”을 클릭하면, 샘플링 레이트·기본주파수·센트 등 수치 컨텍스트를 기종 내 모델에 보내 학술 해석을 스트리밍 생성하며 연속으로 더 질문할 수 있습니다 — 개인정보는 기기를 벗어나지 않고, 오프라인에서도 사용 가능합니다.', tag: 'AI Insight' },
+        { title: '국내외 메타데이터 요소 참조 내보내기', desc: '내보내기 필드는 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 등 메타데이터 요소를 참조(필드 대조 확인 진행 중)하며 사용자 정의 매핑을 지원합니다; 원클릭 필드 보고서 내보내기(JSON / XML / CSV): 아카이브 번호, 프로젝트명, 전승자, 채집 시간, 지역, 분류, 기술 정보 — 모든 소리가 근거를 갖고 장기 아카이빙·추적 가능하게 하며, 학술지와 아카이브에 바로 제출할 수 있습니다.', tag: '메타데이터 요소 · 사용자 정의 매핑' },
+        { title: '극한 사양 낮은 기기 대응', desc: 'Python 실행 환경 설정 불필요, 첫 사용 시 모델 자동 다운로드, 이후 오프라인 사용 가능, FFmpeg 내장, 벡터화 DSP와 스트리밍 처리 — 필드에 네트워크가 없고 기기가 오래돼도 30분 장시간 녹음을 부드럽게 분석합니다.', tag: '오프라인 사용 가능' },
       ],
     },
     screenshots: {
-      eyebrow: 'INTERFACE · AT A GLANCE', // TODO(ko)
-      title: 'Three panes, one view into the texture of sound.', // TODO(ko)
-      subtitle: 'Spectrum, spectrogram and 3D waterfall — always ready, never losing state, like a professional DAW for your sound research.', // TODO(ko)
-      zoom: 'Zoom in', // TODO(ko)
-      close: 'Close', // TODO(ko)
-      prev: 'Previous', // TODO(ko)
-      next: 'Next', // TODO(ko)
-      panes: [ {label:'Analysis navigation',desc:'Switch among 7 views with one click; analyzed views auto-check'}, {label:'Center canvas stack',desc:'Spectrum / spectrogram / 3D stay side by side, state always preserved'}, {label:'Inspector · AI',desc:'Live readings of view / selection / analysis window / playback / audio params'} ], // TODO(ko)
-      shots: [ {alt:'FFT spectrum and note annotation interface (three-pane workspace)',label:'FFT · Spectrum & Notation'}, {alt:'Realtime features four-pane interface',label:'Realtime · Four-pane monitor'}, {alt:'3D spectrogram interface',label:'3D Spectrogram · Waterfall'} ], // TODO(ko)
+      eyebrow: 'INTERFACE · 인터페이스 한눈에',
+      title: '한 화면 3패널, 소리의 질감을 끝까지 봅니다.',
+      subtitle: '스펙트럼·스펙트로그램부터 3D 워터폴까지, 언제든 열어 상태가 절대 안 사라집니다 — 프로 DAW를 다루듯 소리 자료를 정리하세요.',
+      zoom: '확대 보기',
+      close: '닫기',
+      prev: '이전',
+      next: '다음',
+      panes: [ {label:'분석 내비게이션',desc:'7개 뷰 원클릭 전환, 분석 완료 자동 체크'}, {label:'중앙 캔버스 스택',desc:'스펙트럼 / 스펙트로그램 / 3D를 같은 화면에 상시 배치, 떠났다 돌아와도 그대로'}, {label:'인스펙터 · AI',desc:'현재 뷰 / 선택 영역 / 분석 창 / 재생 위치 / 오디오 파라미터 실시간 읽기값'} ],
+      shots: [ {alt:'FFT 스펙트럼과 악보 주석 인터페이스（3패널 워크스페이스）',label:'FFT · 스펙트럼과 악보'}, {alt:'실시간 특징 4창 인터페이스',label:'실시간 특징 · 4창 모니터링'}, {alt:'3D 스펙트로그램 인터페이스',label:'3D 스펙트로그램 · 워터폴'} ],
     },
     charts: {
-      eyebrow: 'DATA · INSIGHTS', // TODO(ko)
-      title: 'Turning facts into trustworthy evidence.', // TODO(ko)
-      desc: 'These figures are research-oriented, verifiable and reproducible — from nine analysis modules to cross-platform, from test coverage to flagship features.', // TODO(ko)
-      c1t: 'Nine analysis modules, four capability families', // TODO(ko)
-      c1s: 'One hairline = one analysis module · bubble size = module count · Time-domain / Frequency·Spectrum / Pitch·Voice / Space·Realtime', // TODO(ko)
-      c2t: 'Three operating systems, one complete capability', // TODO(ko)
-      c2s: 'macOS · Windows · Linux · all filled = supported', // TODO(ko)
-      c3t: '2148 automated tests, reproducible results', // TODO(ko)
-      c3s: 'algorithm · audio I/O · UI · every analysis verified', // TODO(ko)
-      c4t: 'Two flagship features for a researcher’s paper', // TODO(ko)
-      c4s: 'Publication-grade figures + AI interpretation · target CSSCI / SCI · gold = flagship', // TODO(ko)
-      c5t: 'A trustworthy research tool', // TODO(ko)
-      c5s: 'Core algorithms built in-house · open-source & auditable · GPL-3.0-only · stands up to peer review', // TODO(ko)
-      fam_label: 'Bubble size = number of analysis modules · gold = family with most modules', // TODO(ko)
-      fam: ['Time-domain', 'Frequency·Spectrum', 'Pitch·Voice', 'Space·Realtime'], // TODO(ko)
-      engines: ['Waveform', 'FFT Spectrum', 'Spectrogram', '3D Spectrogram', 'Pitch', 'Formant', 'Timbre', 'Realtime', 'Room Mode'], // TODO(ko)
-      cap: ['Waveform', 'FFT', 'Spectrogram', 'Pitch·Formant', '3D', 'Realtime'], // TODO(ko)
-      omarchy: 'First to support Omarchy', // TODO(ko)
-      mods: ['Wave', 'FFT', 'Spec', 'Pitch', 'Formant', 'Timbre', '3D', 'Live', 'AI'], // TODO(ko)
-      testsLabel: 'automated tests · pytest', // TODO(ko)
+      eyebrow: 'DATA · 데이터와 인사이트',
+      title: '사실을, 신뢰할 수 있는 증거로 그립니다.',
+      desc: '다음 데이터는 연구 시나리오를 위해, 전부 검증·재현 가능합니다 — 9대 분석 모듈부터 크로스 플랫폼까지, 테스트 규모부터 플래그십 셀링 포인트까지.',
+      c1t: '9대 분석 모듈, 4대 능력 패밀리',
+      c1s: '머리카락 한 올 = 분석 모듈 1개 · 버블 크기 = 해당 모듈 수 · 시영역 / 주파수영역·스펙트럼 / 피치·목소리 / 공간·실시간',
+      c2t: '3대 운영체제, 하나의 완전한 능력',
+      c2s: 'macOS · Windows · Linux · 전부 채움 = 지원',
+      c3t: '2148개 자동화 테스트, 재현 가능한 결과',
+      c3s: 'algorithm · audio I/O · UI · 모든 분석 항목 검증 완료',
+      c4t: '연구자 한 명의 논문을 위한 2대 플래그십',
+      c4s: '출판급 도표 + AI 해석 · CSSCI / SCI 바로 투고 · gold = 플래그십/출판급',
+      c5t: '신뢰할 수 있는 연구 도구 하나',
+      c5s: '핵심 알고리즘 전부 자체 개발 · 오픈소스 감사 가능 · GPL-3.0-only · 동료 심사 검토를 견뎌냄',
+      fam_label: '버블 크기 = 분석 모듈 수　·　금색 = 분석이 가장 많은 능력 패밀리',
+      fam: ['시영역', '주파수영역·스펙트럼', '피치·목소리', '공간·실시간'],
+      engines: ['웨이브폼 분석', 'FFT 스펙트럼', '스펙트로그램', '3D 스펙트로그램', '피치 분석', '포먼트 분석', '음색 분석', '실시간 특징', '룸 모드 분석'],
+      cap: ['웨이브폼', 'FFT', '스펙트로그램', '피치·포먼트', '3D 스펙트럼', '실시간'],
+      omarchy: 'Omarchy 최초 지원',
+      mods: ['웨이브', 'FFT', '스펙트', '피치', '포먼트', '음색', '3D', '라이브', 'AI'],
+      testsLabel: '개 자동화 테스트 · pytest',
       trust: [
-        { n: '9', label: 'analysis modules', tag: 'Analysis Modules' }, // TODO(ko)
-        { n: '9', label: 'academic themes', tag: 'Themes' }, // TODO(ko)
-        { n: '3', label: 'interface languages', tag: '简体 / 繁體 / EN' }, // TODO(ko)
-        { n: '2148', label: 'automated tests', tag: 'Automated Tests' }, // TODO(ko)
-        { n: '5', label: 'install types', tag: 'Platforms' }, // TODO(ko)
+        { n: '9', label: '대 분석 모듈', tag: 'Analysis Modules' },
+        { n: '9', label: '종 학술 테마', tag: 'Themes' },
+        { n: '3', label: '종 인터페이스 언어', tag: '간체 / 번체 / EN' },
+        { n: '2148', label: '개 자동화 테스트', tag: 'Automated Tests' },
+        { n: '5', label: '종 설치 형태', tag: 'Platforms' },
       ],
       flag: [
-        { badge: 'FLAGSHIP 01', title: 'Publication-grade figures', hook: 'Figures ready for your paper, no further fixes at your defense.', points: ['WYSIWYG export — SVG / PDF vector + PNG bitmap', 'Publication-grade fonts & palettes, CJK and notation stay crisp', 'Custom resolution & size, target CSSCI / SCI', 'One figure with a caption; numbering & notes handled'], stats: [{ n: '6', l: 'Formats' }, { n: '300', l: 'DPI' }] }, // TODO(ko)
-        { badge: 'FLAGSHIP 02', title: 'AI interpretation', hook: 'It reads your spectrum like an academic reviewer.', points: ['Auto-detects spectral peaks, harmonic series and formants, explained in scholarly terms', 'Drafts analysis paragraphs you can drop into your paper', 'Switches language for international submissions', 'Suggests what to examine next'], stats: [{ n: 'Multi', l: 'Providers' }, { n: '30', l: 'AI tests' }] }, // TODO(ko)
+        { badge: '플래그십 01', title: '출판급 도표', hook: '논문에서 바로 쓸 수 있는 도표, 발표 때 다시 고칠 필요 없음.', points: ['내보내기가 보이는 것과 완전히 일치, SVG / PDF 벡터 + PNG 비트맵 선택 가능', '출판급 폰트와 색상을 내장하여, 중국어와 악보 기호가 어긋나거나 흐려지지 않음', '해상도와 도표 크기 사용자 지정, CSSCI / SCI 바로 투고', '도표 하나에 설명 하나, 도표 번호와 주석은 이 도구가 관리'], stats: [{ n: '6', l: '내보내기 형식' }, { n: '300', l: 'DPI 조절 가능' }] },
+        { badge: '플래그십 02', title: 'AI 해석', hook: '학술 심사자의 시선으로, 당신의 스펙트럼을 읽습니다.', points: ['스펙트럼 피크, 하모닉 계열과 포먼트 구조를 자동 식별하여, 중국어 학술 맥락으로 설명', '논문으로 바로 쓸 수 있는 분석 문단 초안을 제공하여, 글쓰기 공수를 절반으로', '이중 언어 전환 출력, 국제 학회 투고를 직접 번역할 필요 없음', '제시 가능한 연구 제안, 다음에 어디를 볼지 알려 줌'], stats: [{ n: '다수', l: 'Provider 선택 가능' }, { n: '30', l: 'AI 테스트 항목' }] },
       ],
-      rowPrec: 'Accuracy', // TODO(ko)
-      rowUse: 'Use case', // TODO(ko)
-      stdArchive: 'Referenced metadata elements', // TODO(ko)
-      stdArchiveNote: 'Field-by-field mapping under review (no conformance claim)', // TODO(ko)
-      pitchEng: 'Pitch engines', // TODO(ko)
+      rowPrec: '정확도',
+      rowUse: '적용 시나리오',
+      stdArchive: '참조한 메타데이터 요소',
+      stdArchiveNote: '필드 대조 확인 진행 중(표준 관련 선언을 하지 않음)',
+      pitchEng: '피치 엔진',
     },
     vision: {
-      eyebrow: 'A VOICE FOR SOUND · OUR VISION', // TODO(ko)
-      title: 'About Jinyun SonicAI', // TODO(ko)
-      quote: '“We believe sound holds a culture’s aesthetic and an era’s memory — and a great tool makes that evidence seen, cited and preserved.”', // TODO(ko)
-      bodyTop: 'Jinyun SonicAI is one of the brands launched by the Southwest University Musical Acoustics Lab for innovative applications, focused on the intersection of musical acoustics, music technology, digital humanities and AI research.', // TODO(ko)
-      bodyBottom: 'AcouScope is the studio’s acoustic analysis engine for music and sound research — delivering the complete workflow from field recording to published figures in one application.', // TODO(ko)
-      badges: ['Southwest University', 'Musical Acoustics · Digital Humanities', 'Open-source & auditable · GPL-3.0-only'], // TODO(ko)
+      eyebrow: '소리를 위해 전기를 세우다 · 스튜디오 비전',
+      title: 'Jinyun SonicAI 소개',
+      quote: '“우리는 믿습니다. 소리 안에는 한 민족의 미감과 한 시대의 기억이 숨어 있으며, 좋은 도구는 이 증거가 보이고, 인용되고, 전승되게 합니다.”',
+      bodyTop: 'Jinyun SonicAI는 서남대학교 음악음향학 실험실이 혁신적 응용 실현을 위해 세운 브랜드 중 하나로, 음악음향학·음악기술·디지털 휴머니티스와 AI 응용의 교차 연구를 전문으로 합니다.',
+      bodyBottom: 'AcouScope는 스튜디오가 음악과 소리 연구를 위해 온 힘을 다해 만든 분석 엔진입니다 — 연구, 교육, 창작 모두 하나의 소프트웨어로 필드 채집부터 논문 출판까지 전 과정을 완수할 수 있습니다.',
+      badges: ['서남대학교', '음악음향학 · 디지털 휴머니티스', '오픈소스 감사 가능 · GPL-3.0-only'],
     },
     stats: {
-      engines: 'pitch engines', // TODO(ko)
-      tests: 'automated tests', // TODO(ko)
-      realtime: '× realtime', // TODO(ko)
-      themes: 'themes', // TODO(ko)
+      engines: '종 피치 엔진',
+      tests: '개 자동화 테스트',
+      realtime: '배 실시간',
+      themes: '종 학술 테마',
     },
     download: {
-      eyebrow: 'DOWNLOAD', // TODO(ko)
-      title: 'Download AcouScope', // TODO(ko)
-      subtitle: 'Native macOS release (arm64 / x86_64); other platform builds ready in parallel.', // TODO(ko)
-      heroBtn: 'Coming soon', // TODO(ko)
-      recommend: 'Recommended for you', // TODO(ko)
-      allTitle: 'All platforms & builds', // TODO(ko)
-      coming: 'Coming soon', // TODO(ko)
-      note: 'GPL-3.0-only · open-source & auditable · optional sponsorship', // TODO(ko)
-      releaseHint: 'Download links will be provided at the official release.', // TODO(ko)
+      eyebrow: 'DOWNLOAD',
+      title: 'AcouScope 다운로드',
+      subtitle: 'macOS 네이티브 첫 출시(arm64 / x86_64), 나머지 플랫폼 빌드 패키지는 동시에 준비 완료.',
+      heroBtn: '출시 예정',
+      recommend: '추천',
+      allTitle: '전체 플랫폼과 버전',
+      coming: '출시 예정',
+      note: 'GPL-3.0-only · 오픈소스 감사 가능 · 필요에 따른 후원',
+      releaseHint: '다운로드 주소를 정식 출시 시 제공하겠습니다.',
     },
     cta: {
-      title: 'Make every sound citable evidence.', // TODO(ko)
-      subtitle: 'For research across musicology, acoustics and the digital humanities — from measurement to archiving in one go.', // TODO(ko)
-      button: 'See download options', // TODO(ko)
+      title: '모든 소리를, 인용 가능한 증거로.',
+      subtitle: '음악학·음향학·디지털 휴머니티스 연구를 위해, 측정부터 아카이빙까지 한 번에.',
+      button: '다운로드 방법 보기',
     },
     footer: {
       tagline: '소리의 측정을 기록하고, 증거를 보존하다.',
       contact: '연락처',
       license: '라이선스',
-      rights: '© 2026 Jinyun SonicAI\nSouthwest University Art Anthropology Institute · Southwest University China Music Mental Health Institute', // TODO(ko)
-      special: 'Dedicated with gratitude to the leading scholar in musical acoustics and expert of the State Council Special Allowance: Prof. Han Baoqiang.', // TODO(ko)
-      version: 'v0.99.20260904', // TODO(ko)
+      rights: '© 2026 Jinyun SonicAI\n서남대학교 예술인류학 연구소 · 서남대학교 중국음악심리건강 연구소',
+      special: '이 소프트웨어로, 음악음향학의 선구적 학자이자 국무원 특별 보조금 전문가 한보강(韩宝强) 교수께 감사와 헌사를 전합니다.',
+      version: 'v0.99.20260904',
+      licenseValue: '오픈소스·감사 가능 · GPL-3.0-only',
     },
     changelog: {
-      eyebrow: 'CHANGELOG', // TODO(ko)
-      headline: 'v0.98 → v0.99, nine categories of updates', // TODO(ko)
-      legend: '★ marks the headline items of this release; one line each, numbers consistent with the rest of the site.', // TODO(ko)
+      eyebrow: 'CHANGELOG · 개발 로그',
+      headline: 'v0.98 → v0.99, 9개 카테고리 업데이트',
+      legend: '★는 이번 버전의 헤드라인(가장 먼저 보셔야 합니다); 항목당 한 줄, 숫자는 사이트 전체와 일치.',
     },
     help: {
-      eyebrow: 'HELP', // TODO(ko)
-      headline: 'Quick start: fourteen steps to get going', // TODO(ko)
-      legend: 'Mirrored word for word from the in-app Help → Quick Start (14 items per language).', // TODO(ko)
-      shortcutsTitle: 'Keyboard shortcuts', // TODO(ko)
-      shortcutsNote: 'On macOS, Ctrl corresponds to Cmd; “Redo” is Cmd+Shift+Z on macOS.', // TODO(ko)
+      eyebrow: 'HELP · 도움말',
+      headline: '빠른 시작: 14단계로 익히기',
+      legend: '내용은 AcouScope 앱 내「도움말 → 빠른 시작」을 그대로 반영(3개 언어 각각 14개 항목, 문자 그대로 일치).',
+      shortcutsTitle: '단축키 설명',
+      shortcutsNote: 'macOS에서는 Ctrl이 Cmd에 해당합니다; 이 중「다시 실행(Redo)」은 macOS에서 Cmd+Shift+Z입니다.',
     },
   },
   ja: {
@@ -656,145 +684,152 @@ const dict = {
       title: 'AcouScope — 音の測定を記録し、証拠を保存する | Jinyun SonicAI',
       desc: '音楽学・音響学・デジタル・ヒューマニティーズ研究のための次世代音響分析エンジン：3つのSOTAピッチエンジン、3ペインワークスペース、ローカルAIチャート解釈、フィールドメタデータエクスポート——低スペックのデバイスでもスムーズに動作します。',
     },
-    brand: { name: 'Jinyun SonicAI', en: 'Jinyun SonicAI' }, // TODO(ja)
+    brand: { name: 'Jinyun SonicAI', en: 'Jinyun SonicAI' },
     nav: { product: '製品', features: '機能', vision: 'ビジョン', download: 'ダウンロード', changelog: '開発ログ', help: 'ヘルプ' },
     hero: {
-      badge: 'Sound research · archivable & traceable · reference to international & Chinese archive metadata elements', // TODO(ja)
-      slogan: 'Measure why it sounds, preserve why it endures.', // TODO(ja)
-      subtitle: 'AcouScope is a next-generation acoustic analysis engine for research fields such as musicology, acoustics and the digital humanities. Whether you are an ethnomusicologist tracing a guqin’s harmonics, a vocal researcher analyzing a singer’s microtones, or an audio engineer measuring a room’s reverb, it turns your auditory intuition into measurable, citable, reproducible acoustic evidence. Exported fields reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, so every recording stays archivable long-term and traceable. The three-pane workspace keeps spectrum, spectrogram and 3D views at hand, so analysis stays smooth and unbroken.', // TODO(ja)
-      cta1: 'Coming soon', // TODO(ja)
-      cta2: 'Explore three pitch engines', // TODO(ja)
-      version: 'v0.99.20260904', // TODO(ja)
-      chip: 'SOTA deep-learning core · single-window three-pane workspace · local AI interpretation', // TODO(ja)
+      badge: '音の研究 · アーカイブ可能・トレーサブル · 国際および中国のアーカイブメタデータ要素を参考',
+      slogan: '音の測定を記録し、証拠を保存する。',
+      subtitle: 'AcouScopeは音楽学・音響学・デジタル・ヒューマニティーズ研究のための次世代音響分析エンジンです。古琴のハーモニックを研究する民族音楽学者、歌唱法のピッチを分析する声楽研究者、練習室の残響を測定するオーディオエンジニア——いずれも聴覚の直感を、計測可能・引用可能・再現可能な音響証拠に変換します。エクスポートフィールドは IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等のメタデータ要素を参考（フィールド対照確認は進行中）、カスタムマッピングに対応し、すべての録音を長期アーカイブ・トレーサブルにします。3ペインワークスペースでスペクトル・スペクトログラム・3Dビューをいつでも開け、研究の整理を一気通貫で。',
+      cta1: '近日公開',
+      cta2: '3つのピッチエンジンを詳しく',
+      version: 'v0.99.20260904',
+      chip: 'SOTAディープラーニング基盤 · 単一ウィンドウ3ペインワークスペース · ローカルAI解釈',
     },
     product: {
-      label: 'FOR MUSICOLOGY & DIGITAL HUMANITIES', // TODO(ja)
-      title: 'Meet AcouScope', // TODO(ja)
-      body: 'AcouScope is a professional acoustic analysis application for research across musicology, acoustics and the digital humanities. With a rigorous, scholarly approach, it unites the measurement, analysis and archiving of sound — from classroom demonstration and fieldwork capture to publication figures and long-term audio preservation. Three SOTA pitch-detection engines (pYIN / SwiftF0 / RMVPE) switch flexibly by research scenario and run efficiently on CPU alone; its de-quantized continuous-pitch technology faithfully preserves the subtle nuances of microtones and glides; AI interpretation and field-metadata export reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, making analysis figures clear and trustworthy and every recording traceable and durably storable. Nine themes and a bilingual interface (Simplified & Traditional Chinese / English) balance scholarly rigor with everyday comfort.', // TODO(ja)
-      spectrum: 'Single-window three-pane workspace · three pitch engines', // TODO(ja)
+      label: '音楽学とデジタル・ヒューマニティーズのための',
+      title: 'AcouScope を知る',
+      body: 'AcouScopeは音楽学・音響学・デジタル・ヒューマニティーズなど分野の研究のための専門音響分析ソフトウェアです。厳密な学術的態度で、音の測定・分析・アーカイブを一体化し、教室でのデモ、フィールド採録から論文の図や長期音源保存まで、すべてこなします。3つのSOTAピッチ検出エンジン（pYIN / SwiftF0 / RMVPE）を内蔵し、研究シーンに応じて柔軟に切替可能で、CPUだけで高効率に推論できます。デ量子化連続ピッチ技術は、微分音やグリンドなどの細かな差を忠実に再現し、AI解釈とフィールドメタデータエクスポートは IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等のメタデータ要素を参考（フィールド対照確認は進行中）、カスタムマッピングに対応し、分析図が明確で信頼でき、すべての録音が根拠を伴い長期保存可能にします。さらに9種のテーマと二言語インターフェース（簡体字中国語 / 繁体字中国語 / English）を提供し、学術研究の厳密さと日常使いの快適さを両立します。',
+      spectrum: '単一ウィンドウ3ペインワークスペース · 3つのピッチエンジン',
+      quick: [
+        { n: '3×', l: 'ピッチエンジン' },
+        { n: '9.2×', l: 'リアルタイム倍率' },
+        { n: '<140MB', l: 'ピークメモリ' },
+        { n: '196s', l: '30分あたり' },
+      ],
     },
     pitch: {
-      eyebrow: 'PITCH · ENGINES', // TODO(ja)
-      title: 'Three SOTA pitch-detection engines', // TODO(ja)
-      subtitle: 'Switch freely by research scenario, on pure-CPU inference — from streaming preview to a weak device in the field.', // TODO(ja)
-      common: 'Pure-CPU ONNX inference · 30-min recording in ~196 s · peak memory < 140 MB', // TODO(ja)
+      eyebrow: 'PITCH · ピッチエンジン',
+      title: '3つのSOTAピッチ検出エンジン',
+      subtitle: '研究シーンに応じて自由に切替、純CPU推論 —— ストリーミングプレビューからフィールドの低スペックデバイスまで軽やかに。',
+      common: '純CPU ONNX推論 · 30分の長時間録音で約196秒の分析 · ピークメモリ < 140MB',
       engines: [
-        { name: 'pYIN', role: 'Classic algorithm · probabilistic YIN', acc: '20-cent resolution', use: 'Streaming preview, live analysis' }, // TODO(ja)
-        { name: 'SwiftF0', role: 'Deep neural model · monophonic pitch', acc: '90.2% HM · 9.2× realtime', use: '95k-param lightweight model, ideal for weak devices' }, // TODO(ja)
-        { name: 'RMVPE', role: 'Deep neural model · polyphonic vocal', acc: 'Robust in polyphonic / noisy settings', use: 'Robust vocal pitch estimation in polyphonic music' }, // TODO(ja)
+        { name: 'pYIN', role: '古典アルゴリズム · 確率化YIN', acc: '20 cent分解能', use: 'ストリーミングプレビュー、リアルタイム分析' },
+        { name: 'SwiftF0', role: '深層ニューラルモデル · 単音ピッチ', acc: '90.2% HM精度 · 9.2×ハイリアルタイム', use: '9.5万パラメータの軽量モデル、低スペックデバイスに最適' },
+        { name: 'RMVPE', role: '深層ニューラルモデル · 複音ボーカル', acc: '複音 / ノイズ環境でも安定', use: 'ポリフォニック音楽における安定したボーカル基音推定' },
       ],
     },
     features: {
-      eyebrow: 'ACOUSTIC · CORE ENGINE', // TODO(ja)
-      title: 'Use science to recover the details sound hides.', // TODO(ja)
-      desc: 'From the SOTA pitch core to a pro-grade workspace, every detail is designed for field research and academic writing — not just to "see", but to cite and reproduce.', // TODO(ja)
+      eyebrow: 'ACOUSTIC · コアエンジン',
+      title: '科学で、音に隠された細部を取り戻す。',
+      desc: 'SOTAピッチコアからプロ級3ペインワークスペースまで、すべての細部はフィールド研究と学術ライティングのために設計 —— 「見える」だけでなく「引用可能・再現可能」のために。',
       items: [
-        { title: 'Three SOTA pitch engines', desc: 'pYIN (streaming/live, 20-cent resolution), SwiftF0 (95k params, 9.2× realtime, 90.2% HM) and RMVPE (polyphonic/noisy vocal) switch per scenario, all on pure-CPU ONNX.', tag: 'pYIN · SwiftF0 · RMVPE' }, // TODO(ja)
-        { title: 'Single-window three-pane workspace', desc: 'The new 0.99 UI: left analysis nav for 7 views (auto-checked when analyzed), a central stacked canvas, and a right inspector with live readings. Pane widths, collapses and last view restore on restart.', tag: 'Workspace' }, // TODO(ja)
-        { title: 'De-quantized continuous pitch', desc: 'Parabolic interpolation + expectation method outputs continuous Hz, faithfully capturing microtones and glides.', tag: 'Microtone' }, // TODO(ja)
-        { title: 'Local AI chart interpretation', desc: 'One click on "AI Interpret" sends the current view with sample rate, F0, cents and confidence to an on-device model, streaming an academic reading you can keep asking — private, offline.', tag: 'AI Insight' }, // TODO(ja)
-        { title: 'Export referencing international & Chinese metadata elements', desc: 'Exported fields reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported; one-click field-report export (JSON / XML / CSV): archive no., project, informant, capture time, region, category, technical info — every recording verifiable, durable and traceable, ready for journals and archives.', tag: 'Metadata elements · custom mapping' }, // TODO(ja)
-        { title: 'Runs on weak devices', desc: 'No Python environment setup required, models are downloaded automatically on first use and can then run offline, bundled FFmpeg, vectorized DSP and streaming — analyze a 30-minute recording offline on old hardware.', tag: 'Offline after first run' }, // TODO(ja)
+        { title: '3つのSOTAピッチエンジン', desc: 'pYIN（ストリーミング/リアルタイム、20 cent分解能）、SwiftF0（9.5万パラメータ、9.2×リアルタイム、90.2% HM精度）、RMVPE（複音・ノイズの多いボーカル抽出）をシーンに応じて自由に切替、純CPU ONNX推論。', tag: 'pYIN · SwiftF0 · RMVPE 3種' },
+        { title: '単一ウィンドウ3ペインワークスペース', desc: '0.99の新UI：左の分析ナビゲーションで7ビューをワンクリック切替（解析済みは自動チェック）、中央キャンバススタック、右のインスペクターでライブ読み取り。ペイン幅・折りたたみ状態・最終ビュー —— 再起動しても作業現場がそのまま復元。', tag: 'Workspace' },
+        { title: 'デ量子化連続ピッチ', desc: '放物線補間 + 期待値法で連続 Hz を出力し、微分音やグリンドなどの細かな差を忠実に記録。', tag: 'Microtone' },
+        { title: 'ローカルAI学術解釈', desc: '右側で「AI 解釈」をクリックすると、サンプリングレート・基音・セントなどの数値コンテキストを端末内モデルに送り、学術的な読み解きをストリーミング生成、連続で追加質問可能 —— プライバシーは端末の外に出ず、オフラインでも利用可能。', tag: 'AI Insight' },
+        { title: '国内外メタデータ要素を参考にしたエクスポート', desc: 'エクスポートフィールドは IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等のメタデータ要素を参考（フィールド対照確認は進行中）、カスタムマッピングに対応；ワンクリックでフィールドレポートをエクスポート（JSON / XML / CSV）：アーカイブ番号、プロジェクト名、伝承者、採集日時、地域、分類、技術情報 —— すべての音に根拠を持たせ、長期アーカイブ・トレーサブルにし、ジャーナルやアーカイブにそのまま提出可能。', tag: 'メタデータ要素 · カスタムマッピング' },
+        { title: '極限の低スペックデバイス対応', desc: 'Python実行環境の設定不要、初回使用時にモデルを自動ダウンロードし、以降はオフライン利用可能、FFmpeg内蔵、ベクトル化DSPとストリーミング処理 —— フィールドにネットワークが無くても、古いデバイスでも30分の長時間録音をスムーズに分析。', tag: 'オフライン利用可能' },
       ],
     },
     screenshots: {
-      eyebrow: 'INTERFACE · AT A GLANCE', // TODO(ja)
-      title: 'Three panes, one view into the texture of sound.', // TODO(ja)
-      subtitle: 'Spectrum, spectrogram and 3D waterfall — always ready, never losing state, like a professional DAW for your sound research.', // TODO(ja)
-      zoom: 'Zoom in', // TODO(ja)
-      close: 'Close', // TODO(ja)
-      prev: 'Previous', // TODO(ja)
-      next: 'Next', // TODO(ja)
-      panes: [ {label:'Analysis navigation',desc:'Switch among 7 views with one click; analyzed views auto-check'}, {label:'Center canvas stack',desc:'Spectrum / spectrogram / 3D stay side by side, state always preserved'}, {label:'Inspector · AI',desc:'Live readings of view / selection / analysis window / playback / audio params'} ], // TODO(ja)
-      shots: [ {alt:'FFT spectrum and note annotation interface (three-pane workspace)',label:'FFT · Spectrum & Notation'}, {alt:'Realtime features four-pane interface',label:'Realtime · Four-pane monitor'}, {alt:'3D spectrogram interface',label:'3D Spectrogram · Waterfall'} ], // TODO(ja)
+      eyebrow: 'INTERFACE · インターフェース一覧',
+      title: '1画面3ペイン、音の質感を隅々まで。',
+      subtitle: 'スペクトル・スペクトログラムから3Dウォーターフォールまで、いつでも開けて状態は常に保持 —— プロのDAWを扱うように音素材を整理。',
+      zoom: '拡大して見る',
+      close: '閉じる',
+      prev: '前へ',
+      next: '次へ',
+      panes: [ {label:'分析ナビゲーション',desc:'7ビューをワンクリック切替、解析済みは自動チェック'}, {label:'中央キャンバススタック',desc:'スペクトル / スペクトログラム / 3Dを同画面に常駐、離れても戻ればそのまま'}, {label:'インスペクター · AI',desc:'現在のビュー / 選択範囲 / 分析ウィンドウ / 再生位置 / オーディオパラメータのライブ読み取り'} ],
+      shots: [ {alt:'FFTスペクトルと楽譜注釈インターフェース（3ペインワークスペース）',label:'FFT · スペクトルと楽譜'}, {alt:'リアルタイム特徴4ペインインターフェース',label:'リアルタイム特徴 · 4ペイン監視'}, {alt:'3Dスペクトログラムインターフェース',label:'3Dスペクトログラム · ウォーターフォール'} ],
     },
     charts: {
-      eyebrow: 'DATA · INSIGHTS', // TODO(ja)
-      title: 'Turning facts into trustworthy evidence.', // TODO(ja)
-      desc: 'These figures are research-oriented, verifiable and reproducible — from nine analysis modules to cross-platform, from test coverage to flagship features.', // TODO(ja)
-      c1t: 'Nine analysis modules, four capability families', // TODO(ja)
-      c1s: 'One hairline = one analysis module · bubble size = module count · Time-domain / Frequency·Spectrum / Pitch·Voice / Space·Realtime', // TODO(ja)
-      c2t: 'Three operating systems, one complete capability', // TODO(ja)
-      c2s: 'macOS · Windows · Linux · all filled = supported', // TODO(ja)
-      c3t: '2148 automated tests, reproducible results', // TODO(ja)
-      c3s: 'algorithm · audio I/O · UI · every analysis verified', // TODO(ja)
-      c4t: 'Two flagship features for a researcher’s paper', // TODO(ja)
-      c4s: 'Publication-grade figures + AI interpretation · target CSSCI / SCI · gold = flagship', // TODO(ja)
-      c5t: 'A trustworthy research tool', // TODO(ja)
-      c5s: 'Core algorithms built in-house · open-source & auditable · GPL-3.0-only · stands up to peer review', // TODO(ja)
-      fam_label: 'Bubble size = number of analysis modules · gold = family with most modules', // TODO(ja)
-      fam: ['Time-domain', 'Frequency·Spectrum', 'Pitch·Voice', 'Space·Realtime'], // TODO(ja)
-      engines: ['Waveform', 'FFT Spectrum', 'Spectrogram', '3D Spectrogram', 'Pitch', 'Formant', 'Timbre', 'Realtime', 'Room Mode'], // TODO(ja)
-      cap: ['Waveform', 'FFT', 'Spectrogram', 'Pitch·Formant', '3D', 'Realtime'], // TODO(ja)
-      omarchy: 'First to support Omarchy', // TODO(ja)
-      mods: ['Wave', 'FFT', 'Spec', 'Pitch', 'Formant', 'Timbre', '3D', 'Live', 'AI'], // TODO(ja)
-      testsLabel: 'automated tests · pytest', // TODO(ja)
+      eyebrow: 'DATA · データとインサイト',
+      title: '事実を、信頼できる証拠に描く。',
+      desc: '以下のデータは研究シーン向けで、すべて検証・再現可能 —— 9大分析モジュールからクロスプラットフォームまで、テスト規模からフラッグシップの売りポイントまで。',
+      c1t: '9大分析モジュール、4大能力ファミリー',
+      c1s: '髪の毛一本 = 分析モジュール1つ · バブルの大きさ = そのモジュール数 · 時間領域 / 周波数領域・スペクトル / ピッチ・声質 / 空間・リアルタイム',
+      c2t: '3大OS、1つの完全な能力',
+      c2s: 'macOS · Windows · Linux · すべて塗りつぶし = 対応',
+      c3t: '2148件の自動化テスト、再現可能な結果',
+      c3s: 'algorithm · audio I/O · UI · すべての分析を検証済み',
+      c4t: '研究者1人の論文のための2大フラッグシップ',
+      c4s: '出版グレードの図 + AI解釈 · CSSCI / SCI に直接投稿 · gold = フラッグシップ/出版グレード',
+      c5t: '信頼できる研究ツール1つ',
+      c5s: 'コアアルゴリズムはすべて独自開発 · オープンソースで監査可能 · GPL-3.0-only · ピアレビューの推敲に耐える',
+      fam_label: 'バブルの大きさ = 分析モジュール数　·　金 = 分析が最も多い能力ファミリー',
+      fam: ['時間領域', '周波数領域・スペクトル', 'ピッチ・声質', '空間・リアルタイム'],
+      engines: ['波形分析', 'FFTスペクトル', 'スペクトログラム', '3Dスペクトログラム', 'ピッチ分析', 'フォーマント分析', 'ティンバー分析', 'リアルタイム特徴', 'ルームモード分析'],
+      cap: ['波形', 'FFT', 'スペクトログラム', 'ピッチ・フォーマント', '3Dスペクトル', 'リアルタイム'],
+      omarchy: 'Omarchyを最初にサポート',
+      mods: ['ウェーブ', 'FFT', 'スペクト', 'ピッチ', 'フォーマント', 'ティンバー', '3D', 'ライブ', 'AI'],
+      testsLabel: '件の自動化テスト · pytest',
       trust: [
-        { n: '9', label: 'analysis modules', tag: 'Analysis Modules' }, // TODO(ja)
-        { n: '9', label: 'academic themes', tag: 'Themes' }, // TODO(ja)
-        { n: '3', label: 'interface languages', tag: '简体 / 繁體 / EN' }, // TODO(ja)
-        { n: '2148', label: 'automated tests', tag: 'Automated Tests' }, // TODO(ja)
-        { n: '5', label: 'install types', tag: 'Platforms' }, // TODO(ja)
+        { n: '9', label: '大分析モジュール', tag: 'Analysis Modules' },
+        { n: '9', label: '種の学術テーマ', tag: 'Themes' },
+        { n: '3', label: '種のインターフェース言語', tag: '簡体 / 繁体 / EN' },
+        { n: '2148', label: '件の自動化テスト', tag: 'Automated Tests' },
+        { n: '5', label: '種のインストール形態', tag: 'Platforms' },
       ],
       flag: [
-        { badge: 'FLAGSHIP 01', title: 'Publication-grade figures', hook: 'Figures ready for your paper, no further fixes at your defense.', points: ['WYSIWYG export — SVG / PDF vector + PNG bitmap', 'Publication-grade fonts & palettes, CJK and notation stay crisp', 'Custom resolution & size, target CSSCI / SCI', 'One figure with a caption; numbering & notes handled'], stats: [{ n: '6', l: 'Formats' }, { n: '300', l: 'DPI' }] }, // TODO(ja)
-        { badge: 'FLAGSHIP 02', title: 'AI interpretation', hook: 'It reads your spectrum like an academic reviewer.', points: ['Auto-detects spectral peaks, harmonic series and formants, explained in scholarly terms', 'Drafts analysis paragraphs you can drop into your paper', 'Switches language for international submissions', 'Suggests what to examine next'], stats: [{ n: 'Multi', l: 'Providers' }, { n: '30', l: 'AI tests' }] }, // TODO(ja)
+        { badge: 'フラッグシップ 01', title: '出版グレードの図', hook: '論文でそのまま使える図、発表会で再修正不要。', points: ['エクスポートは見た目に完全一致、SVG / PDF ベクター + PNG ビットマップから選択', '出版グレードのフォントと配色を内蔵、中国語と楽譜記号が崩れずくっきり', '解像度と図サイズをカスタマイズ、CSSCI / SCI に直接投稿', '図1つに説明1つ、図表番号と注釈はこちらが管理'], stats: [{ n: '6', l: 'エクスポート形式' }, { n: '300', l: 'DPI 調整可能' }] },
+        { badge: 'フラッグシップ 02', title: 'AI解釈', hook: '学術レビュアーの視点で、あなたのスペクトルを読む。', points: ['スペクトルピーク、ハーモニック系列とフォーマント構造を自動検出し、中国語の学術文脈で説明', '論文にそのまま書ける分析段落の草稿を提供し、文章工数を半分節約', '二言語で出力切替、国際会議への投稿を自分で翻訳する必要なし', '提示できる研究提案、次にどこを見るか教えてくれる'], stats: [{ n: '複数', l: 'Provider 選択可能' }, { n: '30', l: 'AI テスト項目' }] },
       ],
-      rowPrec: 'Accuracy', // TODO(ja)
-      rowUse: 'Use case', // TODO(ja)
-      stdArchive: 'Referenced metadata elements', // TODO(ja)
-      stdArchiveNote: 'Field-by-field mapping under review (no conformance claim)', // TODO(ja)
-      pitchEng: 'Pitch engines', // TODO(ja)
+      rowPrec: '精度',
+      rowUse: '適用シーン',
+      stdArchive: '参考にしたメタデータ要素',
+      stdArchiveNote: 'フィールド対照確認は進行中（適合性の声明は行わない）',
+      pitchEng: 'ピッチエンジン',
     },
     vision: {
-      eyebrow: 'A VOICE FOR SOUND · OUR VISION', // TODO(ja)
-      title: 'About Jinyun SonicAI', // TODO(ja)
-      quote: '“We believe sound holds a culture’s aesthetic and an era’s memory — and a great tool makes that evidence seen, cited and preserved.”', // TODO(ja)
-      bodyTop: 'Jinyun SonicAI is one of the brands launched by the Southwest University Musical Acoustics Lab for innovative applications, focused on the intersection of musical acoustics, music technology, digital humanities and AI research.', // TODO(ja)
-      bodyBottom: 'AcouScope is the studio’s acoustic analysis engine for music and sound research — delivering the complete workflow from field recording to published figures in one application.', // TODO(ja)
-      badges: ['Southwest University', 'Musical Acoustics · Digital Humanities', 'Open-source & auditable · GPL-3.0-only'], // TODO(ja)
+      eyebrow: '音に伝記を立てる · スタジオのビジョン',
+      title: 'Jinyun SonicAI について',
+      quote: '「私たちは信じています。音には、ひとつの民族の美学とひとつの時代の記憶が宿り、優れたツールは、その証拠を見られ、引用され、継承されるようにする。」',
+      bodyTop: 'Jinyun SonicAIは、西南大学音楽音響学ラボが革新的な応用の実装のために立ち上げたブランドの一つで、音楽音響学・音楽技術・デジタル・ヒューマニティーズとAI応用の交差研究に特化しています。',
+      bodyBottom: 'AcouScopeは、スタジオが音楽と音の研究のために心を込めて作った分析エンジンです —— 研究・教育・創作、すべてがひとつのソフトウェアで、フィールド採集から論文出版までの全工程を完遂できます。',
+      badges: ['西南大学', '音楽音響学 · デジタル・ヒューマニティーズ', 'オープンソースで監査可能 · GPL-3.0-only'],
     },
     stats: {
-      engines: 'pitch engines', // TODO(ja)
-      tests: 'automated tests', // TODO(ja)
-      realtime: '× realtime', // TODO(ja)
-      themes: 'themes', // TODO(ja)
+      engines: 'つのピッチエンジン',
+      tests: '件の自動化テスト',
+      realtime: '倍リアルタイム',
+      themes: '種の学術テーマ',
     },
     download: {
-      eyebrow: 'DOWNLOAD', // TODO(ja)
-      title: 'Download AcouScope', // TODO(ja)
-      subtitle: 'Native macOS release (arm64 / x86_64); other platform builds ready in parallel.', // TODO(ja)
-      heroBtn: 'Coming soon', // TODO(ja)
-      recommend: 'Recommended for you', // TODO(ja)
-      allTitle: 'All platforms & builds', // TODO(ja)
-      coming: 'Coming soon', // TODO(ja)
-      note: 'GPL-3.0-only · open-source & auditable · optional sponsorship', // TODO(ja)
-      releaseHint: 'Download links will be provided at the official release.', // TODO(ja)
+      eyebrow: 'DOWNLOAD',
+      title: 'AcouScope をダウンロード',
+      subtitle: 'macOS ネイティブで初リリース（arm64 / x86_64）、その他のプラットフォームのビルドパッケージも同時準備完了。',
+      heroBtn: '近日公開',
+      recommend: 'おすすめ',
+      allTitle: '全プラットフォームとバージョン',
+      coming: '近日公開',
+      note: 'GPL-3.0-only · オープンソースで監査可能 · 任意のスポンサー',
+      releaseHint: 'ダウンロードリンクは正式リリース時に提供します。',
     },
     cta: {
-      title: 'Make every sound citable evidence.', // TODO(ja)
-      subtitle: 'For research across musicology, acoustics and the digital humanities — from measurement to archiving in one go.', // TODO(ja)
-      button: 'See download options', // TODO(ja)
+      title: 'すべての音を、引用可能な証拠に。',
+      subtitle: '音楽学・音響学・デジタル・ヒューマニティーズ研究のために、測定からアーカイブまで一気通貫。',
+      button: 'ダウンロード方法を見る',
     },
     footer: {
       tagline: '音の測定を記録し、証拠を保存する。',
       contact: '連絡先',
       license: 'ライセンス',
-      rights: '© 2026 Jinyun SonicAI\nSouthwest University Art Anthropology Institute · Southwest University China Music Mental Health Institute', // TODO(ja)
-      special: 'Dedicated with gratitude to the leading scholar in musical acoustics and expert of the State Council Special Allowance: Prof. Han Baoqiang.', // TODO(ja)
-      version: 'v0.99.20260904', // TODO(ja)
+      rights: '© 2026 Jinyun SonicAI\n西南大学芸術人類学研究所 · 西南大学中国音楽メンタルヘルス研究所',
+      special: 'このソフトウェアをもって、音楽音響学の先駆的学者であり国務院特別手当の専門家である 韓宝強（ハン・バオチャン）教授に、感謝と献辞を捧げます。',
+      version: 'v0.99.20260904',
+      licenseValue: 'オープンソース・監査可能 · GPL-3.0-only',
     },
     changelog: {
-      eyebrow: 'CHANGELOG', // TODO(ja)
-      headline: 'v0.98 → v0.99, nine categories of updates', // TODO(ja)
-      legend: '★ marks the headline items of this release; one line each, numbers consistent with the rest of the site.', // TODO(ja)
+      eyebrow: 'CHANGELOG · 開発ログ',
+      headline: 'v0.98 → v0.99、9カテゴリの更新',
+      legend: '★ は本リリースの見出し項目（まずここを見るべき）；各1行、数字はサイト全体と一致。',
     },
     help: {
-      eyebrow: 'HELP', // TODO(ja)
-      headline: 'Quick start: fourteen steps to get going', // TODO(ja)
-      legend: 'Mirrored word for word from the in-app Help → Quick Start (14 items per language).', // TODO(ja)
-      shortcutsTitle: 'Keyboard shortcuts', // TODO(ja)
-      shortcutsNote: 'On macOS, Ctrl corresponds to Cmd; “Redo” is Cmd+Shift+Z on macOS.', // TODO(ja)
+      eyebrow: 'HELP · ヘルプ',
+      headline: 'クイックスタート：14ステップで始める',
+      legend: '内容は AcouScope アプリ内の「ヘルプ → クイックスタート」をそのままミラー（3言語それぞれ14項目、一字一句一致）。',
+      shortcutsTitle: 'ショートカットキー説明',
+      shortcutsNote: 'macOS では Ctrl が Cmd に対応します；そのうち「やり直し（Redo）」は macOS で Cmd+Shift+Z です。',
     },
   },
 }

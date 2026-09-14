@@ -24,6 +24,10 @@
 //                products.ts 各语块（sc/en/ko/ja）键集/highlights 长度一致
 //                （tc 无独立块 → 按 getLocaleContent 回退 sc 的既有语义豁免）；
 //                两文件 TODO(ko/ja) = 0
+//   ⑧ i18n 内容面（S3-s6）：src/i18n/index.tsx TODO(ko/ja) = 0；
+//                反向断言：ko/ja 长串（长度≥20 且含4+连续小写）与 en 逐字相同 = 0；
+//                标准绝对化禁词 ko 준거/준수/적합성 = 0、ja 準拠/コンプライアンス = 0；
+//                新增键 product.quick（五语各4项 n/l 非空）/ footer.licenseValue（五语含 GPL-3.0-only）在位
 //   ⑦ 汇总       逐项 PASS/FAIL + 明细（文件:行）；任一 FAIL → exit 1
 //
 // 只读子仓内文件（相对本脚本所在仓库根），不依赖主仓任何路径。
@@ -514,6 +518,78 @@ function record(name, pass, details) {
   }
 
   record('⑥ changelog/products 五语一致性（changelog 条数由 sc 推出 · products 键集 tc 豁免 · TODO(ko/ja)=0）', pass, details)
+}
+
+// ---- ⑧ i18n 内容面（非英文占位 + 标准措辞）（S3-s6：dict ko/ja 全量翻译收口 · 防回归） ----
+{
+  const details = []
+  let pass = true
+  const I18N = 'src/i18n/index.tsx'
+  let dict = null
+  try {
+    dict = extractObject(read(I18N), 'dict')
+  } catch (e) {
+    pass = false
+    details.push(`FAIL: 解析 ${I18N} dict 失败 — ${e.message}`)
+  }
+  if (dict) {
+    const langs = ['sc', 'tc', 'en', 'ko', 'ja']
+    // 带值扁平化（叶子 = 非对象值）；组① 的 flattenKeys 只取键，此处需值做逐字比对
+    const flatVals = (obj, prefix = '') => {
+      const out = []
+      for (const [k, v] of Object.entries(obj)) {
+        const p = prefix ? `${prefix}.${k}` : k
+        if (v !== null && typeof v === 'object') out.push(...flatVals(v, p))
+        else out.push([p, v])
+      }
+      return out
+    }
+    const flat = {}
+    for (const l of langs) flat[l] = Object.fromEntries(flatVals(dict[l]))
+
+    // ⑧.1 TODO(ko/ja) = 0（正则容忍空格/换行写法）
+    const todo = countRe(I18N, /TODO\s*\(\s*(?:ko|ja)/)
+    if (todo.count > 0) {
+      pass = false
+      details.push(`FAIL: ${I18N} TODO(ko/ja) 残留 ${todo.count} 处 — [${todo.hits.slice(0, 5).map((h) => `${h.line}: ${h.text}`).join(' ; ')}]`)
+    } else details.push(`${I18N} TODO(ko/ja) = 0 ✓`)
+
+    // ⑧.2 反向断言：ko/ja「长度 ≥20 且含 4+ 连续小写字母」的长串与 en 逐字相同数 = 0（防"删注释蒙过"）
+    const isLong = (v) => typeof v === 'string' && v.length >= 20 && /[a-z]{4}/.test(v)
+    for (const l of ['ko', 'ja']) {
+      const en = flat.en
+      const sameLong = Object.keys(en).filter((k) => typeof en[k] === 'string' && isLong(en[k]) && flat[l][k] === en[k])
+      if (sameLong.length > 0) {
+        pass = false
+        details.push(`FAIL: ${l} 长串（长度≥20 且含4+连续小写）与 en 逐字相同 = ${sameLong.length} — [${sameLong.slice(0, 8).join(', ')}]`)
+      } else details.push(`${l} 长串与 en 逐字相同 = 0 ✓`)
+    }
+
+    // ⑧.3 标准绝对化禁词：ko 준거/준수/적합성 = 0 · ja 準拠/コンプライアンス = 0（适合/適合 不列入，数据表 ja 段已用）
+    const BAN8 = { ko: /준거|준수|적합성/, ja: /準拠|コンプライアンス/ }
+    for (const l of ['ko', 'ja']) {
+      const hits = Object.entries(flat[l]).filter(([, v]) => typeof v === 'string' && BAN8[l].test(v))
+      if (hits.length > 0) {
+        pass = false
+        details.push(`FAIL: ${l} 标准绝对化禁词命中 ${hits.length} 处 — [${hits.slice(0, 5).map(([k]) => k).join(', ')}]`)
+      } else details.push(`${l} 标准绝对化禁词（${BAN8[l].source}）= 0 ✓`)
+    }
+
+    // ⑧.4 新增键在位：五语 product.quick 各 4 项且 n/l 非空 · 五语 footer.licenseValue 含 GPL-3.0-only
+    for (const l of langs) {
+      const q = dict[l]?.product?.quick
+      if (!Array.isArray(q) || q.length !== 4 || !q.every((x) => x && typeof x.n === 'string' && x.n.trim() !== '' && typeof x.l === 'string' && x.l.trim() !== '')) {
+        pass = false
+        details.push(`FAIL: ${l} product.quick 不齐（应恰好 4 项且每项 n/l 非空；实得 ${Array.isArray(q) ? q.length : '∅'} 项）`)
+      } else details.push(`${l} product.quick 4 项齐（n/l 非空）✓`)
+      const lv = dict[l]?.footer?.licenseValue
+      if (typeof lv !== 'string' || !lv.includes('GPL-3.0-only')) {
+        pass = false
+        details.push(`FAIL: ${l} footer.licenseValue 缺失或未含 GPL-3.0-only`)
+      } else details.push(`${l} footer.licenseValue 含 GPL-3.0-only ✓`)
+    }
+  }
+  record('⑧ i18n 内容面（TODO(ko/ja)=0 · 长串与 en 逐字相同=0 · 标准绝对化禁词=0 · product.quick/footer.licenseValue 五语在位）', pass, details)
 }
 
 // ---- ⑦ 汇总输出 ----

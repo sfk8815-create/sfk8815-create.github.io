@@ -23,12 +23,7 @@ export default function Product() {
 
             {/* 能力速览（硬数字） */}
             <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {[
-                { n: '3×', l: 'Pitch engines' },
-                { n: '9.2×', l: 'Realtime' },
-                { n: '<140MB', l: 'Peak memory' },
-                { n: '196s', l: 'Per 30-min' },
-              ].map((s) => (
+              {t.product.quick.map((s) => (
                 <div key={s.l} className="rounded-xl border border-raised bg-surface/60 p-3.5">
                   <p className="font-display text-xl font-bold text-textured">{s.n}</p>
                   <p className="mt-0.5 text-[11px] text-muted">{s.l}</p>
