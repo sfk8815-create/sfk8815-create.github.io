@@ -36,15 +36,15 @@ export default function Product() {
               ))}
             </div>
 
-            <div className="mt-7 flex items-center gap-3 rounded-xl border border-cyan/25 bg-surface/50 px-4 py-3">
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-cyan">{t.charts.stdArchive}</span>
+            <div className="mt-7 flex items-center gap-3 rounded-xl border border-raised bg-surface/50 px-4 py-3">
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-muted">{t.charts.stdArchive}</span>
               <div className="flex flex-wrap gap-2">
-                <span className="rounded-md border border-cyan/40 bg-cyan/10 px-2.5 py-1 font-mono text-[11px] text-cyan">IASA-TC 04</span>
-                <span className="rounded-md border border-cyan/40 bg-cyan/10 px-2.5 py-1 font-mono text-[11px] text-cyan">IMDI</span>
-                <span className="rounded-md border border-cyan/40 bg-cyan/10 px-2.5 py-1 font-mono text-[11px] text-cyan">GB/T 31219.4</span>
-                <span className="rounded-md border border-cyan/40 bg-cyan/10 px-2.5 py-1 font-mono text-[11px] text-cyan">DA/T 63</span>
+                <span className="rounded-md border border-raised bg-raised/40 px-2.5 py-1 font-mono text-[11px] text-muted">IASA-TC 04</span>
+                <span className="rounded-md border border-raised bg-raised/40 px-2.5 py-1 font-mono text-[11px] text-muted">IMDI</span>
+                <span className="rounded-md border border-raised bg-raised/40 px-2.5 py-1 font-mono text-[11px] text-muted">GB/T 31219.4</span>
+                <span className="rounded-md border border-raised bg-raised/40 px-2.5 py-1 font-mono text-[11px] text-muted">DA/T 63</span>
               </div>
-              <span className="text-[11px] text-muted">{t.charts.stdArchiveNote}</span>
+              <span className="text-[11px] text-faint">{t.charts.stdArchiveNote}</span>
             </div>
 
             <div className="mt-4 flex flex-wrap gap-3">
