@@ -17,8 +17,8 @@
 //                旧定位语零残留（音频分析软件 / 音訊分析軟體 / audio analysis application 各 0；S3-t1）
 //   ④ 渲染面     src/** 中 dangerouslySetInnerHTML = 0；indexOf('</b>') = 0；
 //                若 src/data/*.ts 含 <b>，则 HelpPage.tsx 必须含 renderRich
-//   ⑤ 帮助页结构 quickstart.ts 五语各 14 条；manual.ts 三语各 19 节、
-//                逐节条数三语一致（第 18 节为 tables，条数 = 表行数合计）
+//   ⑤ 帮助页结构 quickstart.ts 五语各 14 条；manual.ts 五语各 19 节、
+//                逐节条数五语一致（第 18 节为 tables，条数 = 表行数合计）
 //   ⑥ 汇总       逐项 PASS/FAIL + 明细（文件:行）；任一 FAIL → exit 1
 //
 // 只读子仓内文件（相对本脚本所在仓库根），不依赖主仓任何路径。
@@ -354,7 +354,7 @@ function record(name, pass, details) {
   record('④ 渲染面（dangerouslySetInnerHTML / indexOf(\'</b>\') / renderRich）', pass, details)
 }
 
-// ---- ⑤ 帮助页结构（quickstart 五语各 14 条；manual 三语各 19 节、逐节一致） ----
+// ---- ⑤ 帮助页结构（quickstart 五语各 14 条；manual 五语各 19 节、逐节一致） ----
 {
   const details = []
   let pass = true
@@ -369,14 +369,14 @@ function record(name, pass, details) {
 
   try {
     const mn = extractObject(read('src/data/manual.ts'), 'MANUAL')
-    const langs = ['sc', 'tc', 'en']
+    const langs = ['sc', 'tc', 'en', 'ko', 'ja']
     let ok = true
     for (const l of langs) {
       const n = mn[l]?.sections?.length ?? -1
       if (n !== 19) { pass = false; ok = false; details.push(`FAIL: manual ${l} = ${n} 节（应 19）`) }
     }
     if (ok) {
-      details.push('manual 三语各 19 节 ✓')
+      details.push('manual 五语各 19 节 ✓')
       // 逐节条数：items 节 = items.length；tables 节（第 18 节）= 表行数合计
       const entryCount = (sec) =>
         Array.isArray(sec.items) ? sec.items.length : (Array.isArray(sec.tables) ? sec.tables.reduce((s, t) => s + (t.rows?.length ?? 0), 0) : -1)
@@ -386,10 +386,10 @@ function record(name, pass, details) {
         if (new Set(counts).size > 1) {
           mismatch++
           const kind = mn.sc.sections[i].tables ? 'tables' : 'items'
-          details.push(`FAIL: 第 ${i + 1} 节（${kind}）条数三语不一致 sc/tc/en = ${counts.join('/')}`)
+          details.push(`FAIL: 第 ${i + 1} 节（${kind}）条数五语不一致 sc/tc/en/ko/ja = ${counts.join('/')}`)
         }
       }
-      if (mismatch === 0) details.push('逐节条数三语一致 ✓')
+      if (mismatch === 0) details.push('逐节条数五语一致 ✓')
       // 第 18 节须为 tables
       for (const l of langs) {
         const s18 = mn[l].sections[17]
@@ -398,10 +398,10 @@ function record(name, pass, details) {
           details.push(`FAIL: manual ${l} 第 18 节非 tables 结构（title=${s18?.title ?? '∅'}）`)
         }
       }
-      if (pass) details.push('第 18 节三语均为 tables（快捷键表）✓')
+      if (pass) details.push('第 18 节五语均为 tables（快捷键表）✓')
     }
   } catch (e) { pass = false; details.push(`FAIL: 解析 manual.ts 失败 — ${e.message}`) }
-  record('⑤ 帮助页结构（quickstart 14×5 · manual 19节×3 逐节一致）', pass, details)
+  record('⑤ 帮助页结构（quickstart 14×5 · manual 19节×5 逐节一致）', pass, details)
 }
 
 // ---- ⑥ 汇总输出 ----
