@@ -7,7 +7,7 @@
 // 退出码：全部 PASS = 0；任一 FAIL = 1。
 //
 // 防"裸标签 / 数字漂移 / 键不齐"三类回归（真实事故驱动）：
-//   ① 三语键齐   src/i18n/index.tsx 的 dict（sc/tc/en）键集合相等、无空值
+//   ① 五语键齐   src/i18n/index.tsx 的 dict（sc/tc/en/ko/ja）键集合相等、无空值
 //   ② 数字口径   约定值必须出现（2148 / 9.2 / 9 套|Nine themes）；
 //                旧值零残留（38×|38x、42×、91.8、10 套、Ten themes）；
 //                403 唯一例外 = src/components/socialIcons.tsx（白名单）
@@ -192,13 +192,13 @@ function record(name, pass, details) {
   results.push({ name, pass, details })
 }
 
-// ---- ① 三语键齐（src/i18n/index.tsx dict：sc/tc/en 键集合相等、无空值） ----
+// ---- ① 五语键齐（src/i18n/index.tsx dict：sc/tc/en/ko/ja 键集合相等、无空值） ----
 {
   const details = []
   let pass = true
   try {
     const dict = extractObject(read('src/i18n/index.tsx'), 'dict')
-    const langs = ['sc', 'tc', 'en']
+    const langs = ['sc', 'tc', 'en', 'ko', 'ja']
     for (const l of langs) {
       if (!dict[l] || typeof dict[l] !== 'object') { details.push(`FAIL: dict 缺少 ${l} 段`); pass = false }
     }
@@ -206,7 +206,7 @@ function record(name, pass, details) {
       const flat = {}
       for (const l of langs) flat[l] = flattenKeys(dict[l])
       const base = flat.sc
-      for (const l of ['tc', 'en']) {
+      for (const l of ['tc', 'en', 'ko', 'ja']) {
         const onlyBase = setDiff(base, flat[l])
         const onlyOther = setDiff(flat[l], base)
         if (onlyBase.length || onlyOther.length) {
@@ -214,7 +214,7 @@ function record(name, pass, details) {
           details.push(`FAIL: ${l} 与 sc 键不齐 — 仅sc有: [${onlyBase.slice(0, 8).join(', ')}] 仅${l}有: [${onlyOther.slice(0, 8).join(', ')}]（各 ${onlyBase.length}/${onlyOther.length}）`)
         }
       }
-      details.push(`键数 sc=${flat.sc.length} tc=${flat.tc.length} en=${flat.en.length}`)
+      details.push(`键数 sc=${flat.sc.length} tc=${flat.tc.length} en=${flat.en.length} ko=${flat.ko.length} ja=${flat.ja.length}`)
       // 无空值（叶子字符串 trim 后非空）
       const empties = []
       const walk = (obj, prefix, l) => {
@@ -232,7 +232,7 @@ function record(name, pass, details) {
     pass = false
     details.push(`FAIL: 解析 src/i18n/index.tsx dict 失败 — ${e.message}`)
   }
-  record('① 三语键齐（i18n dict sc/tc/en）', pass, details)
+  record('① 五语键齐（i18n dict sc/tc/en/ko/ja）', pass, details)
 }
 
 // ---- ② 数字口径（src/**；403 白名单 = socialIcons.tsx） ----

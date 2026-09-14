@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { LOCALES, useI18n, type Locale } from '../i18n'
 
-/** 语言切换器 —— 双语（简体中文 / 繁體中文 / English） */
+/** 语言切换器 —— 五语（简体中文 / 繁體中文 / English / 한국어 / 日本語），语言项来自 LOCALES（5 项，顺序即展示顺序） */
 export default function LanguageSwitcher() {
   const { locale, setLocale } = useI18n()
   const [open, setOpen] = useState(false)

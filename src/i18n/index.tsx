@@ -1,11 +1,13 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 
-export type Locale = 'sc' | 'tc' | 'en'
+export type Locale = 'sc' | 'tc' | 'en' | 'ko' | 'ja'
 
 export const LOCALES: { code: Locale; label: string; lang: string }[] = [
   { code: 'sc', label: '简体中文', lang: 'zh-CN' },
   { code: 'tc', label: '繁體中文', lang: 'zh-TW' },
   { code: 'en', label: 'English', lang: 'en' },
+  { code: 'ko', label: '한국어', lang: 'ko' },
+  { code: 'ja', label: '日本語', lang: 'ja' },
 ]
 
 const dict = {
@@ -502,6 +504,298 @@ const dict = {
       shortcutsNote: 'On macOS, Ctrl corresponds to Cmd; “Redo” is Cmd+Shift+Z on macOS.',
     },
   },
+  ko: {
+    meta: {
+      title: 'AcouScope — 소리의 측정을 기록하고, 증거를 보존하다 | Jinyun SonicAI',
+      desc: '음악학·음향학·디지털 휴머니티스 연구 분야를 위한 차세대 음향 분석 엔진: 3개의 SOTA 피치 엔진, 3패널 워크스페이스, 로컬 AI 차트 해석, 필드 메타데이터 내보내기 — 사양이 낮은 기기에서도 부드럽게 동작합니다.',
+    },
+    brand: { name: 'Jinyun SonicAI', en: 'Jinyun SonicAI' }, // TODO(ko)
+    nav: { product: '제품', features: '기능', vision: '비전', download: '다운로드', changelog: '개발 로그', help: '도움말' },
+    hero: {
+      badge: 'Sound research · archivable & traceable · reference to international & Chinese archive metadata elements', // TODO(ko)
+      slogan: 'Measure why it sounds, preserve why it endures.', // TODO(ko)
+      subtitle: 'AcouScope is a next-generation acoustic analysis engine for research fields such as musicology, acoustics and the digital humanities. Whether you are an ethnomusicologist tracing a guqin’s harmonics, a vocal researcher analyzing a singer’s microtones, or an audio engineer measuring a room’s reverb, it turns your auditory intuition into measurable, citable, reproducible acoustic evidence. Exported fields reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, so every recording stays archivable long-term and traceable. The three-pane workspace keeps spectrum, spectrogram and 3D views at hand, so analysis stays smooth and unbroken.', // TODO(ko)
+      cta1: 'Coming soon', // TODO(ko)
+      cta2: 'Explore three pitch engines', // TODO(ko)
+      version: 'v0.99.20260904', // TODO(ko)
+      chip: 'SOTA deep-learning core · single-window three-pane workspace · local AI interpretation', // TODO(ko)
+    },
+    product: {
+      label: 'FOR MUSICOLOGY & DIGITAL HUMANITIES', // TODO(ko)
+      title: 'Meet AcouScope', // TODO(ko)
+      body: 'AcouScope is a professional acoustic analysis application for research across musicology, acoustics and the digital humanities. With a rigorous, scholarly approach, it unites the measurement, analysis and archiving of sound — from classroom demonstration and fieldwork capture to publication figures and long-term audio preservation. Three SOTA pitch-detection engines (pYIN / SwiftF0 / RMVPE) switch flexibly by research scenario and run efficiently on CPU alone; its de-quantized continuous-pitch technology faithfully preserves the subtle nuances of microtones and glides; AI interpretation and field-metadata export reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, making analysis figures clear and trustworthy and every recording traceable and durably storable. Nine themes and a bilingual interface (Simplified & Traditional Chinese / English) balance scholarly rigor with everyday comfort.', // TODO(ko)
+      spectrum: 'Single-window three-pane workspace · three pitch engines', // TODO(ko)
+    },
+    pitch: {
+      eyebrow: 'PITCH · ENGINES', // TODO(ko)
+      title: 'Three SOTA pitch-detection engines', // TODO(ko)
+      subtitle: 'Switch freely by research scenario, on pure-CPU inference — from streaming preview to a weak device in the field.', // TODO(ko)
+      common: 'Pure-CPU ONNX inference · 30-min recording in ~196 s · peak memory < 140 MB', // TODO(ko)
+      engines: [
+        { name: 'pYIN', role: 'Classic algorithm · probabilistic YIN', acc: '20-cent resolution', use: 'Streaming preview, live analysis' }, // TODO(ko)
+        { name: 'SwiftF0', role: 'Deep neural model · monophonic pitch', acc: '90.2% HM · 9.2× realtime', use: '95k-param lightweight model, ideal for weak devices' }, // TODO(ko)
+        { name: 'RMVPE', role: 'Deep neural model · polyphonic vocal', acc: 'Robust in polyphonic / noisy settings', use: 'Robust vocal pitch estimation in polyphonic music' }, // TODO(ko)
+      ],
+    },
+    features: {
+      eyebrow: 'ACOUSTIC · CORE ENGINE', // TODO(ko)
+      title: 'Use science to recover the details sound hides.', // TODO(ko)
+      desc: 'From the SOTA pitch core to a pro-grade workspace, every detail is designed for field research and academic writing — not just to "see", but to cite and reproduce.', // TODO(ko)
+      items: [
+        { title: 'Three SOTA pitch engines', desc: 'pYIN (streaming/live, 20-cent resolution), SwiftF0 (95k params, 9.2× realtime, 90.2% HM) and RMVPE (polyphonic/noisy vocal) switch per scenario, all on pure-CPU ONNX.', tag: 'pYIN · SwiftF0 · RMVPE' }, // TODO(ko)
+        { title: 'Single-window three-pane workspace', desc: 'The new 0.99 UI: left analysis nav for 7 views (auto-checked when analyzed), a central stacked canvas, and a right inspector with live readings. Pane widths, collapses and last view restore on restart.', tag: 'Workspace' }, // TODO(ko)
+        { title: 'De-quantized continuous pitch', desc: 'Parabolic interpolation + expectation method outputs continuous Hz, faithfully capturing microtones and glides.', tag: 'Microtone' }, // TODO(ko)
+        { title: 'Local AI chart interpretation', desc: 'One click on "AI Interpret" sends the current view with sample rate, F0, cents and confidence to an on-device model, streaming an academic reading you can keep asking — private, offline.', tag: 'AI Insight' }, // TODO(ko)
+        { title: 'Export referencing international & Chinese metadata elements', desc: 'Exported fields reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported; one-click field-report export (JSON / XML / CSV): archive no., project, informant, capture time, region, category, technical info — every recording verifiable, durable and traceable, ready for journals and archives.', tag: 'Metadata elements · custom mapping' }, // TODO(ko)
+        { title: 'Runs on weak devices', desc: 'No Python environment setup required, models are downloaded automatically on first use and can then run offline, bundled FFmpeg, vectorized DSP and streaming — analyze a 30-minute recording offline on old hardware.', tag: 'Offline after first run' }, // TODO(ko)
+      ],
+    },
+    screenshots: {
+      eyebrow: 'INTERFACE · AT A GLANCE', // TODO(ko)
+      title: 'Three panes, one view into the texture of sound.', // TODO(ko)
+      subtitle: 'Spectrum, spectrogram and 3D waterfall — always ready, never losing state, like a professional DAW for your sound research.', // TODO(ko)
+      zoom: 'Zoom in', // TODO(ko)
+      close: 'Close', // TODO(ko)
+      prev: 'Previous', // TODO(ko)
+      next: 'Next', // TODO(ko)
+      panes: [ {label:'Analysis navigation',desc:'Switch among 7 views with one click; analyzed views auto-check'}, {label:'Center canvas stack',desc:'Spectrum / spectrogram / 3D stay side by side, state always preserved'}, {label:'Inspector · AI',desc:'Live readings of view / selection / analysis window / playback / audio params'} ], // TODO(ko)
+      shots: [ {alt:'FFT spectrum and note annotation interface (three-pane workspace)',label:'FFT · Spectrum & Notation'}, {alt:'Realtime features four-pane interface',label:'Realtime · Four-pane monitor'}, {alt:'3D spectrogram interface',label:'3D Spectrogram · Waterfall'} ], // TODO(ko)
+    },
+    charts: {
+      eyebrow: 'DATA · INSIGHTS', // TODO(ko)
+      title: 'Turning facts into trustworthy evidence.', // TODO(ko)
+      desc: 'These figures are research-oriented, verifiable and reproducible — from nine analysis modules to cross-platform, from test coverage to flagship features.', // TODO(ko)
+      c1t: 'Nine analysis modules, four capability families', // TODO(ko)
+      c1s: 'One hairline = one analysis module · bubble size = module count · Time-domain / Frequency·Spectrum / Pitch·Voice / Space·Realtime', // TODO(ko)
+      c2t: 'Three operating systems, one complete capability', // TODO(ko)
+      c2s: 'macOS · Windows · Linux · all filled = supported', // TODO(ko)
+      c3t: '2148 automated tests, reproducible results', // TODO(ko)
+      c3s: 'algorithm · audio I/O · UI · every analysis verified', // TODO(ko)
+      c4t: 'Two flagship features for a researcher’s paper', // TODO(ko)
+      c4s: 'Publication-grade figures + AI interpretation · target CSSCI / SCI · gold = flagship', // TODO(ko)
+      c5t: 'A trustworthy research tool', // TODO(ko)
+      c5s: 'Core algorithms built in-house · open-source & auditable · GPL-3.0-only · stands up to peer review', // TODO(ko)
+      fam_label: 'Bubble size = number of analysis modules · gold = family with most modules', // TODO(ko)
+      fam: ['Time-domain', 'Frequency·Spectrum', 'Pitch·Voice', 'Space·Realtime'], // TODO(ko)
+      engines: ['Waveform', 'FFT Spectrum', 'Spectrogram', '3D Spectrogram', 'Pitch', 'Formant', 'Timbre', 'Realtime', 'Room Mode'], // TODO(ko)
+      cap: ['Waveform', 'FFT', 'Spectrogram', 'Pitch·Formant', '3D', 'Realtime'], // TODO(ko)
+      omarchy: 'First to support Omarchy', // TODO(ko)
+      mods: ['Wave', 'FFT', 'Spec', 'Pitch', 'Formant', 'Timbre', '3D', 'Live', 'AI'], // TODO(ko)
+      testsLabel: 'automated tests · pytest', // TODO(ko)
+      trust: [
+        { n: '9', label: 'analysis modules', tag: 'Analysis Modules' }, // TODO(ko)
+        { n: '9', label: 'academic themes', tag: 'Themes' }, // TODO(ko)
+        { n: '3', label: 'interface languages', tag: '简体 / 繁體 / EN' }, // TODO(ko)
+        { n: '2148', label: 'automated tests', tag: 'Automated Tests' }, // TODO(ko)
+        { n: '5', label: 'install types', tag: 'Platforms' }, // TODO(ko)
+      ],
+      flag: [
+        { badge: 'FLAGSHIP 01', title: 'Publication-grade figures', hook: 'Figures ready for your paper, no further fixes at your defense.', points: ['WYSIWYG export — SVG / PDF vector + PNG bitmap', 'Publication-grade fonts & palettes, CJK and notation stay crisp', 'Custom resolution & size, target CSSCI / SCI', 'One figure with a caption; numbering & notes handled'], stats: [{ n: '6', l: 'Formats' }, { n: '300', l: 'DPI' }] }, // TODO(ko)
+        { badge: 'FLAGSHIP 02', title: 'AI interpretation', hook: 'It reads your spectrum like an academic reviewer.', points: ['Auto-detects spectral peaks, harmonic series and formants, explained in scholarly terms', 'Drafts analysis paragraphs you can drop into your paper', 'Switches language for international submissions', 'Suggests what to examine next'], stats: [{ n: 'Multi', l: 'Providers' }, { n: '30', l: 'AI tests' }] }, // TODO(ko)
+      ],
+      rowPrec: 'Accuracy', // TODO(ko)
+      rowUse: 'Use case', // TODO(ko)
+      stdArchive: 'Referenced metadata elements', // TODO(ko)
+      stdArchiveNote: 'Field-by-field mapping under review (no conformance claim)', // TODO(ko)
+      pitchEng: 'Pitch engines', // TODO(ko)
+    },
+    vision: {
+      eyebrow: 'A VOICE FOR SOUND · OUR VISION', // TODO(ko)
+      title: 'About Jinyun SonicAI', // TODO(ko)
+      quote: '“We believe sound holds a culture’s aesthetic and an era’s memory — and a great tool makes that evidence seen, cited and preserved.”', // TODO(ko)
+      bodyTop: 'Jinyun SonicAI is one of the brands launched by the Southwest University Musical Acoustics Lab for innovative applications, focused on the intersection of musical acoustics, music technology, digital humanities and AI research.', // TODO(ko)
+      bodyBottom: 'AcouScope is the studio’s acoustic analysis engine for music and sound research — delivering the complete workflow from field recording to published figures in one application.', // TODO(ko)
+      badges: ['Southwest University', 'Musical Acoustics · Digital Humanities', 'Open-source & auditable · GPL-3.0-only'], // TODO(ko)
+    },
+    stats: {
+      engines: 'pitch engines', // TODO(ko)
+      tests: 'automated tests', // TODO(ko)
+      realtime: '× realtime', // TODO(ko)
+      themes: 'themes', // TODO(ko)
+    },
+    download: {
+      eyebrow: 'DOWNLOAD', // TODO(ko)
+      title: 'Download AcouScope', // TODO(ko)
+      subtitle: 'Native macOS release (arm64 / x86_64); other platform builds ready in parallel.', // TODO(ko)
+      heroBtn: 'Coming soon', // TODO(ko)
+      recommend: 'Recommended for you', // TODO(ko)
+      allTitle: 'All platforms & builds', // TODO(ko)
+      coming: 'Coming soon', // TODO(ko)
+      note: 'GPL-3.0-only · open-source & auditable · optional sponsorship', // TODO(ko)
+      releaseHint: 'Download links will be provided at the official release.', // TODO(ko)
+    },
+    cta: {
+      title: 'Make every sound citable evidence.', // TODO(ko)
+      subtitle: 'For research across musicology, acoustics and the digital humanities — from measurement to archiving in one go.', // TODO(ko)
+      button: 'See download options', // TODO(ko)
+    },
+    footer: {
+      tagline: '소리의 측정을 기록하고, 증거를 보존하다.',
+      contact: '연락처',
+      license: '라이선스',
+      rights: '© 2026 Jinyun SonicAI\nSouthwest University Art Anthropology Institute · Southwest University China Music Mental Health Institute', // TODO(ko)
+      special: 'Dedicated with gratitude to the leading scholar in musical acoustics and expert of the State Council Special Allowance: Prof. Han Baoqiang.', // TODO(ko)
+      version: 'v0.99.20260904', // TODO(ko)
+    },
+    changelog: {
+      eyebrow: 'CHANGELOG', // TODO(ko)
+      headline: 'v0.98 → v0.99, nine categories of updates', // TODO(ko)
+      legend: '★ marks the headline items of this release; one line each, numbers consistent with the rest of the site.', // TODO(ko)
+    },
+    help: {
+      eyebrow: 'HELP', // TODO(ko)
+      headline: 'Quick start: fourteen steps to get going', // TODO(ko)
+      legend: 'Mirrored word for word from the in-app Help → Quick Start (14 items per language).', // TODO(ko)
+      shortcutsTitle: 'Keyboard shortcuts', // TODO(ko)
+      shortcutsNote: 'On macOS, Ctrl corresponds to Cmd; “Redo” is Cmd+Shift+Z on macOS.', // TODO(ko)
+    },
+  },
+  ja: {
+    meta: {
+      title: 'AcouScope — 音の測定を記録し、証拠を保存する | Jinyun SonicAI',
+      desc: '音楽学・音響学・デジタル・ヒューマニティーズ研究のための次世代音響分析エンジン：3つのSOTAピッチエンジン、3ペインワークスペース、ローカルAIチャート解釈、フィールドメタデータエクスポート——低スペックのデバイスでもスムーズに動作します。',
+    },
+    brand: { name: 'Jinyun SonicAI', en: 'Jinyun SonicAI' }, // TODO(ja)
+    nav: { product: '製品', features: '機能', vision: 'ビジョン', download: 'ダウンロード', changelog: '開発ログ', help: 'ヘルプ' },
+    hero: {
+      badge: 'Sound research · archivable & traceable · reference to international & Chinese archive metadata elements', // TODO(ja)
+      slogan: 'Measure why it sounds, preserve why it endures.', // TODO(ja)
+      subtitle: 'AcouScope is a next-generation acoustic analysis engine for research fields such as musicology, acoustics and the digital humanities. Whether you are an ethnomusicologist tracing a guqin’s harmonics, a vocal researcher analyzing a singer’s microtones, or an audio engineer measuring a room’s reverb, it turns your auditory intuition into measurable, citable, reproducible acoustic evidence. Exported fields reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, so every recording stays archivable long-term and traceable. The three-pane workspace keeps spectrum, spectrogram and 3D views at hand, so analysis stays smooth and unbroken.', // TODO(ja)
+      cta1: 'Coming soon', // TODO(ja)
+      cta2: 'Explore three pitch engines', // TODO(ja)
+      version: 'v0.99.20260904', // TODO(ja)
+      chip: 'SOTA deep-learning core · single-window three-pane workspace · local AI interpretation', // TODO(ja)
+    },
+    product: {
+      label: 'FOR MUSICOLOGY & DIGITAL HUMANITIES', // TODO(ja)
+      title: 'Meet AcouScope', // TODO(ja)
+      body: 'AcouScope is a professional acoustic analysis application for research across musicology, acoustics and the digital humanities. With a rigorous, scholarly approach, it unites the measurement, analysis and archiving of sound — from classroom demonstration and fieldwork capture to publication figures and long-term audio preservation. Three SOTA pitch-detection engines (pYIN / SwiftF0 / RMVPE) switch flexibly by research scenario and run efficiently on CPU alone; its de-quantized continuous-pitch technology faithfully preserves the subtle nuances of microtones and glides; AI interpretation and field-metadata export reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, making analysis figures clear and trustworthy and every recording traceable and durably storable. Nine themes and a bilingual interface (Simplified & Traditional Chinese / English) balance scholarly rigor with everyday comfort.', // TODO(ja)
+      spectrum: 'Single-window three-pane workspace · three pitch engines', // TODO(ja)
+    },
+    pitch: {
+      eyebrow: 'PITCH · ENGINES', // TODO(ja)
+      title: 'Three SOTA pitch-detection engines', // TODO(ja)
+      subtitle: 'Switch freely by research scenario, on pure-CPU inference — from streaming preview to a weak device in the field.', // TODO(ja)
+      common: 'Pure-CPU ONNX inference · 30-min recording in ~196 s · peak memory < 140 MB', // TODO(ja)
+      engines: [
+        { name: 'pYIN', role: 'Classic algorithm · probabilistic YIN', acc: '20-cent resolution', use: 'Streaming preview, live analysis' }, // TODO(ja)
+        { name: 'SwiftF0', role: 'Deep neural model · monophonic pitch', acc: '90.2% HM · 9.2× realtime', use: '95k-param lightweight model, ideal for weak devices' }, // TODO(ja)
+        { name: 'RMVPE', role: 'Deep neural model · polyphonic vocal', acc: 'Robust in polyphonic / noisy settings', use: 'Robust vocal pitch estimation in polyphonic music' }, // TODO(ja)
+      ],
+    },
+    features: {
+      eyebrow: 'ACOUSTIC · CORE ENGINE', // TODO(ja)
+      title: 'Use science to recover the details sound hides.', // TODO(ja)
+      desc: 'From the SOTA pitch core to a pro-grade workspace, every detail is designed for field research and academic writing — not just to "see", but to cite and reproduce.', // TODO(ja)
+      items: [
+        { title: 'Three SOTA pitch engines', desc: 'pYIN (streaming/live, 20-cent resolution), SwiftF0 (95k params, 9.2× realtime, 90.2% HM) and RMVPE (polyphonic/noisy vocal) switch per scenario, all on pure-CPU ONNX.', tag: 'pYIN · SwiftF0 · RMVPE' }, // TODO(ja)
+        { title: 'Single-window three-pane workspace', desc: 'The new 0.99 UI: left analysis nav for 7 views (auto-checked when analyzed), a central stacked canvas, and a right inspector with live readings. Pane widths, collapses and last view restore on restart.', tag: 'Workspace' }, // TODO(ja)
+        { title: 'De-quantized continuous pitch', desc: 'Parabolic interpolation + expectation method outputs continuous Hz, faithfully capturing microtones and glides.', tag: 'Microtone' }, // TODO(ja)
+        { title: 'Local AI chart interpretation', desc: 'One click on "AI Interpret" sends the current view with sample rate, F0, cents and confidence to an on-device model, streaming an academic reading you can keep asking — private, offline.', tag: 'AI Insight' }, // TODO(ja)
+        { title: 'Export referencing international & Chinese metadata elements', desc: 'Exported fields reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported; one-click field-report export (JSON / XML / CSV): archive no., project, informant, capture time, region, category, technical info — every recording verifiable, durable and traceable, ready for journals and archives.', tag: 'Metadata elements · custom mapping' }, // TODO(ja)
+        { title: 'Runs on weak devices', desc: 'No Python environment setup required, models are downloaded automatically on first use and can then run offline, bundled FFmpeg, vectorized DSP and streaming — analyze a 30-minute recording offline on old hardware.', tag: 'Offline after first run' }, // TODO(ja)
+      ],
+    },
+    screenshots: {
+      eyebrow: 'INTERFACE · AT A GLANCE', // TODO(ja)
+      title: 'Three panes, one view into the texture of sound.', // TODO(ja)
+      subtitle: 'Spectrum, spectrogram and 3D waterfall — always ready, never losing state, like a professional DAW for your sound research.', // TODO(ja)
+      zoom: 'Zoom in', // TODO(ja)
+      close: 'Close', // TODO(ja)
+      prev: 'Previous', // TODO(ja)
+      next: 'Next', // TODO(ja)
+      panes: [ {label:'Analysis navigation',desc:'Switch among 7 views with one click; analyzed views auto-check'}, {label:'Center canvas stack',desc:'Spectrum / spectrogram / 3D stay side by side, state always preserved'}, {label:'Inspector · AI',desc:'Live readings of view / selection / analysis window / playback / audio params'} ], // TODO(ja)
+      shots: [ {alt:'FFT spectrum and note annotation interface (three-pane workspace)',label:'FFT · Spectrum & Notation'}, {alt:'Realtime features four-pane interface',label:'Realtime · Four-pane monitor'}, {alt:'3D spectrogram interface',label:'3D Spectrogram · Waterfall'} ], // TODO(ja)
+    },
+    charts: {
+      eyebrow: 'DATA · INSIGHTS', // TODO(ja)
+      title: 'Turning facts into trustworthy evidence.', // TODO(ja)
+      desc: 'These figures are research-oriented, verifiable and reproducible — from nine analysis modules to cross-platform, from test coverage to flagship features.', // TODO(ja)
+      c1t: 'Nine analysis modules, four capability families', // TODO(ja)
+      c1s: 'One hairline = one analysis module · bubble size = module count · Time-domain / Frequency·Spectrum / Pitch·Voice / Space·Realtime', // TODO(ja)
+      c2t: 'Three operating systems, one complete capability', // TODO(ja)
+      c2s: 'macOS · Windows · Linux · all filled = supported', // TODO(ja)
+      c3t: '2148 automated tests, reproducible results', // TODO(ja)
+      c3s: 'algorithm · audio I/O · UI · every analysis verified', // TODO(ja)
+      c4t: 'Two flagship features for a researcher’s paper', // TODO(ja)
+      c4s: 'Publication-grade figures + AI interpretation · target CSSCI / SCI · gold = flagship', // TODO(ja)
+      c5t: 'A trustworthy research tool', // TODO(ja)
+      c5s: 'Core algorithms built in-house · open-source & auditable · GPL-3.0-only · stands up to peer review', // TODO(ja)
+      fam_label: 'Bubble size = number of analysis modules · gold = family with most modules', // TODO(ja)
+      fam: ['Time-domain', 'Frequency·Spectrum', 'Pitch·Voice', 'Space·Realtime'], // TODO(ja)
+      engines: ['Waveform', 'FFT Spectrum', 'Spectrogram', '3D Spectrogram', 'Pitch', 'Formant', 'Timbre', 'Realtime', 'Room Mode'], // TODO(ja)
+      cap: ['Waveform', 'FFT', 'Spectrogram', 'Pitch·Formant', '3D', 'Realtime'], // TODO(ja)
+      omarchy: 'First to support Omarchy', // TODO(ja)
+      mods: ['Wave', 'FFT', 'Spec', 'Pitch', 'Formant', 'Timbre', '3D', 'Live', 'AI'], // TODO(ja)
+      testsLabel: 'automated tests · pytest', // TODO(ja)
+      trust: [
+        { n: '9', label: 'analysis modules', tag: 'Analysis Modules' }, // TODO(ja)
+        { n: '9', label: 'academic themes', tag: 'Themes' }, // TODO(ja)
+        { n: '3', label: 'interface languages', tag: '简体 / 繁體 / EN' }, // TODO(ja)
+        { n: '2148', label: 'automated tests', tag: 'Automated Tests' }, // TODO(ja)
+        { n: '5', label: 'install types', tag: 'Platforms' }, // TODO(ja)
+      ],
+      flag: [
+        { badge: 'FLAGSHIP 01', title: 'Publication-grade figures', hook: 'Figures ready for your paper, no further fixes at your defense.', points: ['WYSIWYG export — SVG / PDF vector + PNG bitmap', 'Publication-grade fonts & palettes, CJK and notation stay crisp', 'Custom resolution & size, target CSSCI / SCI', 'One figure with a caption; numbering & notes handled'], stats: [{ n: '6', l: 'Formats' }, { n: '300', l: 'DPI' }] }, // TODO(ja)
+        { badge: 'FLAGSHIP 02', title: 'AI interpretation', hook: 'It reads your spectrum like an academic reviewer.', points: ['Auto-detects spectral peaks, harmonic series and formants, explained in scholarly terms', 'Drafts analysis paragraphs you can drop into your paper', 'Switches language for international submissions', 'Suggests what to examine next'], stats: [{ n: 'Multi', l: 'Providers' }, { n: '30', l: 'AI tests' }] }, // TODO(ja)
+      ],
+      rowPrec: 'Accuracy', // TODO(ja)
+      rowUse: 'Use case', // TODO(ja)
+      stdArchive: 'Referenced metadata elements', // TODO(ja)
+      stdArchiveNote: 'Field-by-field mapping under review (no conformance claim)', // TODO(ja)
+      pitchEng: 'Pitch engines', // TODO(ja)
+    },
+    vision: {
+      eyebrow: 'A VOICE FOR SOUND · OUR VISION', // TODO(ja)
+      title: 'About Jinyun SonicAI', // TODO(ja)
+      quote: '“We believe sound holds a culture’s aesthetic and an era’s memory — and a great tool makes that evidence seen, cited and preserved.”', // TODO(ja)
+      bodyTop: 'Jinyun SonicAI is one of the brands launched by the Southwest University Musical Acoustics Lab for innovative applications, focused on the intersection of musical acoustics, music technology, digital humanities and AI research.', // TODO(ja)
+      bodyBottom: 'AcouScope is the studio’s acoustic analysis engine for music and sound research — delivering the complete workflow from field recording to published figures in one application.', // TODO(ja)
+      badges: ['Southwest University', 'Musical Acoustics · Digital Humanities', 'Open-source & auditable · GPL-3.0-only'], // TODO(ja)
+    },
+    stats: {
+      engines: 'pitch engines', // TODO(ja)
+      tests: 'automated tests', // TODO(ja)
+      realtime: '× realtime', // TODO(ja)
+      themes: 'themes', // TODO(ja)
+    },
+    download: {
+      eyebrow: 'DOWNLOAD', // TODO(ja)
+      title: 'Download AcouScope', // TODO(ja)
+      subtitle: 'Native macOS release (arm64 / x86_64); other platform builds ready in parallel.', // TODO(ja)
+      heroBtn: 'Coming soon', // TODO(ja)
+      recommend: 'Recommended for you', // TODO(ja)
+      allTitle: 'All platforms & builds', // TODO(ja)
+      coming: 'Coming soon', // TODO(ja)
+      note: 'GPL-3.0-only · open-source & auditable · optional sponsorship', // TODO(ja)
+      releaseHint: 'Download links will be provided at the official release.', // TODO(ja)
+    },
+    cta: {
+      title: 'Make every sound citable evidence.', // TODO(ja)
+      subtitle: 'For research across musicology, acoustics and the digital humanities — from measurement to archiving in one go.', // TODO(ja)
+      button: 'See download options', // TODO(ja)
+    },
+    footer: {
+      tagline: '音の測定を記録し、証拠を保存する。',
+      contact: '連絡先',
+      license: 'ライセンス',
+      rights: '© 2026 Jinyun SonicAI\nSouthwest University Art Anthropology Institute · Southwest University China Music Mental Health Institute', // TODO(ja)
+      special: 'Dedicated with gratitude to the leading scholar in musical acoustics and expert of the State Council Special Allowance: Prof. Han Baoqiang.', // TODO(ja)
+      version: 'v0.99.20260904', // TODO(ja)
+    },
+    changelog: {
+      eyebrow: 'CHANGELOG', // TODO(ja)
+      headline: 'v0.98 → v0.99, nine categories of updates', // TODO(ja)
+      legend: '★ marks the headline items of this release; one line each, numbers consistent with the rest of the site.', // TODO(ja)
+    },
+    help: {
+      eyebrow: 'HELP', // TODO(ja)
+      headline: 'Quick start: fourteen steps to get going', // TODO(ja)
+      legend: 'Mirrored word for word from the in-app Help → Quick Start (14 items per language).', // TODO(ja)
+      shortcutsTitle: 'Keyboard shortcuts', // TODO(ja)
+      shortcutsNote: 'On macOS, Ctrl corresponds to Cmd; “Redo” is Cmd+Shift+Z on macOS.', // TODO(ja)
+    },
+  },
 }
 
 export type Dict = typeof dict.sc
@@ -514,7 +808,7 @@ interface I18nCtx {
 
 const Ctx = createContext<I18nCtx | null>(null)
 
-// 依据浏览器语言/区域嗅探初始语言：中文（简/繁）、英文；其它语言回退英文
+// 依据浏览器语言/区域嗅探初始语言：中文（简/繁）、英文、韩文、日文；其它语言回退英文
 function detectLocale(): Locale {
   if (typeof navigator === 'undefined') return 'sc'
   const lan = (navigator.language || 'en').toLowerCase()
@@ -526,6 +820,8 @@ function detectLocale(): Locale {
   if (/^zh/.test(lan)) {
     return /hant|hk|mo|tw/.test(region) ? 'tc' : 'sc'
   }
+  if (/^ko/.test(lan)) return 'ko'
+  if (/^ja/.test(lan)) return 'ja'
   return 'en'
 }
 
