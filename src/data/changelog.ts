@@ -24,7 +24,7 @@ export const CHANGELOG: Record<Locale, ChangelogContent> = {
   sc: {
     title: '开发日志',
     subtitle: 'v0.98 → v0.99 更新要点：九类更新、每条一行，★ 为本版重磅。',
-    version: 'v0.99.20260904',
+    version: 'v0.99.20260925',
     sections: [
       {
         title: '分析引擎 —— 同一段录音，三套引擎按场景切换',
@@ -113,7 +113,7 @@ export const CHANGELOG: Record<Locale, ChangelogContent> = {
   tc: {
     title: '開發日誌',
     subtitle: 'v0.98 → v0.99 更新要點：九類更新、每條一行，★ 為本版重磅。',
-    version: 'v0.99.20260904',
+    version: 'v0.99.20260925',
     sections: [
       {
         title: '分析引擎 —— 同一段錄音，三套引擎按場景切換',
@@ -202,7 +202,7 @@ export const CHANGELOG: Record<Locale, ChangelogContent> = {
   en: {
     title: 'Changelog',
     subtitle: 'What changed from v0.98 to v0.99: nine categories, one line each — ★ marks the headline items of this release.',
-    version: 'v0.99.20260904',
+    version: 'v0.99.20260925',
     sections: [
       {
         title: 'Analysis engines — one recording, three engines by scenario',
@@ -291,7 +291,7 @@ export const CHANGELOG: Record<Locale, ChangelogContent> = {
   ko: {
     title: '개발 로그',
     subtitle: 'v0.98 → v0.99 주요 업데이트: 9개 카테고리, 항목당 한 줄 — ★는 이번 릴리스의 헤드라인 항목입니다.',
-    version: 'v0.99.20260904',
+    version: 'v0.99.20260925',
     sections: [
       {
         title: '분석 엔진 —— 같은 녹음, 시나리오별 3개 엔진 전환',
@@ -380,7 +380,7 @@ export const CHANGELOG: Record<Locale, ChangelogContent> = {
   ja: {
     title: '開発ログ',
     subtitle: 'v0.98 → v0.99 の主な更新：9カテゴリ、各1行 — ★は本リリースの見出し項目です。',
-    version: 'v0.99.20260904',
+    version: 'v0.99.20260925',
     sections: [
       {
         title: '分析エンジン —— 同じ録音、3エンジンをシーン別に切替',

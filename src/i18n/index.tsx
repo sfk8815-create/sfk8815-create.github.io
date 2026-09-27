@@ -26,7 +26,7 @@ const dict = {
         'AcouScope（音析）是面向音乐学、声学与数字人文等研究领域的次世代声学分析引擎。无论你是研究古琴泛音的民族音乐学家、分析唱腔音高的声乐研究者，还是测量琴房混响的音频工程师，它都能把听觉上的直觉，转译成可量化、可引用、可复现的声学证据。导出字段参考 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等元数据要素（字段对照核对中），支持自定义映射，让每一段录音都可长期存档、可溯源。三栏工作台让频谱、语谱与 3D 视图随开随用，研究整理一气呵成。',
       cta1: '即将发布',
       cta2: '了解三套音高引擎',
-      version: 'v0.99.20260904',
+      version: 'v0.99.20260925',
       chip: 'SOTA 深度学习底座 · 单窗口三栏工作台 · 本地 AI 释图',
     },
     product: {
@@ -172,6 +172,17 @@ const dict = {
       coming: '即将发布',
       note: 'GPL-3.0-only · 开源可审计 · 按需赞助',
       releaseHint: '下载地址将在正式发布时提供。',
+      faqHint: '首次打开被拦？见帮助页「遇到问题怎么办」。',
+    },
+    faq: {
+      title: '遇到问题怎么办',
+      items: [
+        '首次打开被系统拦截（macOS）：提示"无法打开"或"无法验证开发者"时，在应用图标上右键（或按住 Control 点击）▸ 打开，弹窗里再点一次"打开"。只需这一次，之后双击即可正常打开。Windows 如遇 SmartScreen 蓝色提示，点"更多信息"▸"仍要运行"。',
+        '若右键打开仍不行：本机终端里运行一条命令，仅移除 AcouScope 自身的"隔离"标记：xattr -d com.apple.quarantine "/Applications/AcouScope.app"。背景：本版有意未做 Apple 付费 notarization（公证），系统会把所有网上下载、未经公证的 App 默认标为"未验证"；这条命令只针对本应用自身放行，不更改任何系统安全设置，也不影响其他应用。',
+        '想确认下载件完整未被篡改：发布页会给出每个安装包文件的 sha256 校验值。下载后在本机核对：macOS 终端运行 shasum -a 256 加文件名；Windows PowerShell 运行 Get-FileHash 文件名。两串完全一致再安装。',
+        'mp3 / m4a 打不开、或 AI 解读不可用：多半是装了 core 轻量包——它不内置 FFmpeg 与本地 AI 引擎（播放音频通常不受影响，受影响的是这类格式的分析解码）。请改用 full 完整包，或自行安装 FFmpeg；AI 解读组件也可在设置里按需下载。',
+        '下载慢、下载失败或遇到其他问题：换个网络重试；仍解决不了请发邮件到 sfklc@hotmail.com，或加官方微信群（应用内工具栏"加入官方微信群"有二维码）。反馈时请附上：你在做哪一步、期望看到什么、实际看到什么，最好带一张截图——这一句话对我们值一整天。',
+      ],
     },
     cta: {
       title: '让每一段声音，都成为可引用的证据。',
@@ -184,7 +195,7 @@ const dict = {
       license: '许可',
       rights: '© 2026 缙云声智（Jinyun SonicAI）\n西南大学艺术人类学研究所 · 西南大学中国音乐心理健康研究所',
       special: '谨以此软件，特别鸣谢并献予音乐声学领军学者、国务院特殊津贴专家：韩宝强 教授。',
-      version: 'v0.99.20260904',
+      version: 'v0.99.20260925',
       licenseValue: '开源可审计 · GPL-3.0-only',
     },
     changelog: {
@@ -214,7 +225,7 @@ const dict = {
         'AcouScope（音析）是面向音樂學、聲學與數位人文等研究領域的次世代聲學分析引擎。無論你是研究古琴泛音的民樂學者、分析唱腔音高的聲樂研究者，還是測量琴房混響的音訊工程師，它都能把聽覺上的直覺，轉譯成可量化、可引用、可重現的聲學證據。匯出字段參考 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等元資料要素（字段對照核對中），支援自訂映射，讓每一段錄音都可長期儲存、可溯源。三欄工作台讓頻譜、語譜與 3D 視圖隨開隨用，研究整理一氣呵成。',
       cta1: '即將發布',
       cta2: '了解三套音高引擎',
-      version: 'v0.99.20260904',
+      version: 'v0.99.20260925',
       chip: 'SOTA 深度學習底座 · 單視窗三欄工作台 · 本地 AI 釋圖',
     },
     product: {
@@ -320,6 +331,17 @@ const dict = {
       coming: '即將發布',
       note: 'GPL-3.0-only · 開源可審計 · 按需贊助',
       releaseHint: '下載位址將在正式發布時提供。',
+      faqHint: '首次開啟被攔？見說明頁「遇到問題怎麼辦」。',
+    },
+    faq: {
+      title: '遇到問題怎麼辦',
+      items: [
+        '首次開啟被系統攔截（macOS）：提示「無法開啟」或「無法驗證開發者」時，在應用圖示上右鍵（或按住 Control 點擊）▸ 開啟，彈窗裡再點一次「開啟」。只需這一次，之後雙擊即可正常開啟。Windows 如遇 SmartScreen 藍色提示，點「更多資訊」▸「執行」。',
+        '若右鍵開啟仍無效：在本機終端執行一條命令，僅移除 AcouScope 自身的「隔離」標記：xattr -d com.apple.quarantine "/Applications/AcouScope.app"。背景：本版有意未做 Apple 付費公證，系統會把所有網路下載、未經公證的 App 預設標為「未驗證」；這條命令只針對本應用自身放行，不更改任何系統安全設定，也不影響其他應用。',
+        '想確認下載檔完整未被竄改：發布頁會給出每個安裝檔的 sha256 校驗值。下載後在本機核對：macOS 終端執行 shasum -a 256 加檔名；Windows PowerShell 執行 Get-FileHash 檔名。兩串完全一致再安裝。',
+        'mp3 / m4a 打不開、或 AI 解讀不可用：多半是裝了 core 輕量套件——它不內建 FFmpeg 與本地 AI 引擎（播放音訊通常不受影響，受影響的是這類格式的分析解碼）。請改用 full 完整套件，或自行安裝 FFmpeg；AI 解讀元件也可在設定裡按需下載。',
+        '下載慢、下載失敗或遇到其他問題：換個網路重試；仍解決不了請發信到 sfklc@hotmail.com，或加入官方微信群（應用內工具欄「加入官方微信群」有 QR Code）。回饋時請附：你在做哪一步、期望看到什麼、實際看到什麼，最好附一張截圖——這一句話對我們值一整天。',
+      ],
     },
     cta: {
       title: '讓每一段聲音，都成為可引用的證據。',
@@ -332,7 +354,7 @@ const dict = {
       license: '授權',
       rights: '© 2026 縉雲聲智（Jinyun SonicAI）\n西南大學藝術人類學研究所 · 西南大學中國音樂心理健康研究所',
       special: '謹以此軟體，特別鳴謝並獻予音樂聲學領軍學者、國務院特殊津貼專家：韓寶強 教授。',
-      version: 'v0.99.20260904',
+      version: 'v0.99.20260925',
       licenseValue: '開源可審計 · GPL-3.0-only',
     },
     changelog: {
@@ -362,7 +384,7 @@ const dict = {
         'AcouScope is a next-generation acoustic analysis engine for research fields such as musicology, acoustics and the digital humanities. Whether you are an ethnomusicologist tracing a guqin’s harmonics, a vocal researcher analyzing a singer’s microtones, or an audio engineer measuring a room’s reverb, it turns your auditory intuition into measurable, citable, reproducible acoustic evidence. Exported fields reference metadata elements from IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 (field-by-field mapping under review), with custom mapping supported, so every recording stays archivable long-term and traceable. The three-pane workspace keeps spectrum, spectrogram and 3D views at hand, so analysis stays smooth and unbroken.',
       cta1: 'Coming soon',
       cta2: 'Explore three pitch engines',
-      version: 'v0.99.20260904',
+      version: 'v0.99.20260925',
       chip: 'SOTA deep-learning core · single-window three-pane workspace · local AI interpretation',
     },
     product: {
@@ -498,6 +520,17 @@ const dict = {
       coming: 'Coming soon',
       note: 'GPL-3.0-only · open-source & auditable · optional sponsorship',
       releaseHint: 'Download links will be provided at the official release.',
+      faqHint: 'Blocked on first launch? See "What to do if something goes wrong" in Help.',
+    },
+    faq: {
+      title: 'What to do if something goes wrong',
+      items: [
+        'Blocked on first launch (macOS): if you see "cannot be opened" or "cannot verify the developer", right-click (or Control-click) the app icon and choose Open, then click Open in the dialog. This is needed only once; afterwards it opens normally. On Windows, if SmartScreen appears, click "More info" then "Run anyway".',
+        'If Open-still-fails: run one command in Terminal to remove the quarantine attribute from AcouScope itself: xattr -d com.apple.quarantine "/Applications/AcouScope.app". Why: this release intentionally ships without Apple notarization, so macOS marks every downloaded, un-notarized app as unverified by default. The command affects only this one app — it changes no system security settings and no other apps.',
+        'Want to verify your download is intact? Each release page lists the sha256 of every installer. Check locally: on macOS run shasum -a 256 <file>; on Windows PowerShell run Get-FileHash <file>. Install only if the two strings match exactly.',
+        'mp3 / m4a won\'t open, or AI interpretation is unavailable? You likely installed the core package — it does not bundle FFmpeg or the local AI engine (audio playback is usually unaffected; analysis decoding of those formats is). Use the full package instead, or install FFmpeg yourself; AI components can also be downloaded on demand in Settings.',
+        'Slow or failed downloads, or anything else: retry on a different network; if it persists, email sfklc@hotmail.com or join our official WeChat group (QR code inside "Join Official WeChat Group" on the toolbar). When reporting, tell us which step you were on, what you expected, and what you actually saw — a screenshot helps. One sentence like that saves us a whole day.',
+      ],
     },
     cta: {
       title: 'Make every sound citable evidence.',
@@ -510,7 +543,7 @@ const dict = {
       license: 'License',
       rights: '© 2026 Jinyun SonicAI\nSouthwest University Art Anthropology Institute · Southwest University China Music Mental Health Institute',
       special: 'Dedicated with gratitude to the leading scholar in musical acoustics and expert of the State Council Special Allowance: Prof. Han Baoqiang.',
-      version: 'v0.99.20260904',
+      version: 'v0.99.20260925',
       licenseValue: 'Open-source & auditable · GPL-3.0-only',
     },
     changelog: {
@@ -539,7 +572,7 @@ const dict = {
       subtitle: 'AcouScope는 음악학·음향학·디지털 휴머니티스 연구 분야를 위한 차세대 음향 분석 엔진입니다. 거금의 하모닉스를 연구하는 민족음악학자, 창법의 피치를 분석하는 성악 연구자, 연습실의 잔향을 측정하는 오디오 엔지니어든, 듣기 직관을 정량화·인용·재현 가능한 음향 증거로 번역합니다. 내보내기 필드는 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 등 메타데이터 요소를 참조(필드 대조 확인 진행 중)하며 사용자 정의 매핑을 지원하여, 모든 녹음이 장기 아카이빙되고 추적 가능하게 합니다. 3패널 워크스페이스로 스펙트럼·스펙트로그램·3D 뷰를 언제든 열어, 연구 정리를 한 번에 끝냅니다.',
       cta1: '출시 예정',
       cta2: '3종 피치 엔진 보기',
-      version: 'v0.99.20260904',
+      version: 'v0.99.20260925',
       chip: 'SOTA 딥러닝 기반 · 단일 창 3패널 워크스페이스 · 로컬 AI 해석',
     },
     product: {
@@ -651,6 +684,17 @@ const dict = {
       coming: '출시 예정',
       note: 'GPL-3.0-only · 오픈소스 감사 가능 · 필요에 따른 후원',
       releaseHint: '다운로드 주소를 정식 출시 시 제공하겠습니다.',
+      faqHint: '첫 실행에서 차단되었나요? 도움말의 "문제 발생 시 해결 방법"을 보세요.',
+    },
+    faq: {
+      title: '문제 발생 시 해결 방법',
+      items: [
+        '첫 실행 시 차단됨(macOS): "열 수 없음" 또는 "개발자 확인 불가" 메시지가 뜨면 앱 아이콘을 우클릭(또는 Control+클릭) ▸ "열기"를 선택하고, 대화상자에서 다시 "열기"를 누르세요. 처음 한 번만 그러면 이후에는 정상 실행됩니다. Windows에서 SmartScreen이 나타나면 "추가 정보" ▸ "실행"을 선택하세요.',
+        '그래도 열리지 않으면: 터미널에서 한 명령어로 AcouScope 자체의 격리 속성만 제거하세요: xattr -d com.apple.quarantine "/Applications/AcouScope.app". 배경: 이 릴리스는 의도적으로 Apple 공증을 생략했기에, macOS는 공증되지 않은 모든 다운로드 앱을 기본으로 미확인 상태로 표시합니다. 이 명령은 이 앱에만 적용되며 시스템 보안 설정이나 다른 앱에는 영향을 주지 않습니다.',
+        '다운로드 파일의 무결성을 확인하려면: 각 배포 페이지에 설치 파일별 sha256 값이 게시됩니다. 로컬에서 확인하세요 — macOS: shasum -a 256 <파일>, Windows PowerShell: Get-FileHash <파일>. 두 값이 완전히 일치할 때만 설치하세요.',
+        'mp3 / m4a가 열리지 않거나 AI 해석을 쓸 수 없다면: core 패키지를 설치한 것일 수 있습니다 — core에는 FFmpeg과 로컬 AI 엔진이 포함되어 있지 않습니다(재생은 보통 영향이 없고, 해당 형식의 분석 디코딩에 영향). full 패키지를 쓰거나 FFmpeg을 직접 설치하세요. AI 구성 요소는 설정에서 필요할 때 다운로드할 수 있습니다.',
+        '다운로드가 느리거나 실패하거나 기타 문제: 다른 네트워크로 재시도하세요. 해결되지 않으면 sfklc@hotmail.com 으로 메일이나, 공식 WeChat 그룹(앱 내 툴바의 "공식 WeChat 그룹 가입"에 QR 코드)으로 알려주세요. 신고 시: 어떤 단계인지, 무엇을 기대했는지, 실제로 무엇을 봤는지 — 스크린샷이 있으면 좋습니다. 그 한 문장이 우리에게 하루의 가치를 줍니다.',
+      ],
     },
     cta: {
       title: '모든 소리를, 인용 가능한 증거로.',
@@ -663,7 +707,7 @@ const dict = {
       license: '라이선스',
       rights: '© 2026 Jinyun SonicAI\n서남대학교 예술인류학 연구소 · 서남대학교 중국음악심리건강 연구소',
       special: '이 소프트웨어로, 음악음향학의 선구적 학자이자 국무원 특별 보조금 전문가 한보강(韩宝强) 교수께 감사와 헌사를 전합니다.',
-      version: 'v0.99.20260904',
+      version: 'v0.99.20260925',
       licenseValue: '오픈소스·감사 가능 · GPL-3.0-only',
     },
     changelog: {
@@ -692,7 +736,7 @@ const dict = {
       subtitle: 'AcouScopeは音楽学・音響学・デジタル・ヒューマニティーズ研究のための次世代音響分析エンジンです。古琴のハーモニックを研究する民族音楽学者、歌唱法のピッチを分析する声楽研究者、練習室の残響を測定するオーディオエンジニア——いずれも聴覚の直感を、計測可能・引用可能・再現可能な音響証拠に変換します。エクスポートフィールドは IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等のメタデータ要素を参考（フィールド対照確認は進行中）、カスタムマッピングに対応し、すべての録音を長期アーカイブ・トレーサブルにします。3ペインワークスペースでスペクトル・スペクトログラム・3Dビューをいつでも開け、研究の整理を一気通貫で。',
       cta1: '近日公開',
       cta2: '3つのピッチエンジンを詳しく',
-      version: 'v0.99.20260904',
+      version: 'v0.99.20260925',
       chip: 'SOTAディープラーニング基盤 · 単一ウィンドウ3ペインワークスペース · ローカルAI解釈',
     },
     product: {
@@ -804,6 +848,17 @@ const dict = {
       coming: '近日公開',
       note: 'GPL-3.0-only · オープンソースで監査可能 · 任意のスポンサー',
       releaseHint: 'ダウンロードリンクは正式リリース時に提供します。',
+      faqHint: '初回起動で止まる場合は、ヘルプページの「問題が起きたときの対処法」をご覧ください。',
+    },
+    faq: {
+      title: '問題が起きたときの対処法',
+      items: [
+        '初回起動でブロックされる（macOS）：「開けません」「開発元を確認できません」と表示されたら、アプリアイコンを右クリック（または Control+クリック）▸「開く」を選び、ダイアログでもう一度「開く」を押してください。この操作は初回の一度だけで、以降はダブルクリックで正常に開けます。Windows で SmartScreen が出たら「詳細情報」▸「実行」を選んでください。',
+        'それでも開けない場合：ターミナルで1つのコマンドを実行し、AcouScope 自身の隔離属性だけを解除してください：xattr -d com.apple.quarantine "/Applications/AcouScope.app"。背景：本バージョンは意図的に Apple の公証を行っていません。macOS は公証されていないダウンロードアプリを既定で「未確認」として扱います。このコマンドはこのアプリにのみ作用し、システムのセキュリティ設定や他のアプリには影響しません。',
+        'ダウンロードファイルの完全性を確認したい場合：各配布ページにインストールファイルの sha256 値を掲載します。手元で確認してください — macOS: shasum -a 256 <ファイル>、Windows PowerShell: Get-FileHash <ファイル>。両者が完全一致した場合のみインストールしてください。',
+        'mp3 / m4a が開かない、または AI 解釈が使えない：core パッケージをインストールした可能性があります — core には FFmpeg とローカル AI エンジンが含まれません（再生は通常影響なく、これらの形式の分析デコードに影響します）。full パッケージへ切り替えるか、FFmpeg をご自身で導入してください。AI コンポーネントは設定から必要に応じてダウンロードできます。',
+        'ダウンロードが遅い／失敗する／その他：回線を変えて再試行、それでも解決しなければ sfklc@hotmail.com へメール、または公式 WeChat グループ（アプリ内ツールバー「公式 WeChat グループに参加」に QR コード）へ。報告の際は：どの操作中か、何を期待したか、実際に見えたもの——スクリーンショットがあると尚可。その一文が、私たちの一日分の価値になります。',
+      ],
     },
     cta: {
       title: 'すべての音を、引用可能な証拠に。',
@@ -816,7 +871,7 @@ const dict = {
       license: 'ライセンス',
       rights: '© 2026 Jinyun SonicAI\n西南大学芸術人類学研究所 · 西南大学中国音楽メンタルヘルス研究所',
       special: 'このソフトウェアをもって、音楽音響学の先駆的学者であり国務院特別手当の専門家である 韓宝強（ハン・バオチャン）教授に、感謝と献辞を捧げます。',
-      version: 'v0.99.20260904',
+      version: 'v0.99.20260925',
       licenseValue: 'オープンソース・監査可能 · GPL-3.0-only',
     },
     changelog: {

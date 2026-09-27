@@ -90,6 +90,7 @@ export default function Download() {
 
         <p className="mt-10 text-center text-xs text-faint">{t.download.note}</p>
         <p className="mt-2 text-center text-[11px] text-faint/70">{t.download.releaseHint}</p>
+        <p className="mt-2 text-center text-[11px] text-faint/70">{t.download.faqHint}</p>
       </div>
     </section>
   )
