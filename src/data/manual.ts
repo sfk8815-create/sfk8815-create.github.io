@@ -1,13 +1,13 @@
-// 用户手册数据（站点「帮助」栏目 · S3-c3）
-// 内容源：acouscope/src/acouscope/ui/widgets/help_dialogs.py 的 MANUAL（T-1057 ce4fe7d 已入库）
-// 五语（sc / tc / en / ko / ja）各 19 节，逐字镜像内容源：<h3>→小节 title、<li>→items[].text（含 <b> 与 {sc_*} 原文）；
+// 用户手册数据（站点「帮助」栏目）
+// 内容与应用内用户手册同步维护。
+// 五语（sc / tc / en / ko / ja）各 22 节，与应用内帮助同步：<h3>→小节 title、<li>→items[].text（含 <b> 与 {sc_*} 原文）；
 // 第 18 节（快捷键表）按结构化数据建模：tables[].{caption, headers, rows[{action,key}]}，页面用真实 <table> 渲染。
 // {sc_*} 占位符不逐条写死、不原样渲染花括号：渲染时统一经 quickstart.ts 的 renderShortcuts（11 键映射）替换；<b> 经 HelpPage 的 renderRich 渲染为 <strong>。
 // 分语范式同 quickstart.ts / changelog.ts（import type { Locale } + getManual(locale)）。
 import type { Locale } from '../i18n'
 
 export interface ManualItem {
-  text: string // 逐字镜像内容源 <li>（含 <b> 与 {sc_*} 原文）
+  text: string // 与应用内帮助同步的 <li>（含 <b> 与 {sc_*} 原文）
 }
 
 export interface ManualTable {
@@ -17,18 +17,18 @@ export interface ManualTable {
 }
 
 export interface ManualSection {
-  title: string // 逐字镜像内容源 <h3>（含序号）
+  title: string // 与应用内帮助同步的 <h3>（含序号）
   items?: ManualItem[] // 第 1–17、19 节：<li> 条目
   tables?: ManualTable[] // 第 18 节：快捷键表（结构化，真实 <table> 渲染）
 }
 
 export interface ManualContent {
-  h2: string // 内容源 <h2>
-  intro: string // <h2> 之后引言 <p>，逐字镜像
-  sections: ManualSection[] // 19 节
+  h2: string // 应用内帮助 <h2>
+  intro: string // <h2> 之后引言 <p>，与应用内帮助同步
+  sections: ManualSection[] // 22 节
 }
 
-// 五语各：h2（内容源 <h2>）+ intro（<h2> 之后引言 <p>，逐字镜像）+ 19 节（ManualSection[]）
+// 五语各：h2（应用内帮助 <h2>）+ intro（<h2> 之后引言 <p>）+ 22 节（ManualSection[]）
 export const MANUAL: Record<Locale, ManualContent> = {
   sc: {
     h2: '用户手册',
@@ -49,7 +49,7 @@ export const MANUAL: Record<Locale, ManualContent> = {
       { title: '2. 加载与播放',
         items: [
           { text: '<b>打开音频</b>：文件 → 打开（{sc_open}），支持 WAV / FLAC / MP3 / AIFF / OGG。' },
-          { text: '<b>内置解码</b>：以上格式均可直接打开，内置 FFmpeg，无需外部编码器。' },
+          { text: '<b>格式解码</b>：WAV / FLAC / AIFF / OGG 各安装包均可直接打开；MP3 / M4A / AAC 等有损格式——full 包与 Windows core 包内置 FFmpeg 直接解码，macOS / Linux core 包需系统自备 FFmpeg（不影响播放）。' },
           { text: '<b>播放 / 暂停 / 停止</b>：空格播放 / 暂停，Shift+空格停止，Esc 停止播放并取消选区。' },
           { text: '<b>播放头定位</b>：在波形上单击任意处定位播放头，也可用时间码输入。' },
           { text: '<b>缩放</b>：放大 / 缩小（Ctrl+= / Ctrl+-）、适应窗口（Ctrl+0）、缩放到选区（Shift+Z）。' },
@@ -286,10 +286,35 @@ export const MANUAL: Record<Locale, ManualContent> = {
           { text: '<b>无分级</b>：开源软件，功能无分级、无需注册或激活。' },
           { text: '<b>第三方许可</b>：第三方许可与来源清单随安装包提供。' },
           { text: '<b>模型下载</b>：模型首次使用自动下载（含校验），此后可离线。' },
-          { text: '<b>内置 FFmpeg</b>：音频解码内置 FFmpeg，无需外部编码器。' },
+          { text: '<b>音频解码</b>：无损格式各包直开；MP3 / M4A / AAC 等在 full 包与 Windows core 包内置解码，macOS / Linux core 包需系统 FFmpeg。' },
           { text: '<b>本地计算</b>：分析在本地进行；除你显式选择云端 AI Provider 外数据不外传。' },
           { text: '<b>隐私提示</b>：使用云端 AI 前请确认数据脱敏与授权。' },
           { text: '<b>完整文本</b>：许可证全文见随附 LICENSE 文件。' },
+        ],
+      },
+      { title: '20. 安装与版本选择（core / full）',
+        items: [
+          { text: '<b>两种安装包</b>：full（内置 AI 引擎与 FFmpeg，离线可跑，体积较大）/ core（精简约 1/6 体积，AI 组件与部分解码按需获取）。' },
+          { text: '<b>模型权重</b>：full 包已内置 rmvpe / swift_f0 等 ONNX，装好即离线可用；core 包首次使用音高检测时自动下载（含 sha256 校验），此后可离线。' },
+          { text: '<b>音频解码</b>：无损格式各包直开；MP3 / M4A / AAC 等在 full 包与 Windows core 包内置解码，macOS / Linux core 包需系统 FFmpeg。' },
+          { text: '<b>平台下限</b>：macOS 12+（arm64 / x86_64 各自单构）；Windows 10 / 11 64 位；Linux x86_64（Ubuntu 24.04+，Arch 实测通过）。' },
+          { text: '<b>不做代码签名与公证</b>：macOS 首次打开请右键 ▸ 打开一次；Windows 如遇 SmartScreen 提示请选择「仍要运行」。' },
+          { text: '<b>校验</b>：安装包与 sha256 校验值见 GitHub Release 页，下载后可比对完整性。' },
+        ],
+      },
+      { title: '21. 检查更新',
+        items: [
+          { text: '<b>只通知</b>：帮助 ▸ 检查更新仅提示新版本并附更新说明链接，不自动下载或安装。' },
+          { text: '<b>零标识</b>：更新检查请求不携带版本号或设备信息，每日至多一次，启动 5 秒后自动查一次。' },
+          { text: '<b>可关闭</b>：可随时在「设置 → AI」中关闭自动检查更新。' },
+        ],
+      },
+      { title: '22. 支持与致谢',
+        items: [
+          { text: '<b>开源可审计</b>：AcouScope 以 GPL-3.0-only 发布，源码与第三方许可清单见 GitHub 仓库。' },
+          { text: '<b>官方微信群</b>：应用内工具栏「加入官方微信群」提供二维码。' },
+          { text: '<b>支持一下</b>：应用内致谢入口，用于支持后续维护。' },
+          { text: '<b>反馈</b>：请附上你在做哪一步、期望看到什么、实际看到什么，最好带一张截图。' },
         ],
       },
     ] as ManualSection[],
@@ -313,7 +338,7 @@ export const MANUAL: Record<Locale, ManualContent> = {
       { title: '2. 載入與播放',
         items: [
           { text: '<b>開啟音訊</b>：檔案 → 開啟（{sc_open}），支援 WAV / FLAC / MP3 / AIFF / OGG。' },
-          { text: '<b>內建解碼</b>：以上格式均可直接開啟，內建 FFmpeg，無需外部編碼器。' },
+          { text: '<b>格式解碼</b>：WAV / FLAC / AIFF / OGG 各安裝包均可直接開啟；MP3 / M4A / AAC 等有損格式——full 包與 Windows core 包內建 FFmpeg 直接解碼，macOS / Linux core 包需系統自備 FFmpeg（不影響播放）。' },
           { text: '<b>播放 / 暫停 / 停止</b>：空白鍵播放 / 暫停，Shift+空白鍵停止，Esc 停止播放並取消選區。' },
           { text: '<b>播放頭定位</b>：在波形上單擊任意處定位播放頭，也可用時間碼輸入。' },
           { text: '<b>縮放</b>：放大 / 縮小（Ctrl+= / Ctrl+-）、適應視窗（Ctrl+0）、縮放到選區（Shift+Z）。' },
@@ -550,10 +575,35 @@ export const MANUAL: Record<Locale, ManualContent> = {
           { text: '<b>無分級</b>：開源軟體，功能無分級、無需註冊或啟動。' },
           { text: '<b>第三方授權</b>：第三方授權與來源清單隨安裝套件提供。' },
           { text: '<b>模型下載</b>：模型首次使用自動下載（含校驗），此後可離線。' },
-          { text: '<b>內建 FFmpeg</b>：音訊解碼內建 FFmpeg，無需外部編碼器。' },
+          { text: '<b>音訊解碼</b>：無損格式各包直開；MP3 / M4A / AAC 等在 full 包與 Windows core 包內建解碼，macOS / Linux core 包需系統 FFmpeg。' },
           { text: '<b>本機計算</b>：分析在本機進行；除你明確選擇雲端 AI Provider 外資料不外傳。' },
           { text: '<b>隱私提示</b>：使用雲端 AI 前請確認資料去識別與授權。' },
           { text: '<b>完整文字</b>：授權證全文見隨附 LICENSE 檔案。' },
+        ],
+      },
+      { title: '20. 安裝與版本選擇（core / full）',
+        items: [
+          { text: '<b>兩種安裝包</b>：full（內建 AI 引擎與 FFmpeg，離線可跑，體積較大）/ core（精簡約 1/6 體積，AI 組件與部分解碼按需取得）。' },
+          { text: '<b>模型權重</b>：full 包已內建 rmvpe / swift_f0 等 ONNX，裝好即離線可用；core 包首次使用音高偵測時自動下載（含 sha256 校驗），此後可離線。' },
+          { text: '<b>音訊解碼</b>：無損格式各包直開；MP3 / M4A / AAC 等在 full 包與 Windows core 包內建解碼，macOS / Linux core 包需系統 FFmpeg。' },
+          { text: '<b>平台下限</b>：macOS 12+（arm64 / x86_64 各自單構）；Windows 10 / 11 64 位元；Linux x86_64（Ubuntu 24.04+，Arch 實測通過）。' },
+          { text: '<b>不做程式碼簽章與公證</b>：macOS 首次開啟請右鍵 ▸ 打開一次；Windows 如遇 SmartScreen 提示請選擇「仍要執行」。' },
+          { text: '<b>校驗</b>：安裝包與 sha256 校驗值見 GitHub Release 頁，下載後可比對完整性。' },
+        ],
+      },
+      { title: '21. 檢查更新',
+        items: [
+          { text: '<b>只通知</b>：說明 ▸ 檢查更新僅提示新版本並附更新說明連結，不自動下載或安裝。' },
+          { text: '<b>零識別</b>：更新檢查請求不攜帶版本號或裝置資訊，每日至多一次，啟動 5 秒後自動查一次。' },
+          { text: '<b>可關閉</b>：可隨時在「設定 → AI」中關閉自動檢查更新。' },
+        ],
+      },
+      { title: '22. 支援與致謝',
+        items: [
+          { text: '<b>開源可稽核</b>：AcouScope 以 GPL-3.0-only 發布，原始碼與第三方授權清單見 GitHub 倉庫。' },
+          { text: '<b>官方微信群</b>：應用內工具列「加入官方微信群」提供二維碼。' },
+          { text: '<b>支持一下</b>：應用內致謝入口，用於支持後續維護。' },
+          { text: '<b>回饋</b>：請附上你在做哪一步、期望看到什麼、實際看到什麼，最好帶一張截圖。' },
         ],
       },
     ] as ManualSection[],
@@ -577,7 +627,7 @@ export const MANUAL: Record<Locale, ManualContent> = {
       { title: '2. Loading and Playback',
         items: [
           { text: '<b>Open audio</b>: File → Open ({sc_open}). Supports WAV / FLAC / MP3 / AIFF / OGG.' },
-          { text: '<b>Built-in decoding</b>: all these formats open directly with the built-in FFmpeg — no system encoder needed.' },
+          { text: '<b>Format decoding</b>: WAV / FLAC / AIFF / OGG open directly in every package; lossy formats such as MP3 / M4A / AAC are decoded out of the box in the full package and the Windows core package (FFmpeg bundled), while the macOS / Linux core package needs a system FFmpeg (playback is unaffected).' },
           { text: '<b>Play / Pause / Stop</b>: Space toggles play / pause, Shift+Space stops, Esc stops playback and clears the selection.' },
           { text: '<b>Position the playhead</b>: click anywhere on the waveform to position the playhead, or type a timecode.' },
           { text: '<b>Zoom</b>: Zoom in / out (Ctrl+= / Ctrl+-), Fit to Window (Ctrl+0), Zoom to Selection (Shift+Z).' },
@@ -814,10 +864,35 @@ export const MANUAL: Record<Locale, ManualContent> = {
           { text: '<b>No tiers</b>: open-source software with no feature tiers; no registration or activation required.' },
           { text: '<b>Third-party licenses</b>: a list of third-party licenses and sources is bundled with the installer.' },
           { text: '<b>Model download</b>: models are downloaded and verified automatically on first use; afterwards they work offline.' },
-          { text: '<b>Bundled FFmpeg</b>: audio decoding uses a bundled FFmpeg — no system encoder needed.' },
+          { text: '<b>Audio decoding</b>: lossless formats open in every package; MP3 / M4A / AAC decode out of the box in the full package and the Windows core package, while the macOS / Linux core package needs a system FFmpeg.' },
           { text: '<b>Local computation</b>: analysis runs locally; data is not sent out unless you explicitly pick a cloud AI provider.' },
           { text: '<b>Privacy note</b>: before using a cloud AI, confirm anonymization and authorization of your data.' },
           { text: '<b>Full text</b>: the full license text is in the bundled LICENSE file.' },
+        ],
+      },
+      { title: '20. Installation & edition choice (core / full)',
+        items: [
+          { text: '<b>Two packages</b>: full (bundles the AI engine and FFmpeg, runs offline, larger) / core (about 1/6 the size, AI components and some decoding fetched on demand).' },
+          { text: '<b>Model weights</b>: the full package already bundles the rmvpe / swift_f0 ONNX models and runs offline once installed; the core package downloads them on first use of pitch detection (with sha256 verification), then works offline.' },
+          { text: '<b>Audio decoding</b>: lossless formats open in every package; MP3 / M4A / AAC decode out of the box in the full package and the Windows core package, while the macOS / Linux core package needs a system FFmpeg.' },
+          { text: '<b>Minimum systems</b>: macOS 12+ (arm64 / x86_64 native builds); Windows 10 / 11 64-bit; Linux x86_64 (Ubuntu 24.04+, verified on Arch).' },
+          { text: '<b>No code signing or notarization</b>: on macOS, right-click ▸ Open once on first launch; on Windows, choose “Run anyway” if SmartScreen appears.' },
+          { text: '<b>Verification</b>: installers and their sha256 checksums are listed on the GitHub Release page for integrity checks after download.' },
+        ],
+      },
+      { title: '21. Checking for updates',
+        items: [
+          { text: '<b>Notify only</b>: Help ▸ Check for updates only reports a new version with an update-notes link; it never downloads or installs automatically.' },
+          { text: '<b>Identity-free</b>: update requests carry no version or device info, run at most once a day, and fire 5 seconds after launch.' },
+          { text: '<b>Turn it off</b>: automatic update checks can be disabled anytime under “Settings → AI”.' },
+        ],
+      },
+      { title: '22. Support & acknowledgment',
+        items: [
+          { text: '<b>Open and auditable</b>: AcouScope is released under GPL-3.0-only; source and the third-party license list are in the GitHub repository.' },
+          { text: '<b>Official WeChat group</b>: a QR code is provided via the in-app toolbar “Join Official WeChat Group”.' },
+          { text: '<b>Support us</b>: an in-app acknowledgment entry helps fund ongoing maintenance.' },
+          { text: '<b>Feedback</b>: please include which step you were on, what you expected and what you actually saw — a screenshot helps a lot.' },
         ],
       },
     ] as ManualSection[],
@@ -841,7 +916,7 @@ export const MANUAL: Record<Locale, ManualContent> = {
       { title: '2. 로딩과 재생',
         items: [
           { text: '<b>오디오 열기</b>: 파일 → 열기（{sc_open}）, WAV / FLAC / MP3 / AIFF / OGG 지원.' },
-          { text: '<b>내장 디코딩</b>: 위 형식은 모두 직접 열 수 있으며, FFmpeg가 내장되어 외부 인코더가 필요 없습니다.' },
+          { text: '<b>형식 디코딩</b>: WAV / FLAC / AIFF / OGG는 모든 패키지에서 바로 열립니다; MP3 / M4A / AAC 등 손실 형식은 full 패키지와 Windows core 패키지에 FFmpeg가 내장되어 바로 디코딩되며, macOS / Linux core 패키지는 시스템 FFmpeg가 필요합니다(재생에는 영향 없음).' },
           { text: '<b>재생 / 일시정지 / 정지</b>: Space로 재생 / 일시정지, Shift+Space로 정지, Esc로 재생을 멈추고 선택 영역을 취소합니다.' },
           { text: '<b>플레이헤드 위치 지정</b>: 파형의 아무 곳이나 클릭해 플레이헤드를 위치시키거나, 시간 코드로 입력할 수 있습니다.' },
           { text: '<b>확대 / 축소</b>: 확대 / 축소（Ctrl+= / Ctrl+-）, 창에 맞춤（Ctrl+0）, 선택 영역으로 확대（Shift+Z）.' },
@@ -1078,10 +1153,35 @@ export const MANUAL: Record<Locale, ManualContent> = {
           { text: '<b>등급 없음</b>: 오픈소스 소프트웨어로, 기능에 등급이 없고 등록 또는 활성화가 필요 없습니다.' },
           { text: '<b>제3자 라이선스</b>: 제3자 라이선스와 출처 목록은 설치 패키지에 함께 제공됩니다.' },
           { text: '<b>모델 다운로드</b>: 모델은 처음 사용할 때 자동 다운로드（검증 포함）되며, 이후에는 오프라인으로 사용할 수 있습니다.' },
-          { text: '<b>내장 FFmpeg</b>: 오디오 디코딩에 FFmpeg가 내장되어 외부 인코더가 필요 없습니다.' },
+          { text: '<b>오디오 디코딩</b>: 무손실 형식은 모든 패키지에서 바로 열립니다; MP3 / M4A / AAC 등은 full 패키지와 Windows core 패키지에 내장 디코딩되며, macOS / Linux core 패키지는 시스템 FFmpeg가 필요합니다.' },
           { text: '<b>로컬 계산</b>: 분석은 로컬에서 수행되며, 클라우드 AI Provider를 명시적으로 선택한 경우를 제외하고 데이터는 외부로 전송되지 않습니다.' },
           { text: '<b>개인정보 알림</b>: 클라우드 AI를 사용하기 전에 데이터 익명화와 인가를 확인하세요.' },
           { text: '<b>전체 텍스트</b>: 라이선스 전문은 동봉된 LICENSE 파일을 참조하세요.' },
+        ],
+      },
+      { title: '20. 설치와 버전 선택(core / full)',
+        items: [
+          { text: '<b>두 가지 설치 패키지</b>: full(AI 엔진과 FFmpeg 내장, 오프라인 실행, 용량 큼) / core(약 1/6 크기로 간소화, AI 구성 요소와 일부 디코딩은 필요 시 획득).' },
+          { text: '<b>모델 가중치</b>: full 패키지에는 rmvpe / swift_f0 등 ONNX가 이미 내장되어 설치 즉시 오프라인 사용 가능; core 패키지는 피치 검출을 처음 사용할 때 자동 다운로드(sha256 검증 포함)되며 이후 오프라인으로 사용할 수 있습니다.' },
+          { text: '<b>오디오 디코딩</b>: 무손실 형식은 모든 패키지에서 바로 열립니다; MP3 / M4A / AAC 등은 full 패키지와 Windows core 패키지에 내장 디코딩되며, macOS / Linux core 패키지는 시스템 FFmpeg가 필요합니다.' },
+          { text: '<b>플랫폼 최소 요구</b>: macOS 12+(arm64 / x86_64 각각 네이티브 빌드); Windows 10 / 11 64비트; Linux x86_64(Ubuntu 24.04+, Arch 실측 통과).' },
+          { text: '<b>코드 서명과 공증 없음</b>: macOS에서는 첫 실행 시 우클릭 ▸ 열기를 한 번; Windows에서 SmartScreen 경고가 뜨면 「그래도 실행」을 선택하세요.' },
+          { text: '<b>검증</b>: 설치 패키지와 sha256 체크섬은 GitHub Release 페이지에 있으며, 다운로드 후 무결성을 비교할 수 있습니다.' },
+        ],
+      },
+      { title: '21. 업데이트 확인',
+        items: [
+          { text: '<b>알림만</b>: 도움말 ▸ 업데이트 확인은 새 버전을 알리고 업데이트 안내 링크를 붙일 뿐, 자동으로 다운로드하거나 설치하지 않습니다.' },
+          { text: '<b>무식별</b>: 업데이트 확인 요청은 버전이나 기기 정보를 담지 않으며, 하루 최대 한 번, 시작 5초 후 자동으로 한 번 확인합니다.' },
+          { text: '<b>끄기 가능</b>: 「설정 → AI」에서 언제든 자동 업데이트 확인을 끌 수 있습니다.' },
+        ],
+      },
+      { title: '22. 지원과 감사',
+        items: [
+          { text: '<b>오픈소스·감사 가능</b>: AcouScope는 GPL-3.0-only로 배포되며, 소스 코드와 제3자 라이선스 목록은 GitHub 저장소에 있습니다.' },
+          { text: '<b>공식 위챗 그룹</b>: 앱 내 도구모음 「공식 위챗 그룹 가입」에서 QR 코드를 제공합니다.' },
+          { text: '<b>후원하기</b>: 앱 내 감사 진입점으로 이후 유지보수를 지원합니다.' },
+          { text: '<b>피드백</b>: 어느 단계에 있었는지, 무엇을 기대했는지, 실제로 무엇을 보았는지 적어 주세요 — 스크린샷이 있으면 더 좋습니다.' },
         ],
       },
     ] as ManualSection[],
@@ -1105,7 +1205,7 @@ export const MANUAL: Record<Locale, ManualContent> = {
       { title: '2. 読み込みと再生',
         items: [
           { text: '<b>オーディオを開く</b>: ファイル → 開く（{sc_open}）、WAV / FLAC / MP3 / AIFF / OGG に対応。' },
-          { text: '<b>内蔵デコード</b>: 上記の形式はすべて直接開け、FFmpeg を内蔵しているため外部エンコーダーは不要。' },
+          { text: '<b>フォーマットデコード</b>：WAV / FLAC / AIFF / OGG はすべてのパッケージで直接開けます；MP3 / M4A / AAC などの非可逆形式は full パッケージと Windows core パッケージに FFmpeg を内蔵して直接デコードし、macOS / Linux core パッケージはシステムの FFmpeg が必要です（再生には影響しません）。' },
           { text: '<b>再生 / 一時停止 / 停止</b>: Space で再生 / 一時停止、Shift+Space で停止、Esc で再生を止め選択範囲を解除。' },
           { text: '<b>プレイヘッドの位置指定</b>: 波形上の任意の位置をクリックしてプレイヘッドを配置、またはタイムコードで入力。' },
           { text: '<b>ズーム</b>: 拡大 / 縮小（Ctrl+= / Ctrl+-）、ウィンドウに合わせる（Ctrl+0）、選択範囲にズーム（Shift+Z）。' },
@@ -1342,10 +1442,35 @@ export const MANUAL: Record<Locale, ManualContent> = {
           { text: '<b>階層なし</b>: オープンソースソフトウェアで、機能に階層はなく、登録やアクティベーションは不要。' },
           { text: '<b>サードパーティライセンス</b>: サードパーティのライセンスと出典リストはインストーラに同梱。' },
           { text: '<b>モデルダウンロード</b>: モデルは初回使用時に自動ダウンロード（検証込み）、以降はオフラインで利用可能。' },
-          { text: '<b>内蔵 FFmpeg</b>: オーディオデコードに FFmpeg を内蔵し、外部エンコーダーは不要。' },
+          { text: '<b>オーディオデコード</b>: ロスレス形式はすべてのパッケージで直接開けます；MP3 / M4A / AAC などは full パッケージと Windows core パッケージで内蔵デコードされ、macOS / Linux core パッケージはシステムの FFmpeg が必要です。' },
           { text: '<b>ローカル計算</b>: 分析はローカルで実行; クラウド AI Provider を明示的に選択した場合を除き、データは外部に送信されない。' },
           { text: '<b>プライバシー注意</b>: クラウド AI を使う前に、データの匿名化と許可を確認すること。' },
           { text: '<b>全文</b>: ライセンス全文は同梱の LICENSE ファイルを参照。' },
+        ],
+      },
+      { title: '20. インストールとエディション選択（core / full）',
+        items: [
+          { text: '<b>2種類のインストーラー</b>：full（AI エンジンと FFmpeg を内蔵、オフラインで動作、サイズ大）/ core（約 1/6 のサイズに簡素化、AI コンポーネントと一部のデコードは必要時に取得）。' },
+          { text: '<b>モデルの重み</b>：full パッケージには rmvpe / swift_f0 などの ONNX を内蔵し、インストール後すぐにオフラインで利用可能；core パッケージはピッチ検出の初回使用時に自動ダウンロード（sha256 検証付き）され、以降はオフラインで使えます。' },
+          { text: '<b>オーディオデコード</b>：ロスレス形式はすべてのパッケージで直接開けます；MP3 / M4A / AAC などは full パッケージと Windows core パッケージで内蔵デコードされ、macOS / Linux core パッケージはシステムの FFmpeg が必要です。' },
+          { text: '<b>プラットフォーム下限</b>：macOS 12+（arm64 / x86_64 はそれぞれネイティブビルド）；Windows 10 / 11 64bit；Linux x86_64（Ubuntu 24.04+、Arch は実機検証済み）。' },
+          { text: '<b>コード署名と公証は行いません</b>：macOS では初回起動時に右クリック ▸ 開くを一度；Windows で SmartScreen が出たら「それでも実行」を選んでください。' },
+          { text: '<b>検証</b>：インストーラーと sha256 チェックサムは GitHub Release ページにあり、ダウンロード後に完全性を照合できます。' },
+        ],
+      },
+      { title: '21. アップデートの確認',
+        items: [
+          { text: '<b>通知のみ</b>：ヘルプ ▸ 更新を確認は新しいバージョンを知らせて更新案内リンクを添えるだけで、自動ダウンロードや自動インストールは行いません。' },
+          { text: '<b>無識別</b>：アップデート確認のリクエストはバージョンやデバイス情報を含まず、1日1回まで、起動 5 秒後に自動で1回確認します。' },
+          { text: '<b>オフにできる</b>：「設定 → AI」でいつでも自動アップデート確認をオフにできます。' },
+        ],
+      },
+      { title: '22. サポートと謝辞',
+        items: [
+          { text: '<b>オープンで監査可能</b>：AcouScope は GPL-3.0-only で公開され、ソースコードとサードパーティライセンス一覧は GitHub リポジトリにあります。' },
+          { text: '<b>公式WeChatグループ</b>：アプリ内ツールバーの「公式WeChatグループに参加」でQRコードを提供しています。' },
+          { text: '<b>支援する</b>：アプリ内の謝辞入口で、今後のメンテナンスを支援できます。' },
+          { text: '<b>フィードバック</b>：どの手順にいたか、何を期待したか、実際に何が起きたかを添えてください — スクリーンショットがあると助かります。' },
         ],
       },
     ] as ManualSection[],

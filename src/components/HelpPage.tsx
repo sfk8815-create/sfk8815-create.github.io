@@ -7,10 +7,10 @@ import BlurText from './bits/BlurText'
 import Aurora from './bits/Aurora'
 
 // 帮助页（快速入门 + 快捷键说明，三语）—— 风格骨架同 ChangelogPage
-// 14 条逐字镜像应用内帮助（help_dialogs.py QUICK_START）；{sc_*} 占位符经 SC_KEYS 统一替换
+// 14 条与应用内帮助同步；{sc_*} 占位符经 SC_KEYS 统一替换
 const VERSION = 'v0.99.20260925' // 页面顶部徽标版本（站点统一口径）
 
-// <b>…</b> → 真实 <strong>（粗体引导词），其余纯文本原样通过（S3-c2-fix：渲染面禁裸标签）
+// <b>…</b> → 真实 <strong>（粗体引导词），其余纯文本原样通过（渲染面禁裸标签）
 function renderRich(text: string) {
   return text.split(/(<b>[\s\S]*?<\/b>)/g).map((part, i) =>
     part.startsWith('<b>') && part.endsWith('</b>') ? (
@@ -86,7 +86,7 @@ export default function HelpPage() {
         </div>
       </section>
 
-      {/* 快速入门：14 条有序列表（逐字镜像应用内帮助） */}
+      {/* 快速入门：14 条有序列表（与应用内帮助同步） */}
       <section id="quickstart" className="relative scroll-mt-24 py-14">
         <div className="container-content">
           <p className="eyebrow">{t.help.eyebrow}</p>
@@ -115,7 +115,7 @@ export default function HelpPage() {
         </div>
       </section>
 
-      {/* 用户手册：19 节（逐字镜像应用内帮助 MANUAL；第 18 节快捷键表按结构化数据以真实 <table> 渲染） */}
+      {/* 用户手册：22 节（与应用内帮助同步；第 18 节快捷键表按结构化数据以真实 <table> 渲染） */}
       <section id="manual" className="relative scroll-mt-24 py-14">
         <div className="container-content">
           <h2 className="section-title max-w-3xl">{m.h2}</h2>
@@ -184,7 +184,7 @@ export default function HelpPage() {
         </div>
       </section>
 
-      {/* 遇到问题怎么办：五语 FAQ（AD-9 网站侧交代；文案定稿权指挥，逐字落位） */}
+      {/* 遇到问题怎么办：五语 FAQ */}
       <section id="faq" className="relative scroll-mt-24 py-14">
         <div className="container-content">
           <h2 className="section-title max-w-3xl">{t.faq.title}</h2>

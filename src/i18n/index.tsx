@@ -68,6 +68,11 @@ const dict = {
           tag: 'Workspace',
         },
         {
+          title: 'core / full 双包',
+          desc: 'full 内置 AI 引擎与 FFmpeg、离线开箱即用；core 精简约 1/6 体积、AI 组件按需下载。同一功能，按网络与存储自选。',
+          tag: 'Two Packages',
+        },
+        {
           title: '反量化连续音高',
           desc: '抛物线插值 + 期望值法输出连续 Hz，忠实记录微分音与滑音等细微差别。',
           tag: 'Microtone',
@@ -84,7 +89,7 @@ const dict = {
         },
         {
           title: '极限弱设备适配',
-          desc: '免于 Python 运行环境配置、首次使用自动下载模型，此后可离线、内置 FFmpeg、向量化 DSP 与流式处理——田野无网、设备老旧，也能顺畅分析 30 分钟长录音。',
+          desc: '免于 Python 运行环境配置：full 包内置 AI 引擎与 FFmpeg、装好即离线；core 包精简约 1/6、模型首次使用按需下载（含校验）后可离线。配合向量化 DSP 与流式处理——田野无网、设备老旧，也能顺畅分析 30 分钟长录音。',
           tag: '离线可用',
         },
       ],
@@ -258,10 +263,11 @@ const dict = {
       items: [
         { title: '三套 SOTA 音高引擎', desc: 'pYIN（串流/即時，20 cent 解析度）、SwiftF0（9.5 萬參，9.2× 即時，90.2% HM 精度）、RMVPE（複音·嘈雜人聲提取）按場景自由切換，純 CPU ONNX 推理。', tag: 'pYIN · SwiftF0 · RMVPE' },
         { title: '單視窗三欄工作台', desc: '0.99 全新介面：左側分析導航 7 大視圖一鍵切換（已分析自動打勾）、中央畫布堆疊、右側檢查器即時讀數。三欄寬度、折疊、上次視圖——重啟即恢復工作現場。', tag: 'Workspace' },
+        { title: 'core / full 雙包', desc: 'full 內建 AI 引擎與 FFmpeg、離線開箱即用；core 精簡約 1/6 體積、AI 組件按需下載。同一功能，按網路與儲存自選。', tag: 'Two Packages' },
         { title: '反量化連續音高', desc: '拋物線內插 + 期望值法輸出連續 Hz，忠實記錄微分音與滑音等細微差別。', tag: 'Microtone' },
         { title: '本地 AI 學術釋圖', desc: '右側一點「AI 釋圖」，連同取樣率、基頻、音分等數值上下文送入端側模型，串流生成學術釋讀，可連續追問——隱私不出機器，無網也能用。', tag: 'AI Insight' },
         { title: '參考國內外元資料要素的匯出', desc: '匯出字段參考 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等元資料要素（字段對照核對中），支援自訂映射；一鍵匯出田野報告（JSON / XML / CSV）：檔案編號、專案名稱、傳承人、採集時間、地區、類別、技術資訊——讓每段聲音都有據可查、可長期儲存、可溯源，直接提交期刊與檔案館。', tag: '元資料要素 · 自訂映射' },
-        { title: '極限弱設備適配', desc: '免於 Python 執行環境設定、首次使用自動下載模型，此後可離線、內建 FFmpeg、向量化 DSP 與串流處理——田野無網、設備老舊，也能順暢分析 30 分鐘長錄音。', tag: '離線可用' },
+        { title: '極限弱設備適配', desc: '免於 Python 執行環境設定：full 包內建 AI 引擎與 FFmpeg、裝好即離線；core 包精簡約 1/6、模型首次使用按需下載（含校驗）後可離線。配合向量化 DSP 與串流處理——田野無網、設備老舊，也能順暢分析 30 分鐘長錄音。', tag: '離線可用' },
       ],
     },
     screenshots: {
@@ -426,6 +432,11 @@ const dict = {
           tag: 'Workspace',
         },
         {
+          title: 'core / full packages',
+          desc: 'full bundles the AI engine and FFmpeg for offline out-of-the-box use; core is about 1/6 the size and fetches AI components on demand. Same capabilities — pick by network and storage.',
+          tag: 'Two Packages',
+        },
+        {
           title: 'De-quantized continuous pitch',
           desc: 'Parabolic interpolation + expectation method outputs continuous Hz, faithfully capturing microtones and glides.',
           tag: 'Microtone',
@@ -442,7 +453,7 @@ const dict = {
         },
         {
           title: 'Runs on weak devices',
-          desc: 'No Python environment setup required, models are downloaded automatically on first use and can then run offline, bundled FFmpeg, vectorized DSP and streaming — analyze a 30-minute recording offline on old hardware.',
+          desc: 'No Python environment to configure: the full package bundles the AI engine and FFmpeg and runs offline out of the box; the core package is about 1/6 the size and fetches models on first use (with verification), then works offline. With vectorized DSP and streaming, even offline fieldwork on old hardware handles 30-minute recordings smoothly.',
           tag: 'Offline after first run',
         },
       ],
@@ -605,10 +616,11 @@ const dict = {
       items: [
         { title: '3개의 SOTA 피치 엔진', desc: 'pYIN(스트리밍/실시간, 20 cent 해상도), SwiftF0(9.5만 파라미터, 9.2× 실시간, 90.2% HM 정확도), RMVPE(복음·소음 보컬 추출)를 시나리오에 따라 자유롭게 전환, 순수 CPU ONNX 추론.', tag: 'pYIN · SwiftF0 · RMVPE 3종' },
         { title: '단일 창 3패널 워크스페이스', desc: '0.99 신규 인터페이스: 왼쪽 분석 내비게이션 7개 뷰 원클릭 전환(분석 완료 자동 체크), 중앙 캔버스 스택, 오른쪽 인스펙터 실시간 읽기값. 패널 너비, 접힘 상태, 마지막 뷰 — 재시작 시 작업 현장 그대로 복원.', tag: 'Workspace' },
+        { title: 'core / full 듀얼 패키지', desc: 'full은 AI 엔진과 FFmpeg를 내장해 오프라인에서 바로 사용; core는 약 1/6 크기로 AI 구성 요소를 필요 시 다운로드합니다. 동일한 기능, 네트워크와 저장 공간에 따라 선택하세요.', tag: 'Two Packages' },
         { title: '탈양자화 연속 피치', desc: '파라볼라 보간 + 기댓값법으로 연속 Hz를 출력하여, 미세음과 글라이드 같은 미묘한 차이를 충실히 기록합니다.', tag: 'Microtone' },
         { title: '로컬 AI 학술 해석', desc: '오른쪽에서 “AI 해석”을 클릭하면, 샘플링 레이트·기본주파수·센트 등 수치 컨텍스트를 기종 내 모델에 보내 학술 해석을 스트리밍 생성하며 연속으로 더 질문할 수 있습니다 — 개인정보는 기기를 벗어나지 않고, 오프라인에서도 사용 가능합니다.', tag: 'AI Insight' },
         { title: '국내외 메타데이터 요소 참조 내보내기', desc: '내보내기 필드는 IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 등 메타데이터 요소를 참조(필드 대조 확인 진행 중)하며 사용자 정의 매핑을 지원합니다; 원클릭 필드 보고서 내보내기(JSON / XML / CSV): 아카이브 번호, 프로젝트명, 전승자, 채집 시간, 지역, 분류, 기술 정보 — 모든 소리가 근거를 갖고 장기 아카이빙·추적 가능하게 하며, 학술지와 아카이브에 바로 제출할 수 있습니다.', tag: '메타데이터 요소 · 사용자 정의 매핑' },
-        { title: '극한 사양 낮은 기기 대응', desc: 'Python 실행 환경 설정 불필요, 첫 사용 시 모델 자동 다운로드, 이후 오프라인 사용 가능, FFmpeg 내장, 벡터화 DSP와 스트리밍 처리 — 필드에 네트워크가 없고 기기가 오래돼도 30분 장시간 녹음을 부드럽게 분석합니다.', tag: '오프라인 사용 가능' },
+        { title: '극한 사양 낮은 기기 대응', desc: 'Python 실행 환경 설정 불필요: full 패키지는 AI 엔진과 FFmpeg를 내장해 설치 즉시 오프라인; core 패키지는 약 1/6 크기로 모델을 처음 사용할 때 필요 시 다운로드(검증 포함)한 뒤 오프라인으로 사용합니다. 벡터화 DSP와 스트리밍 처리로 필드에 네트워크가 없고 기기가 오래돼도 30분 장시간 녹음을 부드럽게 분석합니다.', tag: '오프라인 사용 가능' },
       ],
     },
     screenshots: {
@@ -769,10 +781,11 @@ const dict = {
       items: [
         { title: '3つのSOTAピッチエンジン', desc: 'pYIN（ストリーミング/リアルタイム、20 cent分解能）、SwiftF0（9.5万パラメータ、9.2×リアルタイム、90.2% HM精度）、RMVPE（複音・ノイズの多いボーカル抽出）をシーンに応じて自由に切替、純CPU ONNX推論。', tag: 'pYIN · SwiftF0 · RMVPE 3種' },
         { title: '単一ウィンドウ3ペインワークスペース', desc: '0.99の新UI：左の分析ナビゲーションで7ビューをワンクリック切替（解析済みは自動チェック）、中央キャンバススタック、右のインスペクターでライブ読み取り。ペイン幅・折りたたみ状態・最終ビュー —— 再起動しても作業現場がそのまま復元。', tag: 'Workspace' },
+        { title: 'core / full デュアルパッケージ', desc: 'full は AI エンジンと FFmpeg を内蔵しオフラインで即使えます；core は約 1/6 のサイズで AI コンポーネントを必要時にダウンロード。同じ機能を、ネットワークとストレージに応じて選択。', tag: 'Two Packages' },
         { title: 'デ量子化連続ピッチ', desc: '放物線補間 + 期待値法で連続 Hz を出力し、微分音やグリンドなどの細かな差を忠実に記録。', tag: 'Microtone' },
         { title: 'ローカルAI学術解釈', desc: '右側で「AI 解釈」をクリックすると、サンプリングレート・基音・セントなどの数値コンテキストを端末内モデルに送り、学術的な読み解きをストリーミング生成、連続で追加質問可能 —— プライバシーは端末の外に出ず、オフラインでも利用可能。', tag: 'AI Insight' },
         { title: '国内外メタデータ要素を参考にしたエクスポート', desc: 'エクスポートフィールドは IASA-TC 04 / IMDI / GB/T 31219.4 / DA/T 63 等のメタデータ要素を参考（フィールド対照確認は進行中）、カスタムマッピングに対応；ワンクリックでフィールドレポートをエクスポート（JSON / XML / CSV）：アーカイブ番号、プロジェクト名、伝承者、採集日時、地域、分類、技術情報 —— すべての音に根拠を持たせ、長期アーカイブ・トレーサブルにし、ジャーナルやアーカイブにそのまま提出可能。', tag: 'メタデータ要素 · カスタムマッピング' },
-        { title: '極限の低スペックデバイス対応', desc: 'Python実行環境の設定不要、初回使用時にモデルを自動ダウンロードし、以降はオフライン利用可能、FFmpeg内蔵、ベクトル化DSPとストリーミング処理 —— フィールドにネットワークが無くても、古いデバイスでも30分の長時間録音をスムーズに分析。', tag: 'オフライン利用可能' },
+        { title: '極限の低スペックデバイス対応', desc: 'Python実行環境の設定不要：full パッケージは AI エンジンと FFmpeg を内蔵しインストール後すぐオフライン；core パッケージは約 1/6 のサイズでモデルを初回使用時に必要に応じてダウンロード（検証付き）した後オフラインで使えます。ベクトル化DSPとストリーミング処理により、フィールドにネットワークが無くても、古いデバイスでも30分の長時間録音をスムーズに分析。', tag: 'オフライン利用可能' },
       ],
     },
     screenshots: {

@@ -1,6 +1,6 @@
-// 快速入门数据（站点「帮助」栏目 · S3-c2）
-// 内容源：acouscope/src/acouscope/ui/widgets/help_dialogs.py 的 QUICK_START（T-1057 ce4fe7d 已入库）
-// 五语（sc / tc / en / ko / ja）各 14 条，逐字镜像内容源 <li>（顺序、措辞、加粗要点一致）；分语范式同 changelog.ts。
+// 快速入门数据（站点「帮助」栏目）
+// 内容与应用内快速入门同步维护。
+// 五语（sc / tc / en / ko / ja）各 14 条，与应用内帮助同步 <li>（顺序、措辞、加粗要点一致）；分语范式同 changelog.ts。
 // {sc_*} 占位符不逐条写死、不原样渲染花括号：统一由下方 SC_KEYS 映射表在页面渲染时替换（共 11 键，整值逐字照抄）。
 import type { Locale } from '../i18n'
 
@@ -29,8 +29,8 @@ export interface QuickstartItem {
 }
 
 export interface QuickstartContent {
-  items: QuickstartItem[] // 14 条，逐字镜像 QUICK_START[lang]
-  footnote: string // 内容源 <ol> 之后的收尾句（含 <b>，渲染时同样替换占位符）
+  items: QuickstartItem[] // 14 条，与应用内帮助同步
+  footnote: string // <ol> 之后的收尾句（含 <b>，渲染时同样替换占位符）
 }
 
 export const QUICK_START: Record<Locale, QuickstartContent> = {
