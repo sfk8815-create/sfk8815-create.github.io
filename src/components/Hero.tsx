@@ -56,6 +56,17 @@ export default function Hero() {
                 <path d="M12 5v14m0 0l-5-5m5 5l5-5" />
               </svg>
             </button>
+            <a
+              href="https://github.com/sfk8815-create/AcouScope"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-2xl border border-raised px-6 py-3.5 text-sm font-medium text-muted transition hover:border-cyan/40 hover:text-textured"
+            >
+              {t.hero.github}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition group-hover:translate-x-0.5">
+                <path d="M5 12h14m0 0l-5-5m5 5l-5 5" />
+              </svg>
+            </a>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-faint">
