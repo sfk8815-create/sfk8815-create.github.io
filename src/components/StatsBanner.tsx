@@ -4,7 +4,7 @@ import CountUp from './bits/CountUp'
 const STATS: { value: number; suffix: string; key: 'engines' | 'tests' | 'realtime' | 'themes' }[] = [
   { value: 3, suffix: '', key: 'engines' },
   { value: 9.2, suffix: '×', key: 'realtime' },
-  { value: 2148, suffix: '', key: 'tests' },
+  { value: 2965, suffix: '', key: 'tests' },
   { value: 9, suffix: '', key: 'themes' },
 ]
 

@@ -121,7 +121,7 @@ const dict = {
       c1s: '一条发丝线 = 一个分析模块 · 气泡大小 = 该模块数 · 时域 / 频域·频谱 / 音高·嗓音 / 空间·实时',
       c2t: '三大操作系统，一套完整能力',
       c2s: 'macOS · Windows · Linux · 全部实心 = 支持',
-      c3t: '2148 项自动化测试，让结果可复现',
+      c3t: '2965 项自动化测试，让结果可复现',
       c3s: 'algorithm · audio I/O · UI · 每项分析都经过验证',
       c4t: '两大旗舰，为一个研究者的论文而设',
       c4s: '出版级出图 + AI 释图 · 直投 CSSCI / SCI · gold = 旗舰/出版级',
@@ -137,8 +137,8 @@ const dict = {
       trust: [
         { n: '9', label: '大分析模块', tag: 'Analysis Modules' },
         { n: '9', label: '套学术主题', tag: 'Themes' },
-        { n: '3', label: '种界面语言', tag: '简体 / 繁體 / EN' },
-        { n: '2148', label: '项自动化测试', tag: 'Automated Tests' },
+        { n: '5', label: '种界面语言', tag: '简体 / 繁體 / EN / 한국어 / 日本語' },
+        { n: '2965', label: '项自动化测试', tag: 'Automated Tests' },
         { n: '5', label: '类安装形态', tag: 'Platforms' },
       ],
       flag: [
@@ -289,7 +289,7 @@ const dict = {
       c1s: '一條髮絲線 = 一個分析模組 · 氣泡大小 = 該模組數 · 時域 / 頻域·頻譜 / 音高·嗓音 / 空間·實時',
       c2t: '三大作業系統，一套完整能力',
       c2s: 'macOS · Windows · Linux · 全部實心 = 支援',
-      c3t: '2148 項自動化測試，讓結果可複現',
+      c3t: '2965 項自動化測試，讓結果可複現',
       c3s: 'algorithm · audio I/O · UI · 每項分析都經過驗證',
       c4t: '兩大旗艦，為一個研究者的論文而設',
       c4s: '出版級出圖 + AI 釋圖 · 直投 CSSCI / SCI · gold = 旗艦/出版級',
@@ -302,7 +302,7 @@ const dict = {
       omarchy: '率先支援 Omarchy',
       mods: ['波形', 'FFT', '語譜', '音高', '共振峰', '音色', '3D', '實時', 'AI'],
       testsLabel: '項自動化測試 · pytest',
-      trust: [ {n:'9',label:'大分析模組',tag:'Analysis Modules'}, {n:'9',label:'套學術主題',tag:'Themes'}, {n:'3',label:'種介面語言',tag:'簡體 / 繁體 / EN'}, {n:'2148',label:'項自動化測試',tag:'Automated Tests'}, {n:'5',label:'類安裝形態',tag:'Platforms'} ],
+      trust: [ {n:'9',label:'大分析模組',tag:'Analysis Modules'}, {n:'9',label:'套學術主題',tag:'Themes'}, {n:'5',label:'種介面語言',tag:'簡體 / 繁體 / EN / 한국어 / 日本語'}, {n:'2965',label:'項自動化測試',tag:'Automated Tests'}, {n:'5',label:'類安裝形態',tag:'Platforms'} ],
       flag: [
         { badge: '旗艦 01', title: '出版級出圖', hook: '論文裡能直接用的圖，答辯不用再修。', points: ['匯出與所見完全一致，SVG / PDF 向量 + PNG 點陣任選', '內建出版級字體與配色，中文與樂理符號不亂不糊', '自訂解析度與圖尺寸，直投 CSSCI / SCI', '一張圖配一份說明，圖表編號與註釋由它來管'], stats: [{ n: '6', l: '匯出格式' }, { n: '300', l: 'DPI 可調' }] },
         { badge: '旗艦 02', title: 'AI 釋圖', hook: '它以學術審稿人的視角，幫你讀頻譜。', points: ['自動辨識譜峰、泛音序列與共振峰結構，中文學術語境解釋', '給出可直接寫進論文的分析段落草稿，省一半文字工時', '雙語切換輸出，國際會議投稿不用自己翻', '可提示的研究建議，下一步看哪裡它會提醒'], stats: [{ n: '多', l: 'Provider 可選' }, { n: '30', l: 'AI 測試項' }] },
@@ -477,7 +477,7 @@ const dict = {
       c1s: 'One hairline = one analysis module · bubble size = module count · Time-domain / Frequency·Spectrum / Pitch·Voice / Space·Realtime',
       c2t: 'Three operating systems, one complete capability',
       c2s: 'macOS · Windows · Linux · all filled = supported',
-      c3t: '2148 automated tests, reproducible results',
+      c3t: '2965 automated tests, reproducible results',
       c3s: 'algorithm · audio I/O · UI · every analysis verified',
       c4t: 'Two flagship features for a researcher’s paper',
       c4s: 'Publication-grade figures + AI interpretation · target CSSCI / SCI · gold = flagship',
@@ -493,8 +493,8 @@ const dict = {
       trust: [
         { n: '9', label: 'analysis modules', tag: 'Analysis Modules' },
         { n: '9', label: 'academic themes', tag: 'Themes' },
-        { n: '3', label: 'interface languages', tag: '简体 / 繁體 / EN' },
-        { n: '2148', label: 'automated tests', tag: 'Automated Tests' },
+        { n: '5', label: 'interface languages', tag: '简体 / 繁體 / EN / 한국어 / 日本語' },
+        { n: '2965', label: 'automated tests', tag: 'Automated Tests' },
         { n: '5', label: 'install types', tag: 'Platforms' },
       ],
       flag: [
@@ -642,7 +642,7 @@ const dict = {
       c1s: '머리카락 한 올 = 분석 모듈 1개 · 버블 크기 = 해당 모듈 수 · 시영역 / 주파수영역·스펙트럼 / 피치·목소리 / 공간·실시간',
       c2t: '3대 운영체제, 하나의 완전한 능력',
       c2s: 'macOS · Windows · Linux · 전부 채움 = 지원',
-      c3t: '2148개 자동화 테스트, 재현 가능한 결과',
+      c3t: '2965개 자동화 테스트, 재현 가능한 결과',
       c3s: 'algorithm · audio I/O · UI · 모든 분석 항목 검증 완료',
       c4t: '연구자 한 명의 논문을 위한 2대 플래그십',
       c4s: '출판급 도표 + AI 해석 · CSSCI / SCI 바로 투고 · gold = 플래그십/출판급',
@@ -658,8 +658,8 @@ const dict = {
       trust: [
         { n: '9', label: '대 분석 모듈', tag: 'Analysis Modules' },
         { n: '9', label: '종 학술 테마', tag: 'Themes' },
-        { n: '3', label: '종 인터페이스 언어', tag: '간체 / 번체 / EN' },
-        { n: '2148', label: '개 자동화 테스트', tag: 'Automated Tests' },
+        { n: '5', label: '종 인터페이스 언어', tag: '간체 / 번체 / EN / 한국어 / 日本語' },
+        { n: '2965', label: '개 자동화 테스트', tag: 'Automated Tests' },
         { n: '5', label: '종 설치 형태', tag: 'Platforms' },
       ],
       flag: [
@@ -807,7 +807,7 @@ const dict = {
       c1s: '髪の毛一本 = 分析モジュール1つ · バブルの大きさ = そのモジュール数 · 時間領域 / 周波数領域・スペクトル / ピッチ・声質 / 空間・リアルタイム',
       c2t: '3大OS、1つの完全な能力',
       c2s: 'macOS · Windows · Linux · すべて塗りつぶし = 対応',
-      c3t: '2148件の自動化テスト、再現可能な結果',
+      c3t: '2965件の自動化テスト、再現可能な結果',
       c3s: 'algorithm · audio I/O · UI · すべての分析を検証済み',
       c4t: '研究者1人の論文のための2大フラッグシップ',
       c4s: '出版グレードの図 + AI解釈 · CSSCI / SCI に直接投稿 · gold = フラッグシップ/出版グレード',
@@ -823,8 +823,8 @@ const dict = {
       trust: [
         { n: '9', label: '大分析モジュール', tag: 'Analysis Modules' },
         { n: '9', label: '種の学術テーマ', tag: 'Themes' },
-        { n: '3', label: '種のインターフェース言語', tag: '簡体 / 繁体 / EN' },
-        { n: '2148', label: '件の自動化テスト', tag: 'Automated Tests' },
+        { n: '5', label: '種のインターフェース言語', tag: '簡体 / 繁体 / EN / 한국어 / 日本語' },
+        { n: '2965', label: '件の自動化テスト', tag: 'Automated Tests' },
         { n: '5', label: '種のインストール形態', tag: 'Platforms' },
       ],
       flag: [
