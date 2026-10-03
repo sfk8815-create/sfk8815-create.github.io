@@ -1,6 +1,5 @@
 // 跨平台 · 三大操作系统 → 子平台
 // 说明：包名与最低系统为技术规格，跨语言保持统一（专业术语）。
-// 下载地址暂不公开（即将震撼发布），正式发布时在 SubPlatform.url 填入各平台真实 Release 链接。
 
 export type OSKey = 'macos' | 'windows' | 'linux'
 
@@ -24,8 +23,8 @@ export const PLATFORMS: PlatformGroup[] = [
     os: 'macOS',
     mark: 'Ａ',
     subs: [
-      { name: 'Apple Silicon (M 系列)', pkg: 'DMG · arm64', min: 'macOS 12+', url: '' },
-      { name: 'Intel', pkg: 'DMG · x86_64', min: 'macOS 12+', url: '' },
+      { name: 'Apple Silicon (M 系列)', pkg: 'DMG · arm64', min: 'macOS 12+', url: 'https://github.com/sfk8815-create/AcouScope/releases/download/v0.99.20260925/AcouScope-0.99.20260925-macOS-arm64-core.dmg' },
+      { name: 'Intel', pkg: 'DMG · x86_64', min: 'macOS 12+', url: 'https://github.com/sfk8815-create/AcouScope/releases/download/v0.99.20260925/AcouScope-0.99.20260925-macOS-x86_64-core.dmg' },
     ],
   },
   {
@@ -33,8 +32,7 @@ export const PLATFORMS: PlatformGroup[] = [
     os: 'Windows',
     mark: 'Ｗ',
     subs: [
-      { name: 'Windows 10 / 11 · x86_64', pkg: 'EXE 安装程序 · x64', min: 'Win10 / 11 64 位', url: '' },
-      { name: 'Windows · arm64', pkg: 'EXE 安装程序 · arm64', min: 'Win11 ARM64', url: '' },
+      { name: 'Windows 10 / 11 · x86_64', pkg: 'EXE 安装程序 · x64', min: 'Win10 / 11 64 位', url: 'https://github.com/sfk8815-create/AcouScope/releases/download/v0.99.20260925/AcouScope-0.99.20260925-Windows-x86_64-core-setup.exe' },
     ],
   },
   {
@@ -42,8 +40,8 @@ export const PLATFORMS: PlatformGroup[] = [
     os: 'Linux',
     mark: 'Ｌ',
     subs: [
-      { name: 'Ubuntu', pkg: 'AppImage / DEB', min: 'Ubuntu 22.04 LTS+', url: '' },
-      { name: 'Arch / Omarchy', pkg: 'PACMAN 原生包', min: 'Arch 滚动版', url: '' },
+      { name: 'Ubuntu', pkg: 'AppImage / DEB', min: 'Ubuntu 24.04+', url: 'https://github.com/sfk8815-create/AcouScope/releases/download/v0.99.20260925/AcouScope-0.99.20260925-Linux-x86_64-core.AppImage' },
+      { name: 'Arch / Omarchy', pkg: 'AppImage · x86_64（Arch/Omarchy 实测）', min: 'Arch 滚动版', url: 'https://github.com/sfk8815-create/AcouScope/releases/download/v0.99.20260925/AcouScope-0.99.20260925-Linux-x86_64-core.AppImage' },
     ],
   },
 ]

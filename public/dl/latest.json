@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "version": "0.99.20260925",
+  "channel": "stable",
+  "published_at": "2026-10-03T02:34:18Z",
+  "notes_url": "https://github.com/sfk8815-create/AcouScope/releases/tag/v0.99.20260925",
+  "min_updater_version": "0.99.20260925",
+  "assets": [
+    {
+      "name": "AcouScope-0.99.20260925-Linux-x86_64-core.AppImage",
+      "platform": "linux-x86_64",
+      "kind": "core",
+      "bundle_format": "appimage",
+      "url": "https://github.com/sfk8815-create/AcouScope/releases/download/v0.99.20260925/AcouScope-0.99.20260925-Linux-x86_64-core.AppImage",
+      "sha256": "03a89ffa78d739aee408a6ce02f8d07d30a6f3aa7f4612bdb73aabcc759e8884",
+      "size": 146868728,
+      "min_system": "Ubuntu 24.04+ / Arch"
+    },
+    {
+      "name": "AcouScope-0.99.20260925-Windows-x86_64-core-portable.zip",
+      "platform": "windows-x86_64",
+      "kind": "core",
+      "bundle_format": "zip",
+      "url": "https://github.com/sfk8815-create/AcouScope/releases/download/v0.99.20260925/AcouScope-0.99.20260925-Windows-x86_64-core-portable.zip",
+      "sha256": "786ddd82c5aede7c36a30be39a0c1a8bf1ef21e2fb3a29c044b7b2e6b834f38b",
+      "size": 131032646,
+      "min_system": "Windows 10 1809"
+    },
+    {
+      "name": "AcouScope-0.99.20260925-Windows-x86_64-core-setup.exe",
+      "platform": "windows-x86_64",
+      "kind": "core",
+      "bundle_format": "exe",
+      "url": "https://github.com/sfk8815-create/AcouScope/releases/download/v0.99.20260925/AcouScope-0.99.20260925-Windows-x86_64-core-setup.exe",
+      "sha256": "e65d8b7dd0b905d6ec77cec05e36733517a5815201ebe3dfd2a927206534e52f",
+      "size": 91193097,
+      "min_system": "Windows 10 1809"
+    },
+    {
+      "name": "AcouScope-0.99.20260925-macOS-arm64-core.dmg",
+      "platform": "macos-arm64",
+      "kind": "core",
+      "bundle_format": "dmg",
+      "url": "https://github.com/sfk8815-create/AcouScope/releases/download/v0.99.20260925/AcouScope-0.99.20260925-macOS-arm64-core.dmg",
+      "sha256": "137521f4e375f68ce0b4b46a4349bcec0c166405aa629f1b8a28174453033dd7",
+      "size": 120741824,
+      "min_system": "macOS 12"
+    },
+    {
+      "name": "AcouScope-0.99.20260925-macOS-arm64-full.dmg",
+      "platform": "macos-arm64",
+      "kind": "full",
+      "bundle_format": "dmg",
+      "url": "https://github.com/sfk8815-create/AcouScope/releases/download/v0.99.20260925/AcouScope-0.99.20260925-macOS-arm64-full.dmg",
+      "sha256": "076793c3e6ca2da038e619d96d13ae3f91920285439f47eb2611949e29177c19",
+      "size": 675923454,
+      "min_system": "macOS 12"
+    },
+    {
+      "name": "AcouScope-0.99.20260925-macOS-x86_64-core.dmg",
+      "platform": "macos-x86_64",
+      "kind": "core",
+      "bundle_format": "dmg",
+      "url": "https://github.com/sfk8815-create/AcouScope/releases/download/v0.99.20260925/AcouScope-0.99.20260925-macOS-x86_64-core.dmg",
+      "sha256": "6db55c34e5359ab966108c0523d8e431c249e8451fa8a0080d101c37b0b771a7",
+      "size": 99779409,
+      "min_system": "macOS 12"
+    }
+  ]
+}

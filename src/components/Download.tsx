@@ -48,9 +48,20 @@ export default function Download() {
                   <p className="font-medium text-textured">{sub.name}</p>
                   <p className="mt-1 font-mono text-xs text-muted">{sub.pkg} · {sub.min}</p>
                 </div>
-                <span className="shrink-0 rounded-lg border border-raised px-3 py-1.5 text-xs font-medium text-faint">
-                  {t.download.coming}
-                </span>
+                {sub.url ? (
+                  <a
+                    href={sub.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 rounded-lg border border-raised px-3 py-1.5 text-xs font-medium text-faint"
+                  >
+                    {t.nav.download}
+                  </a>
+                ) : (
+                  <span className="shrink-0 rounded-lg border border-raised px-3 py-1.5 text-xs font-medium text-faint">
+                    {t.download.coming}
+                  </span>
+                )}
               </div>
             ))}
           </div>
@@ -77,9 +88,20 @@ export default function Download() {
                           {sub.pkg} · {sub.min}
                         </p>
                       </div>
-                      <span className="shrink-0 rounded-lg border border-raised px-3 py-1.5 text-xs font-medium text-faint">
-                        {t.download.coming}
-                      </span>
+                      {sub.url ? (
+                        <a
+                          href={sub.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="shrink-0 rounded-lg border border-raised px-3 py-1.5 text-xs font-medium text-faint"
+                        >
+                          {t.nav.download}
+                        </a>
+                      ) : (
+                        <span className="shrink-0 rounded-lg border border-raised px-3 py-1.5 text-xs font-medium text-faint">
+                          {t.download.coming}
+                        </span>
+                      )}
                     </li>
                   ))}
                 </ul>
